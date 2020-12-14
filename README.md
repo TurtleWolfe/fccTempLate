@@ -24,7 +24,7 @@ npm run deploy
     "deploy": "npm run build && gh-pages -d build",
     "build": "react-scripts build"
   },
-  "homepage": "https://CRUDgames.com"
+  "homepage": "https://TurtleWolfe.github.io/fccTempLate"
 }
 ```
 
