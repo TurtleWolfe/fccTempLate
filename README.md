@@ -1,24 +1,13 @@
-# [FreeCodeCamp.com React Template](https://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects "Introduction to the Front End Libraries ProjectsIt's now time to test out the frontend skills learned. This will help to bolster your skills, so don't hesitate to showcase your frontend skills in these projects. In this section you will complete the following projects with Bootstrap, jQuery, Sass, React and Redux:")
-
-1. [I'm an inline-style link with title](https://www.google.com "Google's Homepage")
-1. [I'm an inline-style link with title](https://www.google.com "Google's Homepage")
-1. [I'm an inline-style link with title](https://www.google.com "Google's Homepage")
-1. [I'm an inline-style link with title](https://www.google.com "Google's Homepage")
-1. [I'm an inline-style link with title](https://www.google.com "Google's Homepage")
-1. [I'm an inline-style link with title](https://www.google.com "Google's Homepage")
-1. [The Essential Meta Tags for Social Media](https://css-tricks.com/essential-meta-tags-social-media/ 'These days, almost every website encourages visitors to share its pages on social media. We’ve all seen the ubiquitous Facebook and Twitter icons, among others, just begging to be clicked. This comes as no surprise as sharing via social media, the internet incarnation of word-of-mouth, is one of the most effective ways for businesses and individuals to gain awareness. ')
-1. [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#links 'Markdown Cheatsheet')
+# [FreeCodeCamp.com React Template](https://turtlewolfe.github.io/fccTempLate/ "Introduction to the Front End Libraries ProjectsIt's now time to test out the frontend skills learned. This will help to bolster your skills, so don't hesitate to showcase your frontend skills in these projects. In this section you will complete the following projects with Bootstrap, jQuery, Sass, React and Redux:")
 
 ```bash
 npx create-react-app . --use-npm
 npm i gh-pages --save-dev
-// npm run build
-npm run deploy
 ```
 
 ```json
 {
-  "name": "script_hammer",
+  "name": "fcc_template",
   "scripts": {
     "start": "react-scripts start",
     "deploy": "npm run build && gh-pages -d build",
@@ -27,6 +16,34 @@ npm run deploy
   "homepage": "https://TurtleWolfe.github.io/fccTempLate"
 }
 ```
+
+```bash
+// npm run build
+npm run deploy
+```
+
+<!-- 1. [I'm an inline-style link with title](https://www.google.com "Google's Homepage") -->
+<!-- 1. [I'm an inline-style link with title](https://www.google.com "Google's Homepage") -->
+<!-- 1. [I'm an inline-style link with title](https://www.google.com "Google's Homepage") -->
+
+1. [This Episode on Twitch](https://www.twitch.tv/videos/836894977 'The Code Must Go On')
+1. [FreeCodeCamp.com Front End Projects](https://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects "Introduction to the Front End Libraries ProjectsIt's now time to test out the frontend skills learned. This will help to bolster your skills, so don't hesitate to showcase your frontend skills in these projects. In this section you will complete the following projects with Bootstrap, jQuery, Sass, React and Redux:")
+1. [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#links 'Markdown Cheatsheet')
+1. [The Essential Meta Tags for Social Media](https://css-tricks.com/essential-meta-tags-social-media/ 'These days, almost every website encourages visitors to share its pages on social media. We’ve all seen the ubiquitous Facebook and Twitter icons, among others, just begging to be clicked. This comes as no surprise as sharing via social media, the internet incarnation of word-of-mouth, is one of the most effective ways for businesses and individuals to gain awareness. ')
+1. [GitHub Pages ](https://youtu.be/SKXkC4SqtRk 'GitHub Pages Deploy & Domain')
+
+[GitHub Pages Deploy & Domain: TraversyMedia  
+![https://youtu.be/SKXkC4SqtRk][traversypages]](https://youtu.be/SKXkC4SqtRk')
+
+[traversypages]: public/images/traversyPages.png 'GitHub Pages Deploy & Domain'
+
+1. [@ScriptHammer on Twitter](https://twitter.com/ScriptHammer 'Contact me on Twitter')
+1. [LinkedIn](https://www.linkedin.com/in/jonathan-pohlner-87796377/ 'FreeLance Web Developer')
+
+[ScriptHammer.com  
+![https://ScriptHammer.com][logo]](https://ScriptHammer.com 'Tech Journal')
+
+[logo]: public/images/ScriptHammer.gif 'Tech Journal: ScriptHammer.com'
 
 ## Getting Started with Create React App
 
