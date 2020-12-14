@@ -14,6 +14,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "deploy": "npm run build && gh-pages -d build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -34,5 +35,29 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "devDependencies": {
+    "gh-pages": "^3.1.0"
+  },
+  "description": "1. [The Essential Meta Tags for Social Media](https://css-tricks.com/essential-meta-tags-social-media/ 'These days, almost every website encourages visitors to share its pages on social media. We’ve all seen the ubiquitous Facebook and Twitter icons, among others, just begging to be clicked. This comes as no surprise as sharing via social media, the internet incarnation of word-of-mouth, is one of the most effective ways for businesses and individuals to gain awareness. ') 1. [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#links 'Markdown Cheatsheet')",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TurtleWolfe/fccTempLate.git"
+  },
+  "keywords": [
+    "Node",
+    "React",
+    "Create-React-App",
+    "FreeCodeCamp.com",
+    "GitHub",
+    "Pages",
+    "Template"
+  ],
+  "author": "TurtleWolfe @ ScriptHammer.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TurtleWolfe/fccTempLate/issues"
+  },
+  "homepage": "https://github.com/TurtleWolfe/fccTempLate#readme"
 }
