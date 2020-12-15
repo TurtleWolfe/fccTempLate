@@ -1,19 +1,29 @@
 # [FreeCodeCamp.com React Template](https://turtlewolfe.github.io/fccTempLate/ "Introduction to the Front End Libraries ProjectsIt's now time to test out the frontend skills learned. This will help to bolster your skills, so don't hesitate to showcase your frontend skills in these projects. In this section you will complete the following projects with Bootstrap, jQuery, Sass, React and Redux:")
 
+## to create from scratch
+
 ```bash
 npx create-react-app . --use-npm
 npm i gh-pages --save-dev
 ```
 
+### or install from this repo
+
+```bash
+npm i
+// to edit package.json
+npm init
+```
+
 ```json
 {
-  "name": "fcc_template",
+  "name": "project name",
   "scripts": {
     "start": "react-scripts start",
     "deploy": "npm run build && gh-pages -d build",
     "build": "react-scripts build"
   },
-  "homepage": "https://TurtleWolfe.github.io/fccTempLate"
+  "homepage": "https://UserName.github.io/projectName"
 }
 ```
 
@@ -35,7 +45,7 @@ npm run deploy
 [GitHub Pages Deploy & Domain: TraversyMedia  
 ![https://youtu.be/SKXkC4SqtRk][traversypages]](https://youtu.be/SKXkC4SqtRk')
 
-[traversypages]: public/images/traversyPages.png 'GitHub Pages Deploy & Domain'
+[traversypages]: src/images/traversyPages.png 'GitHub Pages Deploy & Domain'
 
 1. [@ScriptHammer on Twitter](https://twitter.com/ScriptHammer 'Contact me on Twitter')
 1. [LinkedIn](https://www.linkedin.com/in/jonathan-pohlner-87796377/ 'FreeLance Web Developer')
@@ -43,7 +53,7 @@ npm run deploy
 [ScriptHammer.com  
 ![https://ScriptHammer.com][logo]](https://ScriptHammer.com 'Tech Journal')
 
-[logo]: public/images/ScriptHammer.gif 'Tech Journal: ScriptHammer.com'
+[logo]: src/images/ScriptHammer.gif 'Tech Journal: ScriptHammer.com'
 
 ## Getting Started with Create React App
 
