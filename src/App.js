@@ -27,7 +27,7 @@ function App() {
           rel="noopener noreferrer"
           title="TempLate Scaffolding for Free Code Camp Projects, with FontAwesome, BootStrap & Analytics"
         >
-          FreeCodeCamp.com React Template <i class="fab fa-font-awesome-alt"></i>
+          <i className="fab fa-free-code-camp"></i> FreeCodeCamp.com React Template <i className="fab fa-font-awesome-alt"></i>
         </a>
         <a
           className="App-link"
@@ -36,7 +36,7 @@ function App() {
           rel="noopener noreferrer"
           title="This Episode on Twitch I build a template for my freeCodeCamp projects, with FontAwesome, BootStrap & Analytics"
         >
-          This Episode on Twitch
+          <i className="fab fa-twitch"></i> This Episode on Twitch <i className="fab fa-twitch"></i>
         </a>
         <hr></hr>
         <a
@@ -46,7 +46,7 @@ function App() {
           rel="noopener noreferrer"
           title=" Random Quote Machine"
         >
-          Random Quote Machine
+          <i className="fas fa-quote-left"></i> Random Quote Machine <i className="fas fa-quote-right"></i>
         </a>
         <a
           className="App-link"
@@ -55,7 +55,7 @@ function App() {
           rel="noopener noreferrer"
           title="Markdown Previewer"
         >
-          Markdown Previewer
+          <i className="fab fa-markdown"></i> Markdown Previewer <i className="fab fa-markdown"></i>
         </a>
         <a
           className="App-link"
@@ -64,7 +64,7 @@ function App() {
           rel="noopener noreferrer"
           title="Drum Machine"
         >
-          Drum Machine
+          <i className="fas fa-drum"></i> Drum Machine <i className="fas fa-drum"></i>
         </a>
         <a
           className="App-link"
@@ -73,7 +73,7 @@ function App() {
           rel="noopener noreferrer"
           title="JavaScript Calculator"
         >
-          JavaScript Calculator
+          <i className="fas fa-calculator"></i> JavaScript Calculator <i className="fas fa-calculator"></i>
         </a>
         <a
           className="App-link"
@@ -82,7 +82,7 @@ function App() {
           rel="noopener noreferrer"
           title="25 + 5 Clock"
         >
-          25 + 5 Clock
+          <i className="fas  fa-hourglass-start"></i> 25 + 5 Clock <i className="fas  fa-hourglass-half"></i>
         </a>
         <hr></hr>
         <a
@@ -92,9 +92,18 @@ function App() {
           rel="noopener noreferrer"
           title="FreeCodeCamp.com Front End Projects"
         >
-          FreeCodeCamp.com Front End Projects
+          <i className="fab fa-free-code-camp"></i> FreeCodeCamp.com Front End Projects <i className="fab fa-free-code-camp"></i>
         </a>
         <hr></hr>
+        <a
+          className="App-link"
+          href="https://fontawesome.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          title="Awesome Fonts"
+        >
+          <i className="fab fa-font-awesome-alt"></i> Font Awesome <i className="fab fa-font-awesome-alt"></i>
+        </a>
         <a
           className="App-link"
           href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#links"
@@ -102,7 +111,7 @@ function App() {
           rel="noopener noreferrer"
           title="Markdown Cheatsheet"
         >
-          Markdown Cheatsheet
+          <i className="fab fa-markdown"></i> Markdown Cheatsheet <i className="fab fa-markdown"></i>
         </a>
         <a
           className="App-link"
@@ -111,7 +120,9 @@ function App() {
           rel="noopener noreferrer"
           title="The Essential Meta Tags for Social Media"
         >
-          The Essential Meta Tags for Social Media
+          <i className="far fa-file-code"></i> The Essential Meta Tags for Social Media <i className="far fa-file-code"></i>
+
+
         </a>
         <a
           className="App-link"
@@ -120,7 +131,7 @@ function App() {
           rel="noopener noreferrer"
           title="GitHub Pages, Deploy & Domain: Traversy Media"
         >
-          GitHub Pages, Deploy & Domain: Traversy Media
+          <i className="fab fa-github"></i> GitHub Pages, Deploy & Domain: Traversy Media <i className="fab fa-github"></i>
         </a>
         <hr></hr>
         <a
@@ -130,7 +141,7 @@ function App() {
           rel="noopener noreferrer"
           title="Learn React"
         >
-          Learn React
+          <i className="fab fa-react"></i> Learn React <i className="fab fa-react"></i>
         </a>
       </header>
     </div>
