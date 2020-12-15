@@ -8,9 +8,9 @@ function App() {
         <span className="App-hammer">
           <img src={logo} className="App-logo" alt="logo" />
         </span>
-        <p>
+        {/* <p>
           Edit <code>src/App.js</code> and save to reload.
-        </p>
+        </p> */}
         <a
           className="App-link"
           href="https://github.com/TurtleWolfe/fccTempLate"
@@ -27,6 +27,48 @@ function App() {
         >
           This Episode on Twitch
         </a>
+        <hr></hr>
+        <a
+          className="App-link"
+          href="https://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects/build-a-random-quote-machine"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Random Quote Machine
+        </a>
+        <a
+          className="App-link"
+          href="https://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects/build-a-markdown-previewer"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Markdown Previewer
+        </a>
+        <a
+          className="App-link"
+          href="https://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects/build-a-drum-machine"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Drum Machine
+        </a>
+        <a
+          className="App-link"
+          href="https://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects/build-a-javascript-calculator"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          JavaScript Calculator
+        </a>
+        <a
+          className="App-link"
+          href="https://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects/build-a-25--5-clockhttps://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects/build-a-25--5-clock"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          25 + 5 Clock
+        </a>
+        <hr></hr>
         <a
           className="App-link"
           href="https://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects"
@@ -35,6 +77,7 @@ function App() {
         >
           FreeCodeCamp.com Front End Projects
         </a>
+        <hr></hr>
         <a
           className="App-link"
           href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#links"
@@ -59,6 +102,7 @@ function App() {
         >
           GitHub Pages, Deploy & Domain: Traversy Media
         </a>
+        <hr></hr>
         <a
           className="App-link"
           href="https://reactjs.org"

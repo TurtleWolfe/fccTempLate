@@ -7,6 +7,8 @@ npx create-react-app . --use-npm
 npm i gh-pages --save-dev
 ```
 
+---
+
 ### or install from this repo
 
 ```bash
@@ -32,9 +34,19 @@ npm init
 npm run deploy
 ```
 
-<!-- 1. [I'm an inline-style link with title](https://www.google.com "Google's Homepage") -->
-<!-- 1. [I'm an inline-style link with title](https://www.google.com "Google's Homepage") -->
-<!-- 1. [I'm an inline-style link with title](https://www.google.com "Google's Homepage") -->
+---
+
+1. [Random Quote Machine](https://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects/build-a-random-quote-machine "Google's Homepage")
+1. [Markdown Previewer](https://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects/build-a-markdown-previewer "Google's Homepage")
+1. [Drum Machine](https://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects/build-a-drum-machine "Google's Homepage")
+1. [JavaScript Calculator](https://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects/build-a-javascript-calculator "Google's Homepage")
+1. [25 + 5 Clock](https://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects/build-a-25--5-clockhttps://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects/build-a-25--5-clock "Google's Homepage")
+   <!-- 1. [I'm an inline-style link with title](https://www.google.com "Google's Homepage") -->
+   <!-- 1. [I'm an inline-style link with title](https://www.google.com "Google's Homepage") -->
+   <!-- 1. [I'm an inline-style link with title](https://www.google.com "Google's Homepage") -->
+   <!-- 1. [I'm an inline-style link with title](https://www.google.com "Google's Homepage") -->
+
+---
 
 1. [This Episode on Twitch](https://www.twitch.tv/videos/836894977 'The Code Must Go On')
 1. [FreeCodeCamp.com Front End Projects](https://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects "Introduction to the Front End Libraries ProjectsIt's now time to test out the frontend skills learned. This will help to bolster your skills, so don't hesitate to showcase your frontend skills in these projects. In this section you will complete the following projects with Bootstrap, jQuery, Sass, React and Redux:")
