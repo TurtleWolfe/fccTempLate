@@ -120,7 +120,7 @@ function App() {
           rel="noopener noreferrer"
           title="The Essential Meta Tags for Social Media"
         >
-          <i className="far fa-file-code"></i> The Essential Meta Tags for Social Media <i className="far fa-file-code"></i>
+          <i className="far fa-file-code"></i> Essential Meta Tags for Social Media <i className="far fa-file-code"></i>
 
 
         </a>
@@ -131,7 +131,7 @@ function App() {
           rel="noopener noreferrer"
           title="GitHub Pages, Deploy & Domain: Traversy Media"
         >
-          <i className="fab fa-github"></i> GitHub Pages, Deploy & Domain: Traversy Media <i className="fab fa-github"></i>
+          <i className="fab fa-github"></i> GitHub Pages, Deploy & Domain <i className="fab fa-github"></i>
         </a>
         <hr></hr>
         <a

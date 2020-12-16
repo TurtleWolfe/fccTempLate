@@ -57,8 +57,10 @@ i {
   margin: auto;
   overflow: hidden;
   background-image: url(./images/script-n-hammer.png);
-  background-size: 100% auto;
+  /* background-size: 100% auto; */
   background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
 }
 
 .App-hammer img {
