@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/fccTempLate/static/css/main.33a3ff45.chunk.css",
+    "main.css": "/fccTempLate/static/css/main.ae59ca51.chunk.css",
     "main.js": "/fccTempLate/static/js/main.c0fe5d19.chunk.js",
     "main.js.map": "/fccTempLate/static/js/main.c0fe5d19.chunk.js.map",
     "runtime-main.js": "/fccTempLate/static/js/runtime-main.0ad31fda.js",
@@ -10,7 +10,7 @@
     "static/js/3.96bd7aca.chunk.js": "/fccTempLate/static/js/3.96bd7aca.chunk.js",
     "static/js/3.96bd7aca.chunk.js.map": "/fccTempLate/static/js/3.96bd7aca.chunk.js.map",
     "index.html": "/fccTempLate/index.html",
-    "static/css/main.33a3ff45.chunk.css.map": "/fccTempLate/static/css/main.33a3ff45.chunk.css.map",
+    "static/css/main.ae59ca51.chunk.css.map": "/fccTempLate/static/css/main.ae59ca51.chunk.css.map",
     "static/js/2.86302f5e.chunk.js.LICENSE.txt": "/fccTempLate/static/js/2.86302f5e.chunk.js.LICENSE.txt",
     "static/media/logo.11bcd0b5.svg": "/fccTempLate/static/media/logo.11bcd0b5.svg",
     "static/media/App.css": "/fccTempLate/static/media/script-n-hammer.700392a2.png"
@@ -18,7 +18,7 @@
   "entrypoints": [
     "static/js/runtime-main.0ad31fda.js",
     "static/js/2.86302f5e.chunk.js",
-    "static/css/main.33a3ff45.chunk.css",
+    "static/css/main.ae59ca51.chunk.css",
     "static/js/main.c0fe5d19.chunk.js"
   ]
 }
