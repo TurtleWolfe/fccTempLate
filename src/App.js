@@ -59,21 +59,21 @@ function App() {
         </a>
         <a
           className="App-link"
-          href="https://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects/build-a-drum-machine"
-          target="_blank"
-          rel="noopener noreferrer"
-          title="Drum Machine"
-        >
-          <i className="fas fa-drum"></i> Drum Machine <i className="fas fa-drum"></i>
-        </a>
-        <a
-          className="App-link"
           href="https://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects/build-a-javascript-calculator"
           target="_blank"
           rel="noopener noreferrer"
           title="JavaScript Calculator"
         >
           <i className="fas fa-calculator"></i> JavaScript Calculator <i className="fas fa-calculator"></i>
+        </a>
+        <a
+          className="App-link"
+          href="https://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects/build-a-drum-machine"
+          target="_blank"
+          rel="noopener noreferrer"
+          title="Drum Machine"
+        >
+          <i className="fas fa-drum"></i> Drum Machine <i className="fas fa-drum"></i>
         </a>
         <a
           className="App-link"
@@ -97,6 +97,15 @@ function App() {
         <hr></hr>
         <a
           className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+          title="Learn React"
+        >
+          <i className="fab fa-react"></i> Learn React <i className="fab fa-react"></i>
+        </a>
+        <a
+          className="App-link"
           href="https://fontawesome.com"
           target="_blank"
           rel="noopener noreferrer"
@@ -115,17 +124,6 @@ function App() {
         </a>
         <a
           className="App-link"
-          href="https://css-tricks.com/essential-meta-tags-social-media/"
-          target="_blank"
-          rel="noopener noreferrer"
-          title="The Essential Meta Tags for Social Media"
-        >
-          <i className="far fa-file-code"></i> Essential Meta Tags for Social Media <i className="far fa-file-code"></i>
-
-
-        </a>
-        <a
-          className="App-link"
           href="https://youtu.be/SKXkC4SqtRk?t=865"
           target="_blank"
           rel="noopener noreferrer"
@@ -133,15 +131,14 @@ function App() {
         >
           <i className="fab fa-github"></i> GitHub Pages, Deploy & Domain <i className="fab fa-github"></i>
         </a>
-        <hr></hr>
         <a
           className="App-link"
-          href="https://reactjs.org"
+          href="https://css-tricks.com/essential-meta-tags-social-media/"
           target="_blank"
           rel="noopener noreferrer"
-          title="Learn React"
+          title="The Essential Meta Tags for Social Media"
         >
-          <i className="fab fa-react"></i> Learn React <i className="fab fa-react"></i>
+          <i className="far fa-file-code"></i> Essential Meta Tags for Social Media <i className="far fa-file-code"></i>
         </a>
       </header>
     </div>
