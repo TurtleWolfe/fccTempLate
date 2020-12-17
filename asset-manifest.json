@@ -1,27 +1,24 @@
 {
   "files": {
-    "main.css": "/fccTempLate/static/css/main.b92bb49f.chunk.css",
-    "main.js": "/fccTempLate/static/js/main.5719220d.chunk.js",
-    "main.js.map": "/fccTempLate/static/js/main.5719220d.chunk.js.map",
-    "runtime-main.js": "/fccTempLate/static/js/runtime-main.1a227e20.js",
-    "runtime-main.js.map": "/fccTempLate/static/js/runtime-main.1a227e20.js.map",
-    "static/css/2.95f25948.chunk.css": "/fccTempLate/static/css/2.95f25948.chunk.css",
-    "static/js/2.58e6955d.chunk.js": "/fccTempLate/static/js/2.58e6955d.chunk.js",
-    "static/js/2.58e6955d.chunk.js.map": "/fccTempLate/static/js/2.58e6955d.chunk.js.map",
-    "static/js/3.62499eee.chunk.js": "/fccTempLate/static/js/3.62499eee.chunk.js",
-    "static/js/3.62499eee.chunk.js.map": "/fccTempLate/static/js/3.62499eee.chunk.js.map",
+    "main.css": "/fccTempLate/static/css/main.0e24a2d5.chunk.css",
+    "main.js": "/fccTempLate/static/js/main.b87b8ed8.chunk.js",
+    "main.js.map": "/fccTempLate/static/js/main.b87b8ed8.chunk.js.map",
+    "runtime-main.js": "/fccTempLate/static/js/runtime-main.0ad31fda.js",
+    "runtime-main.js.map": "/fccTempLate/static/js/runtime-main.0ad31fda.js.map",
+    "static/js/2.86302f5e.chunk.js": "/fccTempLate/static/js/2.86302f5e.chunk.js",
+    "static/js/2.86302f5e.chunk.js.map": "/fccTempLate/static/js/2.86302f5e.chunk.js.map",
+    "static/js/3.96bd7aca.chunk.js": "/fccTempLate/static/js/3.96bd7aca.chunk.js",
+    "static/js/3.96bd7aca.chunk.js.map": "/fccTempLate/static/js/3.96bd7aca.chunk.js.map",
     "index.html": "/fccTempLate/index.html",
-    "static/css/2.95f25948.chunk.css.map": "/fccTempLate/static/css/2.95f25948.chunk.css.map",
-    "static/css/main.b92bb49f.chunk.css.map": "/fccTempLate/static/css/main.b92bb49f.chunk.css.map",
-    "static/js/2.58e6955d.chunk.js.LICENSE.txt": "/fccTempLate/static/js/2.58e6955d.chunk.js.LICENSE.txt",
+    "static/css/main.0e24a2d5.chunk.css.map": "/fccTempLate/static/css/main.0e24a2d5.chunk.css.map",
+    "static/js/2.86302f5e.chunk.js.LICENSE.txt": "/fccTempLate/static/js/2.86302f5e.chunk.js.LICENSE.txt",
     "static/media/logo.11bcd0b5.svg": "/fccTempLate/static/media/logo.11bcd0b5.svg",
     "static/media/App.css": "/fccTempLate/static/media/script-n-hammer.700392a2.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.1a227e20.js",
-    "static/css/2.95f25948.chunk.css",
-    "static/js/2.58e6955d.chunk.js",
-    "static/css/main.b92bb49f.chunk.css",
-    "static/js/main.5719220d.chunk.js"
+    "static/js/runtime-main.0ad31fda.js",
+    "static/js/2.86302f5e.chunk.js",
+    "static/css/main.0e24a2d5.chunk.css",
+    "static/js/main.b87b8ed8.chunk.js"
   ]
 }
