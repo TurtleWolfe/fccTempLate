@@ -36,11 +36,11 @@ npm run deploy
 
 ---
 
-1. [Random Quote Machine](https://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects/build-a-random-quote-machine "Google's Homepage")
-1. [Markdown Previewer](https://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects/build-a-markdown-previewer "Google's Homepage")
-1. [Drum Machine](https://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects/build-a-drum-machine "Google's Homepage")
-1. [JavaScript Calculator](https://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects/build-a-javascript-calculator "Google's Homepage")
-1. [25 + 5 Clock](https://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects/build-a-25--5-clockhttps://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects/build-a-25--5-clock "Google's Homepage")
+1. [Random Quote Machine](https://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects/build-a-random-quote-machine 'Random Quote Machine')
+1. [Markdown Previewer](https://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects/build-a-markdown-previewer 'Markdown Previewer')
+1. [Drum Machine](https://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects/build-a-drum-machine 'Drum Machine')
+1. [JavaScript Calculator](https://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects/build-a-javascript-calculator 'JavaScript Calculator')
+1. [25 + 5 Clock](https://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects/build-a-25--5-clockhttps://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects/build-a-25--5-clock '25 + 5 Clock')
    <!-- 1. [I'm an inline-style link with title](https://www.google.com "Google's Homepage") -->
    <!-- 1. [I'm an inline-style link with title](https://www.google.com "Google's Homepage") -->
    <!-- 1. [I'm an inline-style link with title](https://www.google.com "Google's Homepage") -->

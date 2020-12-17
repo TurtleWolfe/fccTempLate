@@ -25,7 +25,7 @@ function App() {
           href="https://github.com/TurtleWolfe/fccTempLate"
           target="_blank"
           rel="noopener noreferrer"
-          title="TempLate Scaffolding for Free Code Camp Projects, with FontAwesome, BootStrap & Analytics"
+          title="TempLate Scaffolding for Free Code Camp Projects, with FontAwesome & Analytics"
         >
           <i className="fab fa-free-code-camp"></i> FreeCodeCamp.com React Template <i className="fab fa-font-awesome-alt"></i>
         </a>
@@ -34,7 +34,7 @@ function App() {
           href="https://www.twitch.tv/videos/836894977"
           target="_blank"
           rel="noopener noreferrer"
-          title="This Episode on Twitch I build a template for my freeCodeCamp projects, with FontAwesome, BootStrap & Analytics"
+          title="This Episode on Twitch I build a template for my freeCodeCamp projects, with FontAwesome & Analytics"
         >
           <i className="fab fa-twitch"></i> This Episode on Twitch <i className="fab fa-twitch"></i>
         </a>
