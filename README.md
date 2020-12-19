@@ -1,4 +1,4 @@
-# [FreeCodeCamp.com React Template](https://turtlewolfe.github.io/fccTempLate/ "Introduction to the Front End Libraries ProjectsIt's now time to test out the frontend skills learned. This will help to bolster your skills, so don't hesitate to showcase your frontend skills in these projects. In this section you will complete the following projects with Bootstrap, jQuery, Sass, React and Redux:")
+# [FreeCodeCamp.com React TempLate](https://turtlewolfe.github.io/fccTempLate/ "Introduction to the Front End Libraries Projects It's now time to test out the frontend skills learned. This will help to bolster your skills, so don't hesitate to showcase your frontend skills in these projects. In this section you will complete the following projects with Bootstrap, jQuery, Sass, React and Redux:")
 
 ## to create from scratch
 
@@ -40,7 +40,7 @@ npm run deploy
 1. [Markdown Previewer](https://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects/build-a-markdown-previewer 'Markdown Previewer')
 1. [Drum Machine](https://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects/build-a-drum-machine 'Drum Machine')
 1. [JavaScript Calculator](https://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects/build-a-javascript-calculator 'JavaScript Calculator')
-1. [25 + 5 Clock](https://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects/build-a-25--5-clockhttps://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects/build-a-25--5-clock '25 + 5 Clock')
+1. [25 + 5 Clock](https://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects/build-a-25--5-clock '25 + 5 Clock')
    <!-- 1. [I'm an inline-style link with title](https://www.google.com "Google's Homepage") -->
    <!-- 1. [I'm an inline-style link with title](https://www.google.com "Google's Homepage") -->
    <!-- 1. [I'm an inline-style link with title](https://www.google.com "Google's Homepage") -->
@@ -48,16 +48,16 @@ npm run deploy
 
 ---
 
-1. [This Episode on Twitch](https://www.twitch.tv/videos/836894977 'The Code Must Go On')
+1. [This Episode on Twitch](https://www.twitch.tv/videos/836894977 'This Episode of The Code Must Go On, I build a template for my freeCodeCamp projects, with FontAwesome & Analytics')
 1. [FreeCodeCamp.com Front End Projects](https://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects "Introduction to the Front End Libraries ProjectsIt's now time to test out the frontend skills learned. This will help to bolster your skills, so don't hesitate to showcase your frontend skills in these projects. In this section you will complete the following projects with Bootstrap, jQuery, Sass, React and Redux:")
 1. [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#links 'Markdown Cheatsheet')
 1. [The Essential Meta Tags for Social Media](https://css-tricks.com/essential-meta-tags-social-media/ 'These days, almost every website encourages visitors to share its pages on social media. We’ve all seen the ubiquitous Facebook and Twitter icons, among others, just begging to be clicked. This comes as no surprise as sharing via social media, the internet incarnation of word-of-mouth, is one of the most effective ways for businesses and individuals to gain awareness. ')
-1. [GitHub Pages ](https://youtu.be/SKXkC4SqtRk 'GitHub Pages Deploy & Domain')
+1. [GitHub Pages](https://youtu.be/SKXkC4SqtRk 'GitHub Pages Deploy & Domain')
 
 [GitHub Pages Deploy & Domain: TraversyMedia  
 ![https://youtu.be/SKXkC4SqtRk][traversypages]](https://youtu.be/SKXkC4SqtRk')
 
-[traversypages]: src/images/traversyPages.png 'GitHub Pages Deploy & Domain'
+[traversypages]: src/shared/images/traversyPages.png 'GitHub Pages Deploy & Domain'
 
 1. [@ScriptHammer on Twitter](https://twitter.com/ScriptHammer 'Contact me on Twitter')
 1. [LinkedIn](https://www.linkedin.com/in/jonathan-pohlner-87796377/ 'FreeLance Web Developer')
@@ -65,7 +65,85 @@ npm run deploy
 [ScriptHammer.com  
 ![https://ScriptHammer.com][logo]](https://ScriptHammer.com 'Tech Journal')
 
-[logo]: src/images/ScriptHammer.gif 'Tech Journal: ScriptHammer.com'
+[logo]: src/shared/images/ScriptHammer.gif 'Tech Journal: ScriptHammer.com'
+
+## [React CookBook](https://subscription.packtpub.com/book/web_development/9781783980727/2/ch02lvl1sec08/creating-our-first-react-component 'By Carlos Santana Roldán August 2018 Over 66 recipes that cover UI development, animations, component architecture, routing, and testing with React')
+
+```bash
+touch src/Home.js
+mkdir src/components
+mkdir src/components/Home
+mkdir src/shared
+mkdir src/shared/components
+mkdir src/shared/images
+mv src/App.js src/components
+mv src/App.css src/components
+mv src/App.test.js src/components
+mv src/logo.svg src/shared/images
+mv src/Home.js src/componets/Home
+touch src/components/Home/Home.css
+mkdir src/shared/components/layout
+touch src/shared/components/layout/Header.js
+touch src/shared/components/layout/Footer.js
+touch src/shared/components/layout/Content.js
+npm i prop-types
+# Ch02 Section 09
+mkdir src/components/ToDo
+touch src/components/ToDo/Todo.js
+touch src/components/ToDo/List.js
+touch src/components/ToDo/Todo.css
+npm i uuid
+# npm i typescript
+npm i source-map-explorer
+# pomodoro Timer
+mkdir src/components/Pomodoro
+touch src/components/Pomodoro/Timer.js
+touch src/components/Pomodoro/Timer.css
+
+```
+
+## [Check Mark as Completed or Not: SitePoint Forums](https://www.sitepoint.com/community/t/react-cookbook-check-mark-as-completed-or-not/337875/2 'However, this way you would append the modified item to the list, not modify it in place; And either way, you’re still mutating the original item and only making a copy afterwards So try this instead:')
+
+<!-- ```bash
+npm install --save source-map-explorer
+``` -->
+
+## FCC projects
+
+```bash
+# Quote Machine
+mkdir src/components/Quote
+touch src/components/Quote/Machine.js
+touch src/components/Quote/Machine.css
+```
+
+```bash
+# MarkDown PreViewer
+mkdir src/components/MarkDown
+touch src/components/MarkDown/PreViewer.js
+touch src/components/MarkDown/PreViewer.css
+```
+
+```bash
+# Calculator Calculator
+mkdir src/components/Calculator
+touch src/components/Calculator/Calculator.js
+touch src/components/Calculator/Calculator.css
+```
+
+```bash
+# Drum DrumMachine
+mkdir src/components/Drum
+touch src/components/Drum/DrumMachine.js
+touch src/components/Drum/DrumMachine.css
+```
+
+```bash
+# pomodoro StopWatch
+mkdir src/components/Pomodoro
+touch src/components/Pomodoro/StopWatch.js
+touch src/components/Pomodoro/StopWatch.css
+```
 
 ## Getting Started with Create React App
 
