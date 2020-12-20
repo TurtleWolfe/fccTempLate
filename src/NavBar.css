@@ -19,6 +19,11 @@
   color: yellow;
 }
 
+.navbar-toggler-icon {
+  color: #000;
+  background-color: darkgray;
+}
+
 /* Navbar */
 .navbar {
   display: flex;
