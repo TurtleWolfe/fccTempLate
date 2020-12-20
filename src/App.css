@@ -57,6 +57,7 @@ a {
   color: white;
   max-width: 16em;
   margin: auto;
+  margin-top: 3em;
   overflow: hidden;
   background-image: url(./images/script-n-hammer.png);
   /* background-size: 100% auto; */
