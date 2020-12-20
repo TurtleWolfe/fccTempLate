@@ -2,7 +2,7 @@
 // React Arrow Function Component
 import React from 'react';
 import PropTypes from 'prop-types';
-import './NavBar.css';
+// import './NavBar.css';
 import { Link } from "react-router-dom";
 const NavBar = ({ icon, iconFCC, title }) => {
   return (
@@ -19,7 +19,6 @@ const NavBar = ({ icon, iconFCC, title }) => {
         </h1>
       </a>
       <Link to='/'>Home</Link>
-      {/* <Link to='/about'>About</Link> */}
       <Link to='/quote'>quote</Link>
       <Link to='/markdown'>markdown</Link>
       <Link to='/calculator'>calculator</Link>
