@@ -7,6 +7,7 @@ import Calculator from "./components/pages/calculator";
 import Drum from "./components/pages/drum";
 import Pomodoro from "./components/pages/pomodoro";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import { Fragment } from 'react';
 
@@ -17,7 +18,7 @@ function App() {
         <NavBar />
         <header className="App-header">
           <Switch>
-            <Route exact path='/' render={props => (
+            <Route exact path='/fccTempLate' render={props => (
               <Fragment>
                 <a
                   className="App-link"
