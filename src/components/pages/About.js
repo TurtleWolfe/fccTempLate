@@ -3,52 +3,51 @@ import React, { Fragment } from 'react';
 export const About = () => {
   return (
     <Fragment>
-      {/* <h1>About</h1> */}
       <p>fccTempLate</p>
       <a
         className="App-link"
-        href="https://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects/build-a-random-quote-machine"
+        href="https://reactjs.org"
         target="_blank"
         rel="noopener noreferrer"
-        title=" Random Quote Machine"
+        title="Learn React"
       >
-        <i className="fas fa-quote-left"></i> Random Quote Machine <i className="fas fa-quote-right"></i>
+        <i className="fab fa-react"></i> Learn React <i className="fab fa-react"></i>
       </a>
       <a
         className="App-link"
-        href="https://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects/build-a-markdown-previewer"
+        href="https://fontawesome.com"
         target="_blank"
         rel="noopener noreferrer"
-        title="Markdown Previewer"
+        title="Awesome Fonts"
       >
-        <i className="fab fa-markdown"></i> Markdown Previewer <i className="fab fa-markdown"></i>
+        <i className="fab fa-font-awesome-alt"></i> Font Awesome <i className="fab fa-font-awesome-alt"></i>
       </a>
       <a
         className="App-link"
-        href="https://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects/build-a-javascript-calculator"
+        href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#links"
         target="_blank"
         rel="noopener noreferrer"
-        title="JavaScript Calculator"
+        title="Markdown Cheatsheet"
       >
-        <i className="fas fa-calculator"></i> JavaScript Calculator <i className="fas fa-calculator"></i>
+        <i className="fab fa-markdown"></i> Markdown Cheatsheet <i className="fab fa-markdown"></i>
       </a>
       <a
         className="App-link"
-        href="https://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects/build-a-drum-machine"
+        href="https://youtu.be/SKXkC4SqtRk?t=865"
         target="_blank"
         rel="noopener noreferrer"
-        title="Drum Machine"
+        title="GitHub Pages, Deploy & Domain: Traversy Media"
       >
-        <i className="fas fa-drum"></i> Drum Machine <i className="fas fa-drum"></i>
+        <i className="fab fa-github"></i> GitHub Pages, Deploy & Domain <i className="fab fa-github"></i>
       </a>
       <a
         className="App-link"
-        href="https://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects/build-a-25--5-clockhttps://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects/build-a-25--5-clock"
+        href="https://css-tricks.com/essential-meta-tags-social-media/"
         target="_blank"
         rel="noopener noreferrer"
-        title="25 + 5 Clock"
+        title="The Essential Meta Tags for Social Media"
       >
-        <i className="fas  fa-hourglass-start"></i> 25 + 5 Clock <i className="fas  fa-hourglass-half"></i>
+        <i className="far fa-file-code"></i> Essential Meta Tags for Social Media <i className="far fa-file-code"></i>
       </a>
     </Fragment>
   );
