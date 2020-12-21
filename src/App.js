@@ -32,24 +32,28 @@ function App() {
                     <img src={logo} className="App-logo" alt="logo" />
                   </span>
                 </a>
-                <a
-                  className="App-link"
-                  href="https://www.twitch.tv/videos/836894977"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  title="This Episode on Twitch I build a template for my freeCodeCamp projects, with FontAwesome & Analytics"
-                >
-                  <i className="fab fa-twitch"></i> This Episode on Twitch <i className="fab fa-twitch"></i>
-                </a>
-                <a
-                  className="App-link"
-                  href="https://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  title="FreeCodeCamp.com Front End Projects"
-                >
-                  <i className="fab fa-free-code-camp"></i> FreeCodeCamp.com Front End Projects <i className="fab fa-free-code-camp"></i>
-                </a>
+                <h4>
+                  <a
+                    className="App-link"
+                    href="https://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="FreeCodeCamp.com Front End Projects"
+                  >
+                    <i className="fab fa-free-code-camp"></i> FreeCodeCamp.com Front End Projects <i className="fab fa-free-code-camp"></i>
+                  </a>
+                </h4>
+                <h5>
+                  <a
+                    className="App-link"
+                    href="https://www.twitch.tv/videos/836894977"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="This Episode on Twitch I build a template for my freeCodeCamp projects, with FontAwesome & Analytics"
+                  >
+                    <i className="fab fa-twitch"></i> This Episode on Twitch <i className="fab fa-twitch"></i>
+                  </a>
+                </h5>
               </Fragment>
             )} />
             <Route exact path='/quote' component={Quote} />

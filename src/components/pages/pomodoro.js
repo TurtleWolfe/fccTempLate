@@ -3,7 +3,7 @@ import React, { Fragment } from 'react';
 export const Pomodoro = () => {
   return (
     <Fragment>
-      <h1>
+      <h4>
         <a
           className="App-link"
           href="https://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects/build-a-25--5-clockhttps://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects/build-a-25--5-clock"
@@ -13,8 +13,8 @@ export const Pomodoro = () => {
         >
           <i className="fas  fa-hourglass-start"></i> 25 + 5 Clock <i className="fas  fa-hourglass-half"></i>
         </a>
-      </h1>
-      <h2>
+      </h4>
+      <h5>
         <a
           className="App-link"
           href="https://www.twitch.tv/videos/836894977"
@@ -24,7 +24,7 @@ export const Pomodoro = () => {
         >
           <i className="fab fa-twitch"></i> This Episode on Twitch <i className="fab fa-twitch"></i>
         </a>
-      </h2>
+      </h5>
     </Fragment>
   );
 };

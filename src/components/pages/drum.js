@@ -3,7 +3,7 @@ import React, { Fragment } from 'react';
 export const Drum = () => {
   return (
     <Fragment>
-      <h1>
+      <h4>
         <a
           className="App-link"
           href="https://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects/build-a-drum-machine"
@@ -13,8 +13,8 @@ export const Drum = () => {
         >
           <i className="fas fa-drum"></i> Drum Machine <i className="fas fa-drum"></i>
         </a>
-      </h1>
-      <h2>
+      </h4>
+      <h5>
         <a
           className="App-link"
           href="https://www.twitch.tv/videos/836894977"
@@ -24,7 +24,7 @@ export const Drum = () => {
         >
           <i className="fab fa-twitch"></i> This Episode on Twitch <i className="fab fa-twitch"></i>
         </a>
-      </h2>
+      </h5>
     </Fragment>
   );
 };
