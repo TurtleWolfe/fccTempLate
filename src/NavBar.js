@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 import { Navbar, Nav, NavItem } from 'react-bootstrap';
 const NavBar = ({ icon, iconFCC, title }) => {
   return (
-    <Navbar fixed="top" expand="lg" className='navbar bg-primary'>
+    <Navbar collapseOnSelect fixed="top" expand="lg" className='navbar bg-primary'>
       <Navbar.Brand href="https://github.com/TurtleWolfe/fccTempLate"
         target="_blank"
         rel="noopener noreferrer"
@@ -21,27 +21,27 @@ const NavBar = ({ icon, iconFCC, title }) => {
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="mr-auto">
+        <Nav collapseOnSelect className="mr-auto">
           <NavItem eventkey={1} href="/fccTempLate">
-            <Nav.Link as={Link} to="/fccTempLate" >Home</Nav.Link>
+            <Nav.Link as={Link} to="/fccTempLate" href="/fccTempLate">Home</Nav.Link>
           </NavItem>
           <NavItem eventkey={2} href="/quote">
-            <Nav.Link as={Link} to="/quote" >Quote</Nav.Link>
+            <Nav.Link as={Link} to="/quote" href="/quote">Quote</Nav.Link>
           </NavItem>
           <NavItem eventkey={3} href="/markdown">
-            <Nav.Link as={Link} to="/markdown" >Markdown</Nav.Link>
+            <Nav.Link as={Link} to="/markdown" href="/markdown">Markdown</Nav.Link>
           </NavItem>
           <NavItem eventkey={4} href="/calculator">
-            <Nav.Link as={Link} to="/calculator" >Calculator</Nav.Link>
+            <Nav.Link as={Link} to="/calculator" href="/calculator">Calculator</Nav.Link>
           </NavItem>
           <NavItem eventkey={5} href="/drum">
-            <Nav.Link as={Link} to="/drum" >Drum</Nav.Link>
+            <Nav.Link as={Link} to="/drum" href="/drum">Drum</Nav.Link>
           </NavItem>
           <NavItem eventkey={6} href="/pomodoro">
-            <Nav.Link as={Link} to="/pomodoro" >Pomodoro</Nav.Link>
+            <Nav.Link as={Link} to="/pomodoro" href="/pomodoro">Pomodoro</Nav.Link>
           </NavItem>
           <NavItem eventkey={7} href="/about">
-            <Nav.Link as={Link} to="/about" >About</Nav.Link>
+            <Nav.Link as={Link} to="/about" href="/about">About</Nav.Link>
           </NavItem>
         </Nav>
       </Navbar.Collapse>
