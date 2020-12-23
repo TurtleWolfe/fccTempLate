@@ -40,7 +40,7 @@ function App() {
                     rel="noopener noreferrer"
                     title="FreeCodeCamp.com Front End Projects"
                   >
-                    <i className="fab fa-free-code-camp"></i> FreeCodeCamp.com Front End Projects <i className="fab fa-free-code-camp"></i>
+                    <i className="fab fa-free-code-camp"></i>Front End Projects <i className="fab fa-free-code-camp"></i>
                   </a>
                 </h4>
                 <h5>

@@ -2,19 +2,19 @@
 // React Arrow Function Component
 import React from 'react';
 import PropTypes from 'prop-types';
-import './NavBar.css';
 import { Link } from "react-router-dom";
 import { Navbar, Nav } from 'react-bootstrap';
+import './NavBar.css';
 const NavBar = ({ icon, iconFCC, title }) => {
   return (
-    <Navbar collapseOnSelect fixed="top" expand="lg" className='navbar bg-primary'>
+    <Navbar collapseOnSelect fixed="top" expand="lg" className='navbar' bg="dark" variant="dark">
       <Navbar.Brand href="https://github.com/TurtleWolfe/fccTempLate"
         target="_blank"
         rel="noopener noreferrer"
         title="TempLate Scaffolding for Free Code Camp Projects, with FontAwesome, React-Router & Analytics">
-        <h2>
+        <h3>
           <i className={iconFCC} /> {title} <i className={icon} />
-        </h2>
+        </h3>
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
