@@ -22,7 +22,7 @@ export const Calculator = () => {
           rel="noopener noreferrer"
           title="This Episode on Twitch I build a template for my freeCodeCamp projects, with FontAwesome & Analytics"
         >
-          <i className="fab fa-twitch"></i> This Episode on Twitch <i className="fab fa-twitch"></i>
+          <i className="fab fa-twitch"></i> These Episodes on Twitch <i className="fab fa-twitch"></i>
         </a>
       </h5>
     </Fragment>
