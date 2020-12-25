@@ -1,11 +1,11 @@
 import logo from './logo.svg';
 import NavBar from './NavBar';
 import About from "./components/pages/About";
-import Quote from "./components/pages/quote";
-import MarkDown from "./components/pages/markdown";
-import Calculator from "./components/pages/calculator";
-import Drum from "./components/pages/drum";
-import Pomodoro from "./components/pages/pomodoro";
+import Quote from "./components/pages/quote/quote";
+import MarkDown from "./components/pages/markdown/markdown";
+import Calculator from "./components/pages/calculator/calculator";
+import Drum from "./components/pages/drum/drum";
+import Pomodoro from "./components/pages/pomodoro/pomodoro";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';

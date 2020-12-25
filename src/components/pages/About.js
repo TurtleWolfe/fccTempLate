@@ -15,6 +15,33 @@ export const About = () => {
       </a>
       <a
         className="App-link"
+        href="https://getbootstrap.com/docs/4.0/components/navs/#fill-and-justify"
+        target="_blank"
+        rel="noopener noreferrer"
+        title="Learn React"
+      >
+        <i className="fab fa-react"></i> bootstrap <i className="fab fa-react"></i>
+      </a>
+      <a
+        className="App-link"
+        href="https://react-bootstrap.netlify.app/getting-started/introduction/"
+        target="_blank"
+        rel="noopener noreferrer"
+        title="Learn React"
+      >
+        <i className="fab fa-react"></i> react-bootstrap <i className="fab fa-react"></i>
+      </a>
+      <a
+        className="App-link"
+        href="https://www.npmjs.com/package/react-router-dom"
+        target="_blank"
+        rel="noopener noreferrer"
+        title="Learn React"
+      >
+        <i className="fab fa-react"></i> react-router-dom <i className="fab fa-react"></i>
+      </a>
+      <a
+        className="App-link"
         href="https://fontawesome.com"
         target="_blank"
         rel="noopener noreferrer"
