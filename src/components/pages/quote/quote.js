@@ -1,114 +1,62 @@
-// import React, { Fragment } from 'react';
-// import { Card, Button, ButtonGroup } from 'react-bootstrap';
-// import PropTypes from 'prop-types';
-
-// export const Quote = ({ quote, source, author }) => {
-//   return (
-//     <Fragment>
-//       <Card bg="dark" style={{ width: '90%' }} id="quote-box">
-//         <Card.Header>
-
-//           <h4>
-//             <a
-//               className="App-link"
-//               href="https://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects/build-a-random-quote-machine"
-//               target="_blank"
-//               rel="noopener noreferrer"
-//               title=" Random Quote Machine"
-//             >
-//               <i className="fas fa-quote-left"></i> Random Quote Machine <i className="fas fa-quote-right"></i>
-//             </a>
-//           </h4>
-
-//           {/* Random Quote */}
-
-//         </Card.Header>
-//         <Card.Body>
-//           <blockquote className="blockquote mb-0">
-//             <p id="text">
-//               {' '}
-//               {quote}
-//               {' '}
-//             </p>
-//             <footer className="blockquote-footer" id="author">
-//               {author} <cite title="Source Title">{source}</cite>
-//             </footer>
-//           </blockquote>
-//           <ButtonGroup aria-label="Basic example" style={{ width: '20%' }}>
-//             <Button variant="primary" id="new-quote">new quote</Button>
-//             <Button as="a" variant="primary" id="tweet-quote" href="twitter.com/intent/tweet" ><i className="fab fa-twitter"></i></Button>
-//           </ButtonGroup>
-//         </Card.Body>
-//       </Card>
-
-//       <h5>
-//         <a
-//           className="App-link"
-//           href="https://www.twitch.tv/videos/836894977"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//           title="This Episode on Twitch I build a template for my freeCodeCamp projects, with FontAwesome & Analytics"
-//         >
-//           <i className="fab fa-twitch"></i> These Episodes on Twitch <i className="fab fa-twitch"></i>
-//         </a>
-//       </h5>
-//     </Fragment>
-//   );
-// };
-
-// Quote.defaultProps = {
-//   quote: "And as he drove on, the rainclouds dragged down the sky after him, for, though he did not know it, Rob McKenna was a Rain God. All he knew was that his working days were miserable and he had a succession of lousy holidays. All the clouds knew was that they loved him and wanted to be near him, to cherish him, and to water him.",
-//   source: "So Long, and Thanks for All the Fish",
-//   author: 'Douglas Adams'
-// };
-
-// Quote.propTypes = {
-//   quote: PropTypes.string.isRequired,
-//   source: PropTypes.string.isRequired,
-//   author: PropTypes.string.isRequired
-// };
-
-// export default Quote;
 import React, { Component, Fragment } from 'react';
+import axios from 'axios';
 import { Card, Button, ButtonGroup } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 
 export class Quote extends Component {
-
   constructor(props) {
     super(props);
-
     // Initial State
     this.state = {
       author: "Douglas Adams",
       source: "So Long, and Thanks for All the Fish",
-      quote: "And as he drove on, the rainclouds dragged down the sky after him, for, though he did not know it, Rob McKenna was a Rain God. All he knew was that his working days were miserable and he had a succession of lousy holidays. All the clouds knew was that they loved him and wanted to be near him, to cherish him, and to water him.",
+      quote: "And as he drove on, the rainclouds dragged down the sky after him, for, though he did not know it, Rob McKenna was a Rain God.",
     };
+
+    // This binding is necessary to make `this` work in the callback
+    this.setQuote = this.setQuote.bind(this);
+
   }
+  // Initial State
+  // static defaultProps = {
+  //   author: "Douglas Adams",
+  //   source: "So Long, and Thanks for All the Fish",
+  //   quote: "And as he drove on, the rainclouds dragged down the sky after him, for, though he did not know it, Rob McKenna was a Rain God. All he knew was that his working days were miserable and he had a succession of lousy holidays. All the clouds knew was that they loved him and wanted to be near him, to cherish him, and to water him.",
+  // };
 
   // Quote.propTypes = {
   // this.propTypes = {
   static propTypes = {
     quote: PropTypes.string.isRequired,
-    source: PropTypes.string.isRequired,
+    // source: PropTypes.string.isRequired,
     author: PropTypes.string.isRequired
   };
 
-  setQuote = () => {
+  async componentDidMount() {
+    const res = await axios.get('https://api.quotable.io/random');
+    // console.log(res.data);
     this.setState({
-      author: "Obiwan Kenobi",
-      source: "Return of the Jedi",
-      quote: "Many of the turths we cling to..",
+      author: res.data.author,
+      // source: "Return of the Jedi",
+      quote: res.data.content,
     });
+  }
 
-    console.log("Qque");
-
+  setQuote() {
+    axios.get('https://api.quotable.io/random').then(res => this.setState({
+      author: res.data.author,
+      // source: "Return of the Jedi",
+      quote: res.data.content,
+    })
+    );
+    // console.log("Qque");
     return;
   };
 
   render() {
-    return (
+    const { quote, author } = this.state;
 
+    return (
       <Fragment>
         <Card bg="dark" style={{ width: '90%' }} id="quote-box">
           <Card.Header>
@@ -132,19 +80,22 @@ export class Quote extends Component {
             <blockquote className="blockquote mb-0">
               <p id="text">
                 {' '}
-                {this.state.quote}
+                {quote}
                 {' '}
               </p>
-              <footer className="blockquote-footer">
+              <footer className="blockquote-footer" id="author">
+                {author}
+                {/* <cite title="Source Title">{source}</cite> */}
+              </footer>
+              {/* <footer className="blockquote-footer">
                 <h3 id="author">
                   {this.state.author}
                 </h3>
                 <cite title="Source Title">{this.state.source}</cite>
-              </footer>
+              </footer> */}
             </blockquote>
             <ButtonGroup aria-label="Basic example" style={{ width: '20%' }}>
               <Button variant="primary" id="new-quote" onClick={this.setQuote}>new quote</Button>
-
               <Button as="a" variant="primary" id="tweet-quote" href="twitter.com/intent/tweet" ><i className="fab fa-twitter"></i></Button>
             </ButtonGroup>
           </Card.Body>

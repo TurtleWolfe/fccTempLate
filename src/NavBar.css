@@ -1,19 +1,20 @@
 /* Global Styles */
-:root {
+/* :root {
   --primary-color: #dc3545;
   --primary-color: green;
   --dark-color: #333333;
   --light-color: #f4f4f4;
   --danger-color: #dc3545;
   --success-color: #28a745;
-}
-.btn-primary,
+} */
+
+/* .btn-primary,
 .bg-primary,
 .badge-primary,
 .alert-primary {
   background: var(--primary-color);
   color: #fff;
-}
+} */
 
 .navbar i {
   color: #6197fb;
