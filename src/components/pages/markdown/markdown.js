@@ -18,7 +18,7 @@ code block
 \`\`\`  
 > Quote Block
 1. Inline-style:
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png 'Logo Title Text 1')  
+![ScritpHammer.com](https://raw.githubusercontent.com/TurtleWolfe/fccTempLate/master/src/images/ScriptHammerSM.gif 'ScriptHammer.com')  
 `,
     };
   }
