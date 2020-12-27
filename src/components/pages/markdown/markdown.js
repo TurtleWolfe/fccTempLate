@@ -9,15 +9,14 @@ export class Markdown extends Component {
     super(props);
     // Initial State
     this.state = {
-      markdown: `# H1 Header
-## h2 header
-[**\`inline code\`**](https://www.google.com "Google's Homepage")  
+      markdown: `# ScriptHammer.com
+## custom apps for small businesses
+1. [**\`inline code list\`**](https://ScriptHammer.com "https://ScriptHammer.com")  
 
 \`\`\`bash
 code block
 \`\`\`  
 > Quote Block
-1. Inline-style:
 ![ScritpHammer.com](https://raw.githubusercontent.com/TurtleWolfe/fccTempLate/master/src/images/ScriptHammerSM.gif 'ScriptHammer.com')  
 `,
     };
@@ -72,10 +71,10 @@ code block
         <h5>
           <a
             className="App-link"
-            href="https://www.twitch.tv/videos/836894977"
+            href="https://www.twitch.tv/collections/ElUGINSGVBYpbw"
             target="_blank"
             rel="noopener noreferrer"
-            title="This Episode on Twitch I build a MarkDown Previewer"
+            title="These two Episodes on Twitch I build a MarkDown Previewer"
           >
             <i className="fab fa-twitch"></i> These Episodes on Twitch <i className="fab fa-twitch"></i>
           </a>
