@@ -86,3 +86,16 @@ code block
 }
 
 export default Markdown;
+
+// Set options
+// `highlight` example uses `highlight.js`
+marked.setOptions({
+  renderer: new marked.Renderer(),
+  // pedantic: false,
+  gfm: true,
+  breaks: true,
+  sanitize: true,
+  // smartLists: true,
+  // smartypants: false,
+  // xhtml: false
+});
