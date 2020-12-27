@@ -1,27 +1,27 @@
 {
   "files": {
     "main.css": "/fccTempLate/static/css/main.ebdcddfa.chunk.css",
-    "main.js": "/fccTempLate/static/js/main.6632e6d1.chunk.js",
-    "main.js.map": "/fccTempLate/static/js/main.6632e6d1.chunk.js.map",
-    "runtime-main.js": "/fccTempLate/static/js/runtime-main.09ffcce3.js",
-    "runtime-main.js.map": "/fccTempLate/static/js/runtime-main.09ffcce3.js.map",
+    "main.js": "/fccTempLate/static/js/main.d4b17496.chunk.js",
+    "main.js.map": "/fccTempLate/static/js/main.d4b17496.chunk.js.map",
+    "runtime-main.js": "/fccTempLate/static/js/runtime-main.84370f85.js",
+    "runtime-main.js.map": "/fccTempLate/static/js/runtime-main.84370f85.js.map",
     "static/css/2.20aa2d7b.chunk.css": "/fccTempLate/static/css/2.20aa2d7b.chunk.css",
-    "static/js/2.00a9ad7e.chunk.js": "/fccTempLate/static/js/2.00a9ad7e.chunk.js",
-    "static/js/2.00a9ad7e.chunk.js.map": "/fccTempLate/static/js/2.00a9ad7e.chunk.js.map",
-    "static/js/3.af92fad7.chunk.js": "/fccTempLate/static/js/3.af92fad7.chunk.js",
-    "static/js/3.af92fad7.chunk.js.map": "/fccTempLate/static/js/3.af92fad7.chunk.js.map",
+    "static/js/2.bbdb0657.chunk.js": "/fccTempLate/static/js/2.bbdb0657.chunk.js",
+    "static/js/2.bbdb0657.chunk.js.map": "/fccTempLate/static/js/2.bbdb0657.chunk.js.map",
+    "static/js/3.748e2937.chunk.js": "/fccTempLate/static/js/3.748e2937.chunk.js",
+    "static/js/3.748e2937.chunk.js.map": "/fccTempLate/static/js/3.748e2937.chunk.js.map",
     "index.html": "/fccTempLate/index.html",
     "static/css/2.20aa2d7b.chunk.css.map": "/fccTempLate/static/css/2.20aa2d7b.chunk.css.map",
     "static/css/main.ebdcddfa.chunk.css.map": "/fccTempLate/static/css/main.ebdcddfa.chunk.css.map",
-    "static/js/2.00a9ad7e.chunk.js.LICENSE.txt": "/fccTempLate/static/js/2.00a9ad7e.chunk.js.LICENSE.txt",
+    "static/js/2.bbdb0657.chunk.js.LICENSE.txt": "/fccTempLate/static/js/2.bbdb0657.chunk.js.LICENSE.txt",
     "static/media/logo.11bcd0b5.svg": "/fccTempLate/static/media/logo.11bcd0b5.svg",
     "static/media/App.css": "/fccTempLate/static/media/script-n-hammer.700392a2.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.09ffcce3.js",
+    "static/js/runtime-main.84370f85.js",
     "static/css/2.20aa2d7b.chunk.css",
-    "static/js/2.00a9ad7e.chunk.js",
+    "static/js/2.bbdb0657.chunk.js",
     "static/css/main.ebdcddfa.chunk.css",
-    "static/js/main.6632e6d1.chunk.js"
+    "static/js/main.d4b17496.chunk.js"
   ]
 }
