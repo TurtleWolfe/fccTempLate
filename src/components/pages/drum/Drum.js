@@ -1,7 +1,7 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Button } from 'react-bootstrap';
-import Card from 'react-bootstrap/Card';
+import { Button, Container, Row, Col } from 'react-bootstrap';
+import './Drum.css';
 
 export class Drum extends Component {
   constructor(props) {
@@ -24,7 +24,7 @@ export class Drum extends Component {
 
   render() {
     return (
-      <div id="drum-machine">
+      <Container id="drum-machine">
         <h4>
           <a
             className="App-link"
@@ -36,7 +36,11 @@ export class Drum extends Component {
             <i className="fas fa-drum"></i> Drum Machine <i className="fas fa-drum"></i>
           </a>
         </h4>
-        <Card style={{ width: '18rem' }}>
+        <br></br>
+        <h4 id="display">
+          Display Audio Tags Hear
+        </h4>
+        {/* <Card style={{ width: '18rem' }} >
           <Card.Body className="bg-dark text-white">
             <Card.Title id="display">
               <h3>
@@ -44,9 +48,9 @@ export class Drum extends Component {
               </h3>
             </Card.Title>
           </Card.Body>
-        </Card>
-        <Fragment>
-          <Button className="drum-pad" value={9} variant="success" id="q">
+        </Card> */}
+        <Row className="justify-content-center">
+          <Col as={Button} className="drum-pad" xs={2} sm={1} md={1} lg={1} value={9} variant="success" id="q">
             <h5>
               Q
             </h5>
@@ -57,9 +61,9 @@ export class Drum extends Component {
               Your browser does not support the
             <code>audio</code> element.
             </audio>
-          </Button>
+          </Col>
           {' '}
-          <Button className="drum-pad" value={10} variant="success" id="w">
+          <Col as={Button} className="drum-pad" xs={2} sm={1} md={1} lg={1} value={10} variant="success" id="w">
             <h5>
               W
             </h5>
@@ -70,9 +74,9 @@ export class Drum extends Component {
               Your browser does not support the
             <code>audio</code> element.
             </audio>
-          </Button>
+          </Col>
           {' '}
-          <Button className="drum-pad" value={10} variant="success" id="e">
+          <Col as={Button} className="drum-pad" xs={2} sm={1} md={1} lg={1} value={10} variant="success" id="e">
             <h5>
               E
             </h5>
@@ -83,12 +87,12 @@ export class Drum extends Component {
               Your browser does not support the
             <code>audio</code> element.
             </audio>
-          </Button>
+          </Col>
           {' '}
-        </Fragment>
-        <br></br>
-        <Fragment>
-          <Button className="drum-pad" value={9} variant="success" id="a">
+        </Row>
+        {/* <br></br> */}
+        <Row className="justify-content-center">
+          <Col as={Button} className="drum-pad" xs={2} sm={1} md={1} lg={1} value={9} variant="success" id="a">
             <h5>
               A
             </h5>
@@ -99,9 +103,9 @@ export class Drum extends Component {
               Your browser does not support the
             <code>audio</code> element.
             </audio>
-          </Button>
+          </Col>
           {' '}
-          <Button className="drum-pad" value={10} variant="success" id="s">
+          <Col as={Button} className="drum-pad" xs={2} sm={1} md={1} lg={1} value={10} variant="success" id="s">
             <h5>
               S
             </h5>
@@ -112,9 +116,9 @@ export class Drum extends Component {
               Your browser does not support the
             <code>audio</code> element.
             </audio>
-          </Button>
+          </Col>
           {' '}
-          <Button className="drum-pad" value={10} variant="success" id="d">
+          <Col as={Button} className="drum-pad" xs={2} sm={1} md={1} lg={1} value={10} variant="success" id="d">
             <h5>
               D
             </h5>
@@ -125,12 +129,12 @@ export class Drum extends Component {
               Your browser does not support the
             <code>audio</code> element.
             </audio>
-          </Button>
+          </Col>
           {' '}
-        </Fragment>
-        <br></br>
-        <Fragment>
-          <Button className="drum-pad" value={9} variant="success" id="z">
+        </Row>
+        {/* <br></br> */}
+        <Row className="justify-content-center">
+          <Col as={Button} className="drum-pad" xs={2} sm={1} md={1} lg={1} value={9} variant="success" id="z">
             <h5>
               Z
             </h5>
@@ -141,9 +145,9 @@ export class Drum extends Component {
               Your browser does not support the
             <code>audio</code> element.
             </audio>
-          </Button>
+          </Col>
           {' '}
-          <Button className="drum-pad" value={10} variant="success" id="x">
+          <Col as={Button} className="drum-pad" xs={2} sm={1} md={1} lg={1} value={10} variant="success" id="x">
             <h5>
               X
             </h5>
@@ -154,9 +158,9 @@ export class Drum extends Component {
               Your browser does not support the
             <code>audio</code> element.
             </audio>
-          </Button>
+          </Col>
           {' '}
-          <Button className="drum-pad" value={10} variant="success" id="c">
+          <Col as={Button} className="drum-pad" xs={2} sm={1} md={1} lg={1} value={10} variant="success" id="c">
             <h5>
               C
             </h5>
@@ -167,9 +171,9 @@ export class Drum extends Component {
               Your browser does not support the
             <code>audio</code> element.
             </audio>
-          </Button>
+          </Col>
           {' '}
-        </Fragment>
+        </Row>
         <h5>
           <a
             className="App-link"
@@ -181,7 +185,7 @@ export class Drum extends Component {
             <i className="fab fa-twitch"></i> These Episodes on Twitch <i className="fab fa-twitch"></i>
           </a>
         </h5>
-      </div>
+      </Container>
     );
   }
 }
