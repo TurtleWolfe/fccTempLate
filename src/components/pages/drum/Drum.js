@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { Button, ButtonGroup } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
 
 export class Drum extends Component {
@@ -37,18 +37,19 @@ export class Drum extends Component {
           </a>
         </h4>
         <Card style={{ width: '18rem' }}>
-          {/* <Card.Img variant="top" src="holder.js/100px180" /> */}
           <Card.Body className="bg-dark text-white">
-            <Card.Title id="display">Card Title</Card.Title>
-            {/* <Card.Text>
-              Some quick example text to build on the card title and make up the bulk of
-              the card's content.
-            </Card.Text> */}
-            {/* <Button variant="primary">Go somewhere</Button> */}
+            <Card.Title id="display">
+              <h3>
+                Card Title
+              </h3>
+            </Card.Title>
           </Card.Body>
         </Card>
-        <ButtonGroup>
-          <Button className="drum-pad" value={9} variant="success" id="q">Q
+        <Fragment>
+          <Button className="drum-pad" value={9} variant="success" id="q">
+            <h5>
+              Q
+            </h5>
             <audio
               id="Q"
               className="clip"
@@ -57,7 +58,11 @@ export class Drum extends Component {
             <code>audio</code> element.
             </audio>
           </Button>
-          <Button className="drum-pad" value={10} variant="success" id="w">W
+          {' '}
+          <Button className="drum-pad" value={10} variant="success" id="w">
+            <h5>
+              W
+            </h5>
             <audio
               id="W"
               className="clip"
@@ -66,7 +71,11 @@ export class Drum extends Component {
             <code>audio</code> element.
             </audio>
           </Button>
-          <Button className="drum-pad" value={10} variant="success" id="e">E
+          {' '}
+          <Button className="drum-pad" value={10} variant="success" id="e">
+            <h5>
+              E
+            </h5>
             <audio
               id="E"
               className="clip"
@@ -75,10 +84,14 @@ export class Drum extends Component {
             <code>audio</code> element.
             </audio>
           </Button>
-        </ButtonGroup>
+          {' '}
+        </Fragment>
         <br></br>
-        <ButtonGroup>
-          <Button className="drum-pad" value={9} variant="success" id="a">A
+        <Fragment>
+          <Button className="drum-pad" value={9} variant="success" id="a">
+            <h5>
+              A
+            </h5>
             <audio
               id="A"
               className="clip"
@@ -87,7 +100,11 @@ export class Drum extends Component {
             <code>audio</code> element.
             </audio>
           </Button>
-          <Button className="drum-pad" value={10} variant="success" id="s">S
+          {' '}
+          <Button className="drum-pad" value={10} variant="success" id="s">
+            <h5>
+              S
+            </h5>
             <audio
               id="S"
               className="clip"
@@ -96,7 +113,11 @@ export class Drum extends Component {
             <code>audio</code> element.
             </audio>
           </Button>
-          <Button className="drum-pad" value={10} variant="success" id="d">D
+          {' '}
+          <Button className="drum-pad" value={10} variant="success" id="d">
+            <h5>
+              D
+            </h5>
             <audio
               id="D"
               className="clip"
@@ -105,10 +126,14 @@ export class Drum extends Component {
             <code>audio</code> element.
             </audio>
           </Button>
-        </ButtonGroup>
+          {' '}
+        </Fragment>
         <br></br>
-        <ButtonGroup>
-          <Button className="drum-pad" value={9} variant="success" id="z">Z
+        <Fragment>
+          <Button className="drum-pad" value={9} variant="success" id="z">
+            <h5>
+              Z
+            </h5>
             <audio
               id="Z"
               className="clip"
@@ -117,7 +142,11 @@ export class Drum extends Component {
             <code>audio</code> element.
             </audio>
           </Button>
-          <Button className="drum-pad" value={10} variant="success" id="x">X
+          {' '}
+          <Button className="drum-pad" value={10} variant="success" id="x">
+            <h5>
+              X
+            </h5>
             <audio
               id="X"
               className="clip"
@@ -126,7 +155,11 @@ export class Drum extends Component {
             <code>audio</code> element.
             </audio>
           </Button>
-          <Button className="drum-pad" value={10} variant="success" id="c">C
+          {' '}
+          <Button className="drum-pad" value={10} variant="success" id="c">
+            <h5>
+              C
+            </h5>
             <audio
               id="C"
               className="clip"
@@ -135,7 +168,8 @@ export class Drum extends Component {
             <code>audio</code> element.
             </audio>
           </Button>
-        </ButtonGroup>
+          {' '}
+        </Fragment>
         <h5>
           <a
             className="App-link"

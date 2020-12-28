@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { ToggleButton, ToggleButtonGroup } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 
 export class Pomodoro extends Component {
   constructor(props) {
@@ -35,56 +35,46 @@ export class Pomodoro extends Component {
             <i className="fas  fa-hourglass-start"></i> 25 + 5 Clock <i className="fas  fa-hourglass-half"></i>
           </a>
         </h4>
-        <ToggleButtonGroup type="radio" name="options" defaultValue={22}>
-          <ToggleButton value={5} variant="warning" id="time-left"><h1>25:00</h1></ToggleButton>
-          <ToggleButton value={6} variant="warning" id="session-length">25</ToggleButton>
-        </ToggleButtonGroup>
+
+        <>
+          <Button value={9} variant="success" id="break-increment">+ Break</Button>
+          {' '}
+          <Button value={10} variant="success" id="session-increment">+ Work</Button>
+        </>
         <br></br>
-        <ToggleButtonGroup type="radio" name="options">
-          <ToggleButton value={1} variant="warning" id="break-label">Break</ToggleButton>
-          <span> _ </span>
-          <ToggleButton value={3} variant="warning" id="session-label">Work</ToggleButton>
-        </ToggleButtonGroup>
+        <>
+          <Button value={1} variant="warning" id="break-label">Break</Button>
+          <Button value={2} variant="secondary" id="break-length">5</Button>
+          {' '}
+          <Button value={4} variant="secondary" id="timer-label">25</Button>
+          <Button value={3} variant="warning" id="session-label">Work</Button>
+        </>
         <br></br>
-        <ToggleButtonGroup type="radio" name="options">
-          <ToggleButton value={2} variant="warning" id="break-length">5</ToggleButton>
-          <span> _ </span>
-          <ToggleButton value={4} variant="warning" id="timer-label">25</ToggleButton>
-        </ToggleButtonGroup>
+        <>
+          <Button value={7} variant="info" id="break-decrement">- Break</Button>
+          {' '}
+          <Button value={8} variant="info" id="session-decrement">- Work</Button>
+        </>
         <br></br>
-        <ToggleButtonGroup type="radio" name="options">
-          <ToggleButton value={7} variant="danger" id="break-decrement">- Break</ToggleButton>
-          <ToggleButton value={8} variant="danger" id="session-decrement">- Work</ToggleButton>
-        </ToggleButtonGroup>
         <br></br>
-        <ToggleButtonGroup type="radio" name="options">
-          <ToggleButton value={9} variant="success" id="break-increment">+ Break</ToggleButton>
-          <ToggleButton value={10} variant="success" id="session-increment">+ Work</ToggleButton>
-        </ToggleButtonGroup>
+        <>
+          <Button value={5} variant="warning" id="time-left"><h1>25:00</h1></Button>
+          <Button value={6} variant="secondary" id="session-length">25</Button>
+        </>
         <br></br>
-        <ToggleButtonGroup type="radio" name="options">
-          <ToggleButton value={11} id="start_stop">Start/Stop</ToggleButton>
-          <ToggleButton value={12} id="reset">Reset</ToggleButton>
-        </ToggleButtonGroup>
-        <figure>
-          {/* <figcaption>Listen to the T-Rex:</figcaption> */}
-          <audio
-            id="beep"
-            controls
-            src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav">
-            Your browser does not support the
+        <>
+          <Button value={11} id="start_stop">Start/Stop</Button>
+          {' '}
+          <Button value={12} id="reset">Reset</Button>
+          <br></br>
+        </>
+        <audio
+          id="beep"
+          controls
+          src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav">
+          Your browser does not support the
             <code>audio</code> element.
         </audio>
-        </figure>
-        {/* <audio
-          id="beep"
-          preload="auto"
-          ref={(audio) => {
-            this.audioBeep = audio;
-          }}
-          controls
-          src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav"
-        /> */}
         <h5>
           <a
             className="App-link"
