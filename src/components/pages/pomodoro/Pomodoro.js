@@ -24,32 +24,45 @@ export class Pomodoro extends Component {
   render() {
     return (
       <div>
+        <h4>
+          <a
+            className="App-link"
+            href="https://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects/build-a-25--5-clockhttps://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects/build-a-25--5-clock"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="25 + 5 Clock"
+          >
+            <i className="fas  fa-hourglass-start"></i> 25 + 5 Clock <i className="fas  fa-hourglass-half"></i>
+          </a>
+        </h4>
         <ToggleButtonGroup type="radio" name="options" defaultValue={22}>
+          <ToggleButton value={5} variant="warning" id="time-left"><h1>25:00</h1></ToggleButton>
+          <ToggleButton value={6} variant="warning" id="session-length">25</ToggleButton>
+        </ToggleButtonGroup>
+        <br></br>
+        <ToggleButtonGroup type="radio" name="options">
           <ToggleButton value={1} variant="warning" id="break-label">Break</ToggleButton>
-          <ToggleButton value={2} variant="warning" id="break-length">5:00</ToggleButton>
-        </ToggleButtonGroup>
-        <br></br>
-        <ToggleButtonGroup type="radio" name="options" defaultValue={22}>
+          <span> _ </span>
           <ToggleButton value={3} variant="warning" id="session-label">Work</ToggleButton>
-          <ToggleButton value={4} variant="warning" id="timer-label">Session</ToggleButton>
         </ToggleButtonGroup>
         <br></br>
-        <ToggleButtonGroup type="radio" name="options" defaultValue={22}>
-          <ToggleButton value={5} variant="warning" id="time-left">25:00</ToggleButton>
-          <ToggleButton value={6} variant="warning" id="session-length">25:00</ToggleButton>
+        <ToggleButtonGroup type="radio" name="options">
+          <ToggleButton value={2} variant="warning" id="break-length">5</ToggleButton>
+          <span> _ </span>
+          <ToggleButton value={4} variant="warning" id="timer-label">25</ToggleButton>
         </ToggleButtonGroup>
         <br></br>
-        <ToggleButtonGroup type="radio" name="options" defaultValue={22}>
+        <ToggleButtonGroup type="radio" name="options">
           <ToggleButton value={7} variant="danger" id="break-decrement">- Break</ToggleButton>
-          <ToggleButton value={9} variant="success" id="break-increment">+ Break</ToggleButton>
+          <ToggleButton value={8} variant="danger" id="session-decrement">- Work</ToggleButton>
         </ToggleButtonGroup>
         <br></br>
-        <ToggleButtonGroup type="radio" name="options" defaultValue={22}>
-          <ToggleButton value={8} variant="danger" id="session-decrement">- Work</ToggleButton>
+        <ToggleButtonGroup type="radio" name="options">
+          <ToggleButton value={9} variant="success" id="break-increment">+ Break</ToggleButton>
           <ToggleButton value={10} variant="success" id="session-increment">+ Work</ToggleButton>
         </ToggleButtonGroup>
         <br></br>
-        <ToggleButtonGroup type="radio" name="options" defaultValue={22}>
+        <ToggleButtonGroup type="radio" name="options">
           <ToggleButton value={11} id="start_stop">Start/Stop</ToggleButton>
           <ToggleButton value={12} id="reset">Reset</ToggleButton>
         </ToggleButtonGroup>
@@ -72,6 +85,17 @@ export class Pomodoro extends Component {
           controls
           src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav"
         /> */}
+        <h5>
+          <a
+            className="App-link"
+            href="https://www.twitch.tv/videos/836894977"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="These Episodes on Twitch I'm working on the Pomodor timer"
+          >
+            <i className="fab fa-twitch"></i> These Episodes on Twitch <i className="fab fa-twitch"></i>
+          </a>
+        </h5>
       </div>
     );
   }
