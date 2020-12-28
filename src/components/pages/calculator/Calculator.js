@@ -216,7 +216,7 @@ export class Calculator extends Component {
         <h5>
           <a
             className="App-link"
-            href="https://www.twitch.tv/videos/836894977"
+            href="https://www.twitch.tv/collections/1DAbboLDVBZxxA"
             target="_blank"
             rel="noopener noreferrer"
             title="These Episodes on Twitch I work on the JavaScript Calculator for my freeCodeCamp certificate using React-BootStrap"

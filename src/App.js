@@ -46,12 +46,12 @@ function App() {
                 <h5>
                   <a
                     className="App-link"
-                    href="https://www.twitch.tv/videos/836894977"
+                    href="https://www.twitch.tv/collections/mgPReDzBVBbReg"
                     target="_blank"
                     rel="noopener noreferrer"
-                    title="This Episode on Twitch I build a template for my freeCodeCamp projects, with FontAwesome & Analytics"
+                    title="These Episodes on Twitch I build a template for my freeCodeCamp projects, with FontAwesome, React-BootStrap & Analytics"
                   >
-                    <i className="fab fa-twitch"></i> This Episode on Twitch <i className="fab fa-twitch"></i>
+                    <i className="fab fa-twitch"></i> These Episodes on Twitch <i className="fab fa-twitch"></i>
                   </a>
                 </h5>
               </Fragment>

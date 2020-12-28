@@ -139,7 +139,7 @@ export class Drum extends Component {
         <h5>
           <a
             className="App-link"
-            href="https://www.twitch.tv/videos/836894977"
+            href="https://www.twitch.tv/collections/Zh4cSjzCVBaSEw"
             target="_blank"
             rel="noopener noreferrer"
             title="These Episodes on Twitch I build a drum machine for my freeCodeCamp projects with React-BootStrap"

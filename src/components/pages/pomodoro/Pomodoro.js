@@ -88,10 +88,10 @@ export class Pomodoro extends Component {
         <h5>
           <a
             className="App-link"
-            href="https://www.twitch.tv/videos/836894977"
+            href="https://www.twitch.tv/collections/Z-WfaCrBVBZa9w"
             target="_blank"
             rel="noopener noreferrer"
-            title="These Episodes on Twitch I'm working on the Pomodor timer"
+            title="These Episodes on Twitch I'm working on the Pomodor timer for FreeCodeCamp using ReactBootstrap"
           >
             <i className="fab fa-twitch"></i> These Episodes on Twitch <i className="fab fa-twitch"></i>
           </a>
