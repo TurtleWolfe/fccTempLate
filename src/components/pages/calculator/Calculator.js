@@ -36,9 +36,9 @@ export class Calculator extends Component {
             <i className="fas fa-calculator"></i> JavaScript Calculator <i className="fas fa-calculator"></i>
           </a>
         </h4>
-        <br></br>
+        {/* <br></br> */}
         <Row className="justify-content-center">
-          <Col as={Button} className="key-pad" xs={2} sm={1} md={1} lg={1} value={0} variant="warning" id="divide">
+          <Col as={Button} className="key-pad" xs={2} sm={2} md={1} lg={1} value={0} variant="warning" id="divide">
             <h2>
               /
             </h2>
@@ -50,7 +50,7 @@ export class Calculator extends Component {
             <code>audio</code> element.
             </audio>
           </Col>
-          <Col as={Button} className="key-pad" xs={2} sm={1} md={1} lg={1} value={7} variant="success" id="seven">
+          <Col as={Button} className="key-pad" xs={2} sm={2} md={1} lg={1} value={7} variant="success" id="seven">
             <h2>
               7
             </h2>
@@ -62,7 +62,7 @@ export class Calculator extends Component {
             <code>audio</code> element.
             </audio>
           </Col>
-          <Col as={Button} className="key-pad" xs={2} sm={1} md={1} lg={1} value={8} variant="success" id="eight">
+          <Col as={Button} className="key-pad" xs={2} sm={2} md={1} lg={1} value={8} variant="success" id="eight">
             <h2>
               8
             </h2>
@@ -74,7 +74,7 @@ export class Calculator extends Component {
             <code>audio</code> element.
             </audio>
           </Col>
-          <Col as={Button} className="key-pad" xs={2} sm={1} md={1} lg={1} value={9} variant="success" id="nine">
+          <Col as={Button} className="key-pad" xs={2} sm={2} md={1} lg={1} value={9} variant="success" id="nine">
             <h2>
               9
             </h2>
@@ -89,7 +89,7 @@ export class Calculator extends Component {
         </Row>
 
         <Row className="justify-content-center">
-          <Col as={Button} className="key-pad" xs={2} sm={1} md={1} lg={1} value={0} variant="warning" id="multiply">
+          <Col as={Button} className="key-pad" xs={2} sm={2} md={1} lg={1} value={0} variant="warning" id="multiply">
             <h2>
               *
             </h2>
@@ -101,7 +101,7 @@ export class Calculator extends Component {
             <code>audio</code> element.
             </audio>
           </Col>
-          <Col as={Button} className="key-pad" xs={2} sm={1} md={1} lg={1} value={4} variant="success" id="four">
+          <Col as={Button} className="key-pad" xs={2} sm={2} md={1} lg={1} value={4} variant="success" id="four">
             <h2>
               4
             </h2>
@@ -113,7 +113,7 @@ export class Calculator extends Component {
             <code>audio</code> element.
             </audio>
           </Col>
-          <Col as={Button} className="key-pad" xs={2} sm={1} md={1} lg={1} value={5} variant="success" id="five">
+          <Col as={Button} className="key-pad" xs={2} sm={2} md={1} lg={1} value={5} variant="success" id="five">
             <h2>
               5
             </h2>
@@ -125,7 +125,7 @@ export class Calculator extends Component {
             <code>audio</code> element.
             </audio>
           </Col>
-          <Col as={Button} className="key-pad" xs={2} sm={1} md={1} lg={1} value={6} variant="success" id="six">
+          <Col as={Button} className="key-pad" xs={2} sm={2} md={1} lg={1} value={6} variant="success" id="six">
             <h2>
               6
             </h2>
@@ -140,7 +140,7 @@ export class Calculator extends Component {
         </Row>
 
         <Row className="justify-content-center">
-          <Col as={Button} className="key-pad" xs={2} sm={1} md={1} lg={1} value={0} variant="warning" id="subtract">
+          <Col as={Button} className="key-pad" xs={2} sm={2} md={1} lg={1} value={0} variant="warning" id="subtract">
             <h2>
               -
             </h2>
@@ -152,7 +152,7 @@ export class Calculator extends Component {
             <code>audio</code> element.
             </audio>
           </Col>
-          <Col as={Button} className="key-pad" xs={2} sm={1} md={1} lg={1} value={1} variant="success" id="one">
+          <Col as={Button} className="key-pad" xs={2} sm={2} md={1} lg={1} value={1} variant="success" id="one">
             <h2>
               1
             </h2>
@@ -164,7 +164,7 @@ export class Calculator extends Component {
             <code>audio</code> element.
             </audio>
           </Col>
-          <Col as={Button} className="key-pad" xs={2} sm={1} md={1} lg={1} value={2} variant="success" id="two">
+          <Col as={Button} className="key-pad" xs={2} sm={2} md={1} lg={1} value={2} variant="success" id="two">
             <h2>
               2
             </h2>
@@ -176,7 +176,7 @@ export class Calculator extends Component {
             <code>audio</code> element.
             </audio>
           </Col>
-          <Col as={Button} className="key-pad" xs={2} sm={1} md={1} lg={1} value={3} variant="success" id="three">
+          <Col as={Button} className="key-pad" xs={2} sm={2} md={1} lg={1} value={3} variant="success" id="three">
             <h2>
               3
             </h2>
@@ -190,9 +190,8 @@ export class Calculator extends Component {
           </Col>
         </Row>
 
-
         <Row className="justify-content-center">
-          <Col as={Button} className="key-pad" xs={2} sm={1} md={1} lg={1} value={0} variant="warning" id="add">
+          <Col as={Button} className="key-pad" xs={2} sm={2} md={1} lg={1} value={0} variant="warning" id="add">
             <h2>
               +
             </h2>
@@ -204,7 +203,7 @@ export class Calculator extends Component {
             <code>audio</code> element.
             </audio>
           </Col>
-          <Col as={Button} className="key-pad" xs={2} sm={1} md={1} lg={1} value={0} variant="dark" id="decimal">
+          <Col as={Button} className="key-pad" xs={2} sm={2} md={1} lg={1} value={0} variant="dark" id="decimal">
             <h2>
               .
             </h2>
@@ -216,7 +215,7 @@ export class Calculator extends Component {
             <code>audio</code> element.
             </audio>
           </Col>
-          <Col as={Button} className="key-pad" xs={2} sm={1} md={1} lg={1} value={0} variant="success" id="zero">
+          <Col as={Button} className="key-pad" xs={2} sm={2} md={1} lg={1} value={0} variant="success" id="zero">
             <h2>
               0
             </h2>
@@ -228,7 +227,7 @@ export class Calculator extends Component {
             <code>audio</code> element.
             </audio>
           </Col>
-          <Col as={Button} className="key-pad" xs={2} sm={1} md={1} lg={1} value={0} variant="warning" id="equals">
+          <Col as={Button} className="key-pad" xs={2} sm={2} md={1} lg={1} value={0} variant="warning" id="equals">
             <h2>
               =
             </h2>
