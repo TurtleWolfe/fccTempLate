@@ -40,15 +40,6 @@ export class Drum extends Component {
         <h4 id="display">
           Display Audio Tags Hear
         </h4>
-        {/* <Card style={{ width: '18rem' }} >
-          <Card.Body className="bg-dark text-white">
-            <Card.Title id="display">
-              <h3>
-                Card Title
-              </h3>
-            </Card.Title>
-          </Card.Body>
-        </Card> */}
         <Row className="justify-content-center">
           <Col as={Button} className="drum-pad" xs={2} sm={1} md={1} lg={1} value={9} variant="success" id="q">
             <h5>
