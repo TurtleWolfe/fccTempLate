@@ -1,0 +1,32 @@
+.fa-plus-circle {
+  color: #000;
+}
+.fa-minus-square {
+  color: #000;
+}
+
+h5 {
+  padding-top: 10px;
+  color: #000;
+}
+
+#break-length,
+#timer-label,
+#session-length,
+#break-increment,
+#session-increment,
+#break-decrement,
+#session-decrement {
+  padding: 5px;
+}
+
+.slab {
+  font-family: 'Alfa Slab One', cursive;
+}
+
+#break-length h5,
+#timer-label h5,
+#session-length h5 {
+  font-family: 'Lobster', cursive;
+  color: #ffc107;
+}

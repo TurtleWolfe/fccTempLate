@@ -3,7 +3,13 @@ i {
 }
 a {
   text-decoration: none;
+  font-family: 'Special Elite', cursive;
 }
+
+.blockquote {
+  font-family: 'Lobster', cursive;
+}
+
 .App {
   text-align: center;
 }
@@ -71,4 +77,8 @@ a {
   width: 100%;
   /* height: auto; */
   animation: App-logo-spin infinite 20s linear;
+}
+
+.container {
+  margin: 56px;
 }

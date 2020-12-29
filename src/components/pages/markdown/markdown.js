@@ -1,16 +1,18 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
+import { Container, Row } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import marked from 'marked';
 import Form from 'react-bootstrap/Form';
 import Card from 'react-bootstrap/Card';
+import './Markdown.css';
 
 export class Markdown extends Component {
   constructor(props) {
     super(props);
     // Initial State
     this.state = {
-      markdown: `# ScriptHammer.com
-## custom apps for small businesses
+      markdown: `# Enter markdown in the text area
+## to see it previewed below
 1. [**\`inline code list\`**](https://ScriptHammer.com "https://ScriptHammer.com")  
 
 \`\`\`bash
@@ -33,53 +35,55 @@ code block
   render() {
     let { markdown } = this.state;
     return (
-      <Fragment>
-        <h4>
-          <a
-            className="App-link"
-            href="https://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects/build-a-markdown-previewer"
-            target="_blank"
-            rel="noopener noreferrer"
-            title="Markdown Previewer"
-          >
-            <i className="fab fa-markdown"></i> Markdown Previewer <i className="fab fa-markdown"></i>
-          </a>
-        </h4>
-        <Form
-          style={{ width: '90%' }}>
-          <Form.Group controlId="editor" >
-            <Form.Control as="textarea"
-              className="bg-dark text-white"
-              rows={3}
-              value={markdown}
-              onChange={(e) => {
-                this.updateMarkdown(e.target.value);
-              }}
-            />
-            <Form.Text id="passwordHelpBlock" muted>
-              enter markdown in the text area above
-      </Form.Text>
-          </Form.Group>
-        </Form>
+      <Container>
+        <Row className="justify-content-center">
 
-        <Card id="preview"
-          className="bg-dark text-white"
-          style={{ width: '90%' }}
-          dangerouslySetInnerHTML={{ __html: marked(markdown) }}
-        >
-        </Card>
-        <h5>
-          <a
-            className="App-link"
-            href="https://www.twitch.tv/collections/ElUGINSGVBYpbw"
-            target="_blank"
-            rel="noopener noreferrer"
-            title="These two Episodes on Twitch I build a MarkDown Previewer"
+          <h4>
+            <a
+              className="App-link"
+              href="https://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects/build-a-markdown-previewer"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Markdown Previewer"
+            >
+              <i className="fab fa-markdown"></i> Markdown Previewer <i className="fab fa-markdown"></i>
+            </a>
+          </h4>
+          <Form
+            style={{ width: '90%' }}>
+            <Form.Group controlId="editor" >
+              <Form.Control as="textarea"
+                className="bg-dark text-white"
+                rows={3}
+                value={markdown}
+                onChange={(e) => {
+                  this.updateMarkdown(e.target.value);
+                }}
+              />
+
+            </Form.Group>
+          </Form>
+
+          <Card id="preview"
+            className="bg-dark text-white"
+            style={{ width: '90%' }}
+            dangerouslySetInnerHTML={{ __html: marked(markdown) }}
           >
-            <i className="fab fa-twitch"></i> These Episodes on Twitch <i className="fab fa-twitch"></i>
-          </a>
-        </h5>
-      </Fragment>
+          </Card>
+          <h5>
+            <a
+              className="App-link"
+              href="https://www.twitch.tv/collections/ElUGINSGVBYpbw"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="These two Episodes on Twitch I build a MarkDown Previewer"
+            >
+              <i className="fab fa-twitch"></i> These Episodes on Twitch <i className="fab fa-twitch"></i>
+            </a>
+          </h5>
+
+        </Row>
+      </Container>
     );
   }
 }

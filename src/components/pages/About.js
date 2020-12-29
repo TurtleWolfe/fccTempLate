@@ -1,82 +1,84 @@
-import React, { Fragment } from 'react';
+import React from 'react';
+import { Container, Row } from 'react-bootstrap';
+import './About.css';
+
 
 export const About = () => {
   return (
-    <Fragment>
-      <p>fccTempLate</p>
-      <a
-        className="App-link"
+    <Container>
+      <Row as="a"
+        className="ispace App-link justify-content-center"
         href="https://reactjs.org"
         target="_blank"
         rel="noopener noreferrer"
         title="Learn React"
       >
-        <i className="fab fa-react"></i> Learn React <i className="fab fa-react"></i>
-      </a>
-      <a
-        className="App-link"
+        <i className="ispace fab fa-react"></i> Learn React <i className="ispace fab fa-react"></i>
+      </Row>
+      <Row as="a"
+        className="ispace App-link justify-content-center"
         href="https://getbootstrap.com/docs/4.0/components/navs/#fill-and-justify"
         target="_blank"
         rel="noopener noreferrer"
         title="Learn React"
       >
-        <i className="fab fa-react"></i> bootstrap <i className="fab fa-react"></i>
-      </a>
-      <a
-        className="App-link"
+        <i class="ispace fab fa-bootstrap"></i> bootstrap <i class="ispace fab fa-bootstrap"></i>
+      </Row>
+      <Row as="a"
+        className="ispace App-link justify-content-center"
         href="https://react-bootstrap.netlify.app/getting-started/introduction/"
         target="_blank"
         rel="noopener noreferrer"
         title="Learn React"
       >
-        <i className="fab fa-react"></i> react-bootstrap <i className="fab fa-react"></i>
-      </a>
-      <a
-        className="App-link"
+        <i className="ispace fab fa-react"></i><i class="ispace fab fa-bootstrap"></i> react-bootstrap <i className="ispace fab fa-react"></i><i class="ispace fab fa-bootstrap"></i>
+      </Row>
+      <Row as="a"
+        className="ispace App-link justify-content-center"
         href="https://www.npmjs.com/package/react-router-dom"
         target="_blank"
         rel="noopener noreferrer"
         title="Learn React"
       >
-        <i className="fab fa-react"></i> react-router-dom <i className="fab fa-react"></i>
-      </a>
-      <a
-        className="App-link"
+        <i className="ispace fab fa-react"></i> react-router-dom <i className="ispace fab fa-react"></i>
+      </Row>
+      <Row as="a"
+        className="ispace App-link justify-content-center"
         href="https://fontawesome.com"
         target="_blank"
         rel="noopener noreferrer"
         title="Awesome Fonts"
       >
-        <i className="fab fa-font-awesome-alt"></i> Font Awesome <i className="fab fa-font-awesome-alt"></i>
-      </a>
-      <a
-        className="App-link"
+        <i className="ispace fab fa-font-awesome-alt"></i> Font Awesome <i className="ispace fab fa-font-awesome-alt"></i>
+      </Row>
+      <Row as="a"
+        className="ispace App-link justify-content-center"
         href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#links"
         target="_blank"
         rel="noopener noreferrer"
         title="Markdown Cheatsheet"
       >
-        <i className="fab fa-markdown"></i> Markdown Cheatsheet <i className="fab fa-markdown"></i>
-      </a>
-      <a
-        className="App-link"
+        <i className="ispace fab fa-markdown"></i> Markdown Cheatsheet <i className="ispace fab fa-markdown"></i>
+      </Row>
+      <Row as="a"
+        className="ispace App-link justify-content-center"
         href="https://youtu.be/SKXkC4SqtRk?t=865"
         target="_blank"
         rel="noopener noreferrer"
         title="GitHub Pages, Deploy & Domain: Traversy Media"
       >
-        <i className="fab fa-github"></i> GitHub Pages, Deploy & Domain <i className="fab fa-github"></i>
-      </a>
-      <a
-        className="App-link"
+        <i className="ispace fab fa-github"></i> GitHub Pages, Deploy & Domain <i className="ispace fab fa-github"></i>
+      </Row>
+      <Row as="a"
+        className="ispace App-link justify-content-center"
         href="https://css-tricks.com/essential-meta-tags-social-media/"
         target="_blank"
         rel="noopener noreferrer"
         title="The Essential Meta Tags for Social Media"
       >
-        <i className="far fa-file-code"></i> Essential Meta Tags for Social Media <i className="far fa-file-code"></i>
-      </a>
-    </Fragment>
+        <i className="ispace far fa-file-code"></i> Essential Meta Tags<i className="ispace far fa-file-code"></i>
+      </Row>
+    </Container>
   );
 };
 

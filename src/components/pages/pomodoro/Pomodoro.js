@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Button, Container, Row, Col } from 'react-bootstrap';
+import './Pomodor.css';
 
 export class Pomodoro extends Component {
   constructor(props) {
@@ -37,34 +38,63 @@ export class Pomodoro extends Component {
         </h4>
 
         <Row className="justify-content-center">
-          <Col as={Button} className="drum-pad" xs={1} sm={1} md={1} lg={1} value={9} variant="success" id="break-increment">+</Col>
-          <Col as={Button} className="drum-pad" xs={1} sm={1} md={1} lg={1} value={10} variant="success" id="session-increment">+</Col>
+          <Col as={Button} className="drum-pad" xs={2} sm={1} md={1} lg={1} value={9} variant="success" id="break-increment"><i class="fas fa-plus-circle"></i></Col>
+          <Col as={Button} className="drum-pad" xs={2} sm={1} md={1} lg={1} value={10} variant="success" id="session-increment"><i class="fas fa-plus-circle"></i></Col>
         </Row>
         <Row className="justify-content-center">
-          <Col as={Button} className="drum-pad" xs={2} sm={2} md={1} lg={1} value={1} variant="warning" id="break-label">Break</Col>
-          <Col as={Button} className="drum-pad" xs={2} sm={1} md={1} lg={1} value={2} variant="secondary" id="break-length">5</Col>
-          <Col as={Button} className="drum-pad" xs={2} sm={1} md={1} lg={1} value={4} variant="secondary" id="timer-label">25</Col>
-          <Col as={Button} className="drum-pad" xs={2} sm={2} md={1} lg={1} value={3} variant="warning" id="session-label">Work</Col>
+          <Col as={Button} className="drum-pad slab" xs={3} sm={3} md={2} lg={2} value={1} variant="warning" id="break-label">
+            <h5>
+              Break
+          </h5>
+          </Col>
+          <Col as={Button} className="drum-pad" xs={2} sm={1} md={1} lg={1} value={2} variant="dark" id="break-length">
+            <h5>
+              5
+          </h5>
+          </Col>
+          <Col as={Button} className="drum-pad" xs={2} sm={1} md={1} lg={1} value={4} variant="dark" id="timer-label">
+            <h5>
+              25
+          </h5>
+          </Col>
+          <Col as={Button} className="drum-pad slab" xs={3} sm={3} md={2} lg={2} value={3} variant="warning" id="session-label">
+            <h5>
+              Work
+          </h5>
+          </Col>
         </Row>
         <Row className="justify-content-center">
-          <Col as={Button} className="drum-pad" xs={1} sm={1} md={1} lg={1} value={7} variant="info" id="break-decrement">-</Col>
-          <Col as={Button} className="drum-pad" xs={1} sm={1} md={1} lg={1} value={8} variant="info" id="session-decrement">-</Col>
+          <Col as={Button} className="drum-pad" xs={2} sm={1} md={1} lg={1} value={7} variant="info" id="break-decrement"><i class="fas fa-minus-square"></i></Col>
+          <Col as={Button} className="drum-pad" xs={2} sm={1} md={1} lg={1} value={8} variant="info" id="session-decrement"><i class="fas fa-minus-square"></i></Col>
         </Row>
         <Row className="justify-content-center">
-          <Col as={Button} className="drum-pad" xs={4} sm={3} md={2} lg={2} value={5} variant="warning" id="time-left"><h1>25:00</h1></Col>
-          <Col as={Button} className="drum-pad" xs={2} sm={1} md={1} lg={1} value={6} variant="secondary" id="session-length">25</Col>
+          <Col as={Button} className="drum-pad" xs={5} sm={4} md={3} lg={2} value={5} variant="warning" id="time-left"><h1 className="slab">25:00</h1></Col>
+          <Col as={Button} className="drum-pad" xs={2} sm={1} md={1} lg={1} value={6} variant="dark" id="session-length">
+            <h5>
+              25
+            </h5>
+          </Col>
         </Row>
         <Row className="justify-content-center">
-          <Col as={Button} className="drum-pad" xs={3} sm={3} md={2} lg={2} value={11} id="start_stop">Start/Stop</Col>
-          <Col as={Button} className="drum-pad" xs={3} sm={2} md={2} lg={1} value={12} id="reset">Reset</Col>
+          <Col as={Button} className="drum-pad slab" xs={5} sm={3} md={3} lg={2} value={11} id="start_stop">
+            <h5>
+              Start/Stop
+            </h5>
+          </Col>
+          <Col as={Button} className="drum-pad slab" xs={3} sm={2} md={2} lg={1} value={12} id="reset">
+            <h5>
+              Reset
+            </h5>
+          </Col>
         </Row>
         <audio
           id="beep"
-          controls
+          // controls
           src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav">
           Your browser does not support the
             <code>audio</code> element.
         </audio>
+        <br></br>
         <h5>
           <a
             className="App-link"
