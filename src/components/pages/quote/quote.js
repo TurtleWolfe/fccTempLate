@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react';
 import axios from 'axios';
 import { Card, Button, ButtonGroup } from 'react-bootstrap';
 import PropTypes from 'prop-types';
+import './Quote.css';
 
 export class Quote extends Component {
   constructor(props) {
@@ -69,7 +70,7 @@ export class Quote extends Component {
                 rel="noopener noreferrer"
                 title=" Random Quote Machine"
               >
-                <i className="fas fa-quote-left"></i> Random Quote Machine <i className="fas fa-quote-right"></i>
+                <i className="fas fa-quote-left"></i> Random Quotes <i className="fas fa-quote-right"></i>
               </a>
             </h4>
 
@@ -79,12 +80,12 @@ export class Quote extends Component {
           <Card.Body>
             <blockquote className="blockquote mb-0">
               <p id="text">
-                {' '}
                 {quote}
-                {' '}
               </p>
               <footer className="blockquote-footer" id="author">
-                {author}
+                <h3>
+                  {author}
+                </h3>
                 {/* <cite title="Source Title">{source}</cite> */}
               </footer>
               {/* <footer className="blockquote-footer">
@@ -94,9 +95,9 @@ export class Quote extends Component {
                 <cite title="Source Title">{this.state.source}</cite>
               </footer> */}
             </blockquote>
-            <ButtonGroup aria-label="Basic example" style={{ width: '20%' }}>
+            <ButtonGroup aria-label="Basic example">
               <Button variant="primary" id="new-quote" onClick={this.setQuote}>new quote</Button>
-              <Button as="a" variant="primary" id="tweet-quote" href="twitter.com/intent/tweet" ><i className="fab fa-twitter"></i></Button>
+              <Button as="a" variant="warning" id="tweet-quote" href="twitter.com/intent/tweet" ><i className="fab fa-twitter"></i></Button>
             </ButtonGroup>
           </Card.Body>
         </Card>

@@ -33,7 +33,7 @@ export class Calculator extends Component {
             rel="noopener noreferrer"
             title="JavaScript Calculator"
           >
-            <i className="fas fa-calculator"></i> JavaScript Calculator <i className="fas fa-calculator"></i>
+            <i className="fas fa-calculator"></i> Calculator <i className="fas fa-calculator"></i>
           </a>
         </h4>
         {/* <br></br> */}
@@ -242,7 +242,7 @@ export class Calculator extends Component {
         </Row>
 
         <Row className="justify-content-center">
-          <Col as={"h3"} className="key-pad" xs={3} sm={2} md={2} lg={2} id="display">
+          <Col as={"h3"} className="key-pad" xs={4} sm={2} md={2} lg={2} id="display">
             0.0000
           </Col>
           <Col as={Button} className="key-pad" xs={4} sm={3} md={2} lg={2} value={0} variant="info" id="clear">

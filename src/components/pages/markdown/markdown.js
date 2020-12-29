@@ -12,7 +12,7 @@ export class Markdown extends Component {
     // Initial State
     this.state = {
       markdown: `# Enter markdown in the text area
-## to see it previewed below
+## see it previewed
 1. [**\`inline code list\`**](https://ScriptHammer.com "https://ScriptHammer.com")  
 
 \`\`\`bash

@@ -38,7 +38,7 @@ export class Drum extends Component {
         </h4>
         <br></br>
         <h4 id="display">
-          Display Audio Tags Hear
+          Audio Tags Hear
         </h4>
         <Row className="justify-content-center">
           <Col as={Button} className="drum-pad" xs={2} sm={1} md={1} lg={1} value={9} variant="success" id="q">

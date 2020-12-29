@@ -67,7 +67,7 @@ export const About = () => {
         rel="noopener noreferrer"
         title="GitHub Pages, Deploy & Domain: Traversy Media"
       >
-        <i className="ispace fab fa-github"></i> GitHub Pages, Deploy & Domain <i className="ispace fab fa-github"></i>
+        <i className="ispace fab fa-github"></i> Deployment to GitHub Pages <i className="ispace fab fa-github"></i>
       </Row>
       <Row as="a"
         className="ispace App-link justify-content-center"
