@@ -1,94 +1,149 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { Button } from 'react-bootstrap';
+import './Timer.css';
 
-export class Pomodoro extends Component {
-  constructor(props) {
-    super(props);
+class Timer extends Component {
+  constructor() {
+    super();
+
     // Initial State
     this.state = {
-      author: "Douglas Adams",
-      source: "So Long, and Thanks for All the Fish",
-      quote: "change all this",
+      alert: {
+        type: '',
+        message: ''
+      },
+      time: 0
     };
 
-    // This binding is necessary to make `this` work in the callback
-    // this.setQuote = this.setQuote.bind(this);
-
+    // Defined times for work, short break and long break...
+    this.times = {
+      defaultTime: 1500, // 25 min
+      shortBreak: 300, // 5 min
+      longBreak: 900 // 15 min
+    };
   }
-  static propTypes = {
-    quote: PropTypes.string.isRequired,
-    author: PropTypes.string.isRequired
+
+  componentDidMount() {
+    // Set default time when the component mounts
+    this.setDefaultTime();
+  }
+
+  setDefaultTime = () => {
+    // Default time is 25 min
+    this.setState({
+      time: this.times.defaultTime
+    });
   };
 
-  render() {
-    return (
-      <div>
-        <h4>
-          <a
-            className="App-link"
-            href="https://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects/build-a-25--5-clockhttps://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects/build-a-25--5-clock"
-            target="_blank"
-            rel="noopener noreferrer"
-            title="25 + 5 Clock"
-          >
-            <i className="fas  fa-hourglass-start"></i> 25 + 5 Clock <i className="fas  fa-hourglass-half"></i>
-          </a>
-        </h4>
+  setTime = newTime => {
+    this.restartInterval();
 
-        <>
-          <Button value={9} variant="success" id="break-increment">+ Break</Button>
-          {' '}
-          <Button value={10} variant="success" id="session-increment">+ Work</Button>
-        </>
-        <br></br>
-        <>
-          <Button value={1} variant="warning" id="break-label">Break</Button>
-          <Button value={2} variant="secondary" id="break-length">5</Button>
-          {' '}
-          <Button value={4} variant="secondary" id="timer-label">25</Button>
-          <Button value={3} variant="warning" id="session-label">Work</Button>
-        </>
-        <br></br>
-        <>
-          <Button value={7} variant="info" id="break-decrement">- Break</Button>
-          {' '}
-          <Button value={8} variant="info" id="session-decrement">- Work</Button>
-        </>
-        <br></br>
-        <br></br>
-        <>
-          <Button value={5} variant="warning" id="time-left"><h1>25:00</h1></Button>
-          <Button value={6} variant="secondary" id="session-length">25</Button>
-        </>
-        <br></br>
-        <>
-          <Button value={11} id="start_stop">Start/Stop</Button>
-          {' '}
-          <Button value={12} id="reset">Reset</Button>
-          <br></br>
-        </>
-        <audio
-          id="beep"
-          controls
-          src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav">
-          Your browser does not support the
-            <code>audio</code> element.
-        </audio>
-        <h5>
-          <a
-            className="App-link"
-            href="https://www.twitch.tv/collections/Z-WfaCrBVBZa9w"
-            target="_blank"
-            rel="noopener noreferrer"
-            title="These Episodes on Twitch I'm working on the Pomodor timer for FreeCodeCamp using ReactBootstrap"
+    this.setState({
+      time: newTime
+    });
+  };
+
+  restartInterval = () => {
+    // Clearing the interval
+    clearInterval(this.interval);
+
+    // Execute countDown every second
+    this.interval = setInterval(this.countDown, 1000);
+  };
+
+  countDown = () => {
+    // If the time reach 0 then we display Buzzzz! alert.
+    if (this.state.time === 0) {
+      this.setState({
+        alert: {
+          type: 'buz',
+          message: 'Buzzzzzzzz!'
+        }
+      });
+    } else {
+      // We decrease the time second by second
+      this.setState({
+        time: this.state.time - 1
+      });
+    }
+  };
+
+  setTimeForWork = () => {
+    this.setState({
+      alert: {
+        type: 'work',
+        message: 'Working!'
+      }
+    });
+
+    return this.setTime(this.times.defaultTime);
+  };
+
+  setTimeForShortBreak = () => {
+    this.setState({
+      alert: {
+        type: 'shortBreak',
+        message: 'Taking a Short Break!'
+      }
+    });
+
+    return this.setTime(this.times.shortBreak);
+  };
+
+  setTimeForLongBreak = () => {
+    this.setState({
+      alert: {
+        type: 'longBreak',
+        message: 'Taking a Long Break!'
+      }
+    });
+
+    return this.setTime(this.times.longBreak);
+  };
+
+  displayTimer(seconds) {
+    // Formatting the time into mm:ss
+    const m = Math.floor(seconds % 3600 / 60);
+    const s = Math.floor(seconds % 3600 % 60);
+
+    return `${m < 10 ? '0' : ''}${m}:${s < 10 ? '0' : ''}${s}`;
+  }
+
+  render() {
+    const { alert: { message, type }, time } = this.state;
+
+    return (
+      <div className="Pomodoro">
+        <div className={`alert ${type}`}>
+          {message}
+        </div>
+
+        <div className="timer">
+          {this.displayTimer(time)}
+        </div>
+
+        <div className="types">
+          <button
+            className="start"
+            onClick={this.setTimeForWork}
           >
-            <i className="fab fa-twitch"></i> These Episodes on Twitch <i className="fab fa-twitch"></i>
-          </a>
-        </h5>
+            Start Working
+          </button>
+          <button
+            className="short"
+            onClick={this.setTimeForShortBreak}
+          >
+            Short Break
+          </button>
+          <button
+            className="long"
+            onClick={this.setTimeForLongBreak}
+          >
+            Long Break
+          </button>
+        </div>
       </div>
     );
   }
 }
 
-export default Pomodoro;
+export default Timer;

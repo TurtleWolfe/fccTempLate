@@ -11,9 +11,9 @@ export class Pomodoro extends Component {
       tglStart: "Start",
       tglVariant: 'btn-success drum-pad slab',
       // timeLft: 1500,
-      timeLft: 25,
-      timeWorkSession: 25,
-      timeBreak: 5,
+      timeLft: 1500,
+      timeWorkSession: 1500,
+      timeBreak: 300,
     };
     // This binding is necessary to make `this` work in the callback
     // this.setToggleOnOff = this.setToggleOnOff.bind(this);
@@ -30,30 +30,38 @@ export class Pomodoro extends Component {
 
   incrementBreak = () => {
     let { timeBreak } = this.state;
-    this.setState({
-      timeBreak: timeBreak + 1
-    });
+    if (timeBreak < 3540) {
+      this.setState({
+        timeBreak: timeBreak + 60
+      });
+    }
   };
 
   incrementWorkSession = () => {
     let { timeWorkSession } = this.state;
-    this.setState({
-      timeWorkSession: timeWorkSession + 1
-    });
+    if (timeWorkSession < 3540) {
+      this.setState({
+        timeWorkSession: timeWorkSession + 60
+      });
+    }
   };
 
   decrementBreak = () => {
     let { timeBreak } = this.state;
-    this.setState({
-      timeBreak: timeBreak - 1
-    });
+    if (timeBreak > 61) {
+      this.setState({
+        timeBreak: timeBreak - 60
+      });
+    }
   };
 
   decrementWorkSession = () => {
     let { timeWorkSession } = this.state;
-    this.setState({
-      timeWorkSession: timeWorkSession - 1
-    });
+    if (timeWorkSession > 61) {
+      this.setState({
+        timeWorkSession: timeWorkSession - 60
+      });
+    }
   };
 
   setReset = () => {
@@ -65,7 +73,9 @@ export class Pomodoro extends Component {
     this.setState({
       tglStart: "Start",
       tglVariant: 'btn-success drum-pad slab',
-      timeLft: 25,
+      timeLft: 1500,
+      timeWorkSession: 1500,
+      timeBreak: 300,
     });
   };
 
@@ -93,7 +103,7 @@ export class Pomodoro extends Component {
       this.setState({
         tglStart: "Start",
         tglVariant: 'btn-success drum-pad slab',
-        timeLft: 25
+        timeLft: 1500
       });
       clearInterval(this.interval);
     } else {
@@ -104,6 +114,22 @@ export class Pomodoro extends Component {
     }
   };
   // <Col as={Button} className="drum-pad slab" xs={5} sm={3} md={3} lg={2} value={11} id="start_stop">
+
+  displayTimer(seconds) {
+    // Formatting the time into mm:ss
+    const m = Math.floor(seconds % 3600 / 60);
+    const s = Math.floor(seconds % 3600 % 60);
+
+    return `${m < 10 ? '0' : ''}${m}:${s < 10 ? '0' : ''}${s}`;
+  }
+
+  displayMinutes(seconds) {
+    // Formatting the time into mm:ss
+    const m = Math.floor(seconds % 3600 / 60);
+    // const s = Math.floor(seconds % 3600 % 60);
+
+    return `${m}`;
+  }
 
   render() {
     let { tglStart } = this.state;
@@ -150,12 +176,17 @@ export class Pomodoro extends Component {
           </Col>
           <Col as={Button} className="drum-pad" xs={2} sm={1} md={1} lg={1} value={2} variant="dark" id="break-length">
             <h5>
-              {timeBreak}
+              {/* {this.displayTimer(timeBreak)} */}
+              {/* <br></br> */}
+              {this.displayMinutes(timeBreak)}
+              {/* {timeBreak} */}
             </h5>
           </Col>
           <Col as={Button} className="drum-pad" xs={2} sm={1} md={1} lg={1} value={4} variant="dark" id="timer-label">
             <h5>
-              {timeWorkSession}
+              {/* {this.displayTimer(timeWorkSession)} */}
+              {this.displayMinutes(timeWorkSession)}
+              {/* {timeWorkSession} */}
             </h5>
           </Col>
           <Col as={Button} className="drum-pad slab" xs={3} sm={3} md={2} lg={2} value={3} variant="warning"
@@ -187,13 +218,17 @@ export class Pomodoro extends Component {
           <Col as={Button} className="drum-pad" xs={5} sm={4} md={3} lg={2} value={5} variant="warning"
             id="time-left">
             <h1 className="slab">
-              {timeLft}
+              {/* {timeLft} */}
+              {/* <br></br> */}
+              {this.displayTimer(timeLft)}
             </h1>
           </Col>
           <Col as={Button} className="drum-pad" xs={2} sm={1} md={1} lg={1} value={6} variant="dark"
             id="session-length">
             <h5>
-              {timeLft}
+              {/* {this.displayTimer(timeLft)} */}
+              {this.displayMinutes(timeLft)}
+              {/* {timeLft} */}
             </h5>
           </Col>
         </Row>
@@ -204,7 +239,7 @@ export class Pomodoro extends Component {
             <h5>
               {tglStart}
               <br></br>
-              {tglVariant}
+              {/* {tglVariant} */}
             </h5>
           </Col>
           <Col as={Button} className="drum-pad slab" xs={3} sm={2} md={2} lg={1} value={12}
@@ -240,5 +275,6 @@ export class Pomodoro extends Component {
 }
 
 export default Pomodoro;
+//       id="time-left"
 //       id="session-length"
 //       "timer-label"
