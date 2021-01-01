@@ -59,7 +59,7 @@ export class Drum extends Component {
               id="Q"
               className="clip"
               ref={ref => this.audio = ref}
-              src="./javaScript30daysDRUM/boom.wav">
+              src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav">
               Your browser does not support the
             <code>audio</code> element.
             </audio>
