@@ -22,6 +22,11 @@ export class Drum extends Component {
     author: PropTypes.string.isRequired
   };
 
+  playAudioBeat = () => {
+    this.audio.play();
+    this.audio.currentTime = 0;
+  };
+
   render() {
     return (
       <Container id="drum-machine">
@@ -53,7 +58,8 @@ export class Drum extends Component {
             <audio
               id="Q"
               className="clip"
-              src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav">
+              ref={ref => this.audio = ref}
+              src="./javaScript30daysDRUM/boom.wav">
               Your browser does not support the
             <code>audio</code> element.
             </audio>
@@ -210,6 +216,7 @@ export class Drum extends Component {
           </Col>
           {' '}
         </Row>
+        <input id="typeinp" type="range" min="0" max="49" defaultValue="17" step="1" />
         <h5>
           <a
             className="App-link"
