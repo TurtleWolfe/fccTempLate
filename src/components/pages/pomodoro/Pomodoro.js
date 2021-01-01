@@ -30,7 +30,7 @@ export class Pomodoro extends Component {
 
   incrementBreak = () => {
     let { timeBreak } = this.state;
-    if (timeBreak < 3540) {
+    if (timeBreak < 3600) {
       this.setState({
         timeBreak: timeBreak + 60
       });
@@ -39,7 +39,7 @@ export class Pomodoro extends Component {
 
   incrementWorkSession = () => {
     let { timeWorkSession } = this.state;
-    if (timeWorkSession < 3540) {
+    if (timeWorkSession < 3600) {
       this.setState({
         timeWorkSession: timeWorkSession + 60
       });
@@ -123,9 +123,19 @@ export class Pomodoro extends Component {
     return `${m < 10 ? '0' : ''}${m}:${s < 10 ? '0' : ''}${s}`;
   }
 
+  displayHack(seconds) {
+    // Formatting the time into mm:ss
+    // const m = Math.floor(seconds % 3600 / 60);
+    const m = Math.floor(seconds % 3600 / 60);
+    // const s = Math.floor(seconds % 3600 % 60);
+
+    return `${m < 10 ? '0' : ''}${m}`;
+  }
+
   displayMinutes(seconds) {
     // Formatting the time into mm:ss
-    const m = Math.floor(seconds % 3600 / 60);
+    // const m = Math.floor(seconds % 3600 / 60);
+    const m = seconds / 60;
     // const s = Math.floor(seconds % 3600 % 60);
 
     return `${m}`;
@@ -227,7 +237,7 @@ export class Pomodoro extends Component {
             id="session-length">
             <h5>
               {/* {this.displayTimer(timeLft)} */}
-              {this.displayMinutes(timeLft)}
+              {this.displayHack(timeLft)}
               {/* {timeLft} */}
             </h5>
           </Col>

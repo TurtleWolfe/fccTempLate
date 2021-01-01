@@ -41,7 +41,12 @@ export class Drum extends Component {
           Audio Tags Hear
         </h4>
         <Row className="justify-content-center">
-          <Col as={Button} className="drum-pad" xs={2} sm={1} md={1} lg={1} value={9} variant="success" id="q">
+          <Col as={Button} className="drum-pad" xs={2} sm={1} md={1} lg={1}
+            value={9}
+            variant="success"
+            id="q"
+            onClick={this.playAudioBeat}
+          >
             <h5>
               Q
             </h5>
@@ -54,7 +59,12 @@ export class Drum extends Component {
             </audio>
           </Col>
           {' '}
-          <Col as={Button} className="drum-pad" xs={2} sm={1} md={1} lg={1} value={10} variant="success" id="w">
+          <Col as={Button} className="drum-pad" xs={2} sm={1} md={1} lg={1}
+            value={10}
+            variant="success"
+            id="w"
+            onClick={this.playAudioBeat}
+          >
             <h5>
               W
             </h5>
@@ -67,7 +77,12 @@ export class Drum extends Component {
             </audio>
           </Col>
           {' '}
-          <Col as={Button} className="drum-pad" xs={2} sm={1} md={1} lg={1} value={10} variant="success" id="e">
+          <Col as={Button} className="drum-pad" xs={2} sm={1} md={1} lg={1}
+            value={10}
+            variant="success"
+            id="e"
+            onClick={this.playAudioBeat}
+          >
             <h5>
               E
             </h5>
@@ -83,7 +98,12 @@ export class Drum extends Component {
         </Row>
         {/* <br></br> */}
         <Row className="justify-content-center">
-          <Col as={Button} className="drum-pad" xs={2} sm={1} md={1} lg={1} value={9} variant="success" id="a">
+          <Col as={Button} className="drum-pad" xs={2} sm={1} md={1} lg={1}
+            value={9}
+            variant="success"
+            id="a"
+            onClick={this.playAudioBeat}
+          >
             <h5>
               A
             </h5>
@@ -96,7 +116,12 @@ export class Drum extends Component {
             </audio>
           </Col>
           {' '}
-          <Col as={Button} className="drum-pad" xs={2} sm={1} md={1} lg={1} value={10} variant="success" id="s">
+          <Col as={Button} className="drum-pad" xs={2} sm={1} md={1} lg={1}
+            value={10}
+            variant="success"
+            id="s"
+            onClick={this.playAudioBeat}
+          >
             <h5>
               S
             </h5>
@@ -109,7 +134,12 @@ export class Drum extends Component {
             </audio>
           </Col>
           {' '}
-          <Col as={Button} className="drum-pad" xs={2} sm={1} md={1} lg={1} value={10} variant="success" id="d">
+          <Col as={Button} className="drum-pad" xs={2} sm={1} md={1} lg={1}
+            value={10}
+            variant="success"
+            id="d"
+            onClick={this.playAudioBeat}
+          >
             <h5>
               D
             </h5>
@@ -125,7 +155,12 @@ export class Drum extends Component {
         </Row>
         {/* <br></br> */}
         <Row className="justify-content-center">
-          <Col as={Button} className="drum-pad" xs={2} sm={1} md={1} lg={1} value={9} variant="success" id="z">
+          <Col as={Button} className="drum-pad" xs={2} sm={1} md={1} lg={1}
+            value={9}
+            variant="success"
+            id="z"
+            onClick={this.playAudioBeat}
+          >
             <h5>
               Z
             </h5>
@@ -138,7 +173,12 @@ export class Drum extends Component {
             </audio>
           </Col>
           {' '}
-          <Col as={Button} className="drum-pad" xs={2} sm={1} md={1} lg={1} value={10} variant="success" id="x">
+          <Col as={Button} className="drum-pad" xs={2} sm={1} md={1} lg={1}
+            value={10}
+            variant="success"
+            id="x"
+            onClick={this.playAudioBeat}
+          >
             <h5>
               X
             </h5>
@@ -151,7 +191,12 @@ export class Drum extends Component {
             </audio>
           </Col>
           {' '}
-          <Col as={Button} className="drum-pad" xs={2} sm={1} md={1} lg={1} value={10} variant="success" id="c">
+          <Col as={Button} className="drum-pad" xs={2} sm={1} md={1} lg={1}
+            value={10}
+            variant="success"
+            id="c"
+            onClick={this.playAudioBeat}
+          >
             <h5>
               C
             </h5>
