@@ -3,33 +3,86 @@ import PropTypes from 'prop-types';
 import { Button, Container, Row, Col } from 'react-bootstrap';
 import './Drum.css';
 
-export class Drum extends Component {
-  constructor(props) {
-    super(props);
-    // Initial State
-    this.state = {
-      author: "Douglas Adams",
-      source: "So Long, and Thanks for All the Fish",
-      quote: "change all this",
-    };
+const row1 = [
+  { id: 'boom', letter: 'Q', src: 'https://github.com/TurtleWolfe/fccTempLate/blob/master/src/components/pages/drum/javaScript30daysDRUM/boom.wav?raw=true' },
+  { id: 'clap', letter: 'W', src: 'https://github.com/TurtleWolfe/fccTempLate/blob/master/src/components/pages/drum/javaScript30daysDRUM/clap.wav?raw=true' },
+  { id: 'hihat', letter: 'E', src: 'https://github.com/TurtleWolfe/fccTempLate/blob/master/src/components/pages/drum/javaScript30daysDRUM/hihat.wav?raw=true' },
+];
 
-    // This binding is necessary to make `this` work in the callback
-    // this.setQuote = this.setQuote.bind(this);
+const row2 = [
+  { id: 'kick', letter: 'A', src: 'https://github.com/TurtleWolfe/fccTempLate/blob/master/src/components/pages/drum/javaScript30daysDRUM/kick.wav?raw=true' },
+  { id: 'openhat', letter: 'S', src: 'https://github.com/TurtleWolfe/fccTempLate/blob/master/src/components/pages/drum/javaScript30daysDRUM/openhat.wav?raw=true' },
+  { id: 'ride', letter: 'D', src: 'https://github.com/TurtleWolfe/fccTempLate/blob/master/src/components/pages/drum/javaScript30daysDRUM/ride.wav?raw=true' },
+];
 
+const row3 = [
+  { id: 'snare', letter: 'Z', src: 'https://github.com/TurtleWolfe/fccTempLate/blob/master/src/components/pages/drum/javaScript30daysDRUM/snare.wav?raw=true' },
+  { id: 'piano', letter: 'X', src: 'https://github.com/TurtleWolfe/fccTempLate/blob/master/src/components/pages/drum/piano/a1.mp3?raw=true' },
+  { id: 'tom', letter: 'C', src: 'https://github.com/TurtleWolfe/fccTempLate/blob/master/src/components/pages/drum/javaScript30daysDRUM/tom.wav?raw=true' },
+];
+
+class DrumPad extends React.Component {
+
+  componentDidMount() {
+    console.log(this.audio);
+    document.addEventListener('keydown', this.handleKeydown);
+    window.focus();
   }
-  static propTypes = {
-    quote: PropTypes.string.isRequired,
-    author: PropTypes.string.isRequired
+
+  componentWillUnmount() {
+    document.removeEventListener('keydown', this.handleKeydown);
+  }
+
+  handleKeydown = e => {
+    if (e.keyCode === this.props.letter.charCodeAt()) {
+      this.audio.play();
+      this.audio.currentTime = 0;
+      this.props.handleDisplay(this.props.id);
+    }
   };
 
-  playAudioBeat = () => {
+  handleClick = () => {
     this.audio.play();
     this.audio.currentTime = 0;
+    this.props.handleDisplay(this.props.id);
   };
 
   render() {
     return (
-      <Container id="drum-machine">
+      <Col as={Button} className="drum-pad" xs={2} sm={1} md={1} lg={1}
+        variant="success"
+        id={this.props.id}
+        onClick={this.handleClick}
+      >
+        <h5>{this.props.letter}</h5>
+        <audio id={this.props.letter}
+          className='clip'
+          src={this.props.src}
+          ref={ref => this.audio = ref}
+        ></audio>
+      </Col>
+    );
+  }
+}
+
+
+export class Drum extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      display: 'Click or Press a Key'
+    };
+  }
+
+  static propTypes = {
+    display: PropTypes.string.isRequired,
+  };
+
+  handleDisplay = display => this.setState({ display });
+
+  render() {
+    return (
+      <Container id='drum-machine'>
         <h4>
           <a
             className="App-link"
@@ -42,180 +95,34 @@ export class Drum extends Component {
           </a>
         </h4>
         <br></br>
-        <h4 id="display">
-          Audio Tags Hear
-        </h4>
-        <Row className="justify-content-center">
-          <Col as={Button} className="drum-pad" xs={2} sm={1} md={1} lg={1}
-            value={9}
-            variant="success"
-            id="q"
-            onClick={this.playAudioBeat}
-          >
-            <h5>
-              Q
-            </h5>
-            <audio
-              id="Q"
-              className="clip"
-              ref={ref => this.audio = ref}
-              src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav">
-              Your browser does not support the
-            <code>audio</code> element.
-            </audio>
-          </Col>
-          {' '}
-          <Col as={Button} className="drum-pad" xs={2} sm={1} md={1} lg={1}
-            value={10}
-            variant="success"
-            id="w"
-            onClick={this.playAudioBeat}
-          >
-            <h5>
-              W
-            </h5>
-            <audio
-              id="W"
-              className="clip"
-              src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav">
-              Your browser does not support the
-            <code>audio</code> element.
-            </audio>
-          </Col>
-          {' '}
-          <Col as={Button} className="drum-pad" xs={2} sm={1} md={1} lg={1}
-            value={10}
-            variant="success"
-            id="e"
-            onClick={this.playAudioBeat}
-          >
-            <h5>
-              E
-            </h5>
-            <audio
-              id="E"
-              className="clip"
-              src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav">
-              Your browser does not support the
-            <code>audio</code> element.
-            </audio>
-          </Col>
-          {' '}
-        </Row>
-        {/* <br></br> */}
-        <Row className="justify-content-center">
-          <Col as={Button} className="drum-pad" xs={2} sm={1} md={1} lg={1}
-            value={9}
-            variant="success"
-            id="a"
-            onClick={this.playAudioBeat}
-          >
-            <h5>
-              A
-            </h5>
-            <audio
-              id="A"
-              className="clip"
-              src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav">
-              Your browser does not support the
-            <code>audio</code> element.
-            </audio>
-          </Col>
-          {' '}
-          <Col as={Button} className="drum-pad" xs={2} sm={1} md={1} lg={1}
-            value={10}
-            variant="success"
-            id="s"
-            onClick={this.playAudioBeat}
-          >
-            <h5>
-              S
-            </h5>
-            <audio
-              id="S"
-              className="clip"
-              src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav">
-              Your browser does not support the
-            <code>audio</code> element.
-            </audio>
-          </Col>
-          {' '}
-          <Col as={Button} className="drum-pad" xs={2} sm={1} md={1} lg={1}
-            value={10}
-            variant="success"
-            id="d"
-            onClick={this.playAudioBeat}
-          >
-            <h5>
-              D
-            </h5>
-            <audio
-              id="D"
-              className="clip"
-              src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav">
-              Your browser does not support the
-            <code>audio</code> element.
-            </audio>
-          </Col>
-          {' '}
-        </Row>
-        {/* <br></br> */}
-        <Row className="justify-content-center">
-          <Col as={Button} className="drum-pad" xs={2} sm={1} md={1} lg={1}
-            value={9}
-            variant="success"
-            id="z"
-            onClick={this.playAudioBeat}
-          >
-            <h5>
-              Z
-            </h5>
-            <audio
-              id="Z"
-              className="clip"
-              src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav">
-              Your browser does not support the
-            <code>audio</code> element.
-            </audio>
-          </Col>
-          {' '}
-          <Col as={Button} className="drum-pad" xs={2} sm={1} md={1} lg={1}
-            value={10}
-            variant="success"
-            id="x"
-            onClick={this.playAudioBeat}
-          >
-            <h5>
-              X
-            </h5>
-            <audio
-              id="X"
-              className="clip"
-              src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav">
-              Your browser does not support the
-            <code>audio</code> element.
-            </audio>
-          </Col>
-          {' '}
-          <Col as={Button} className="drum-pad" xs={2} sm={1} md={1} lg={1}
-            value={10}
-            variant="success"
-            id="c"
-            onClick={this.playAudioBeat}
-          >
-            <h5>
-              C
-            </h5>
-            <audio
-              id="C"
-              className="clip"
-              src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav">
-              Your browser does not support the
-            <code>audio</code> element.
-            </audio>
-          </Col>
-          {' '}
-        </Row>
+        <Col as={"h3"} id='display'>{this.state.display}</Col>
+        <Row className="justify-content-center" id='drum-pads'>{row1.map(d => (
+          <DrumPad
+            key={d.id}
+            id={d.id}
+            letter={d.letter}
+            src={d.src}
+            handleDisplay={this.handleDisplay}
+          />
+        ))}</Row>
+        <Row className="justify-content-center" id='drum-pads'>{row2.map(d => (
+          <DrumPad
+            key={d.id}
+            id={d.id}
+            letter={d.letter}
+            src={d.src}
+            handleDisplay={this.handleDisplay}
+          />
+        ))}</Row>
+        <Row className="justify-content-center" id='drum-pads'>{row3.map(d => (
+          <DrumPad
+            key={d.id}
+            id={d.id}
+            letter={d.letter}
+            src={d.src}
+            handleDisplay={this.handleDisplay}
+          />
+        ))}</Row>
         <input id="typeinp" type="range" min="0" max="49" defaultValue="17" step="1" />
         <h5>
           <a
@@ -234,3 +141,5 @@ export class Drum extends Component {
 }
 
 export default Drum;
+
+
