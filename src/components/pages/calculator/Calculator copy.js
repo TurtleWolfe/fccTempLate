@@ -1,7 +1,8 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Button } from 'react-bootstrap';
-import Card from 'react-bootstrap/Card';
+import { Button, Container, Row, Col } from 'react-bootstrap';
+import './Calculator.css';
+
 export class Calculator extends Component {
   constructor(props) {
     super(props);
@@ -23,7 +24,7 @@ export class Calculator extends Component {
 
   render() {
     return (
-      <div id="drum-machine">
+      <Container id="drum-machine">
         <h4>
           <a
             className="App-link"
@@ -32,43 +33,14 @@ export class Calculator extends Component {
             rel="noopener noreferrer"
             title="JavaScript Calculator"
           >
-            <i className="fas fa-calculator"></i> JavaScript Calculator <i className="fas fa-calculator"></i>
+            <i className="fas fa-calculator"></i> Calculator <i className="fas fa-calculator"></i>
           </a>
         </h4>
-        <Card style={{ width: '18rem' }}>
-          {/* <Card.Img variant="top" src="holder.js/100px180" /> */}
-          <Card.Body className="bg-dark text-white">
-            <Card.Title id="display">
-              <h3>
-                Card Title
-              </h3>
-            </Card.Title>
-            {/* <Card.Text>
-              Some quick example text to build on the card title and make up the bulk of
-              the card's content.
-            </Card.Text> */}
-            {/* <Button variant="primary">Go somewhere</Button> */}
-          </Card.Body>
-        </Card>
-        <Fragment>
-          <Button className="drum-pad" value={0} variant="info" id="clear">
-            <h3>
-              clear
-            </h3>
-            <audio
-              id="0"
-              className="clip"
-              src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav">
-              Your browser does not support the
-            <code>audio</code> element.
-            </audio>
-          </Button>
-        </Fragment>
-        <br></br>
-        <Fragment>
-          <Button className="drum-pad" value={0} variant="warning" id="add">
+        {/* <br></br> */}
+        <Row className="justify-content-center">
+          <Col as={Button} className="key-pad" xs={2} sm={2} md={1} lg={1} value={0} variant="warning" id="divide">
             <h2>
-              +
+              <i class="fas fa-divide"></i>
             </h2>
             <audio
               id="0"
@@ -77,172 +49,8 @@ export class Calculator extends Component {
               Your browser does not support the
             <code>audio</code> element.
             </audio>
-          </Button>
-          {' '}
-          <Button className="drum-pad" value={0} variant="dark" id="decimal">
-            <h2>
-              .
-            </h2>
-            <audio
-              id="0"
-              className="clip"
-              src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav">
-              Your browser does not support the
-            <code>audio</code> element.
-            </audio>
-          </Button>
-          {' '}
-          <Button className="drum-pad" value={0} variant="success" id="zero">
-            <h2>
-              0
-            </h2>
-            <audio
-              id="0"
-              className="clip"
-              src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav">
-              Your browser does not support the
-            <code>audio</code> element.
-            </audio>
-          </Button>
-          {' '}
-          <Button className="drum-pad" value={0} variant="warning" id="equals">
-            <h2>
-              =
-            </h2>
-            <audio
-              id="0"
-              className="clip"
-              src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav">
-              Your browser does not support the
-            <code>audio</code> element.
-            </audio>
-          </Button>
-        </Fragment>
-        <br></br>
-        <Fragment>
-          <Button className="drum-pad" value={0} variant="warning" id="subtract">
-            <h2>
-              -
-            </h2>
-            <audio
-              id="0"
-              className="clip"
-              src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav">
-              Your browser does not support the
-            <code>audio</code> element.
-            </audio>
-          </Button>
-          {' '}
-          <Button className="drum-pad" value={1} variant="success" id="one">
-            <h2>
-              1
-            </h2>
-            <audio
-              id="1"
-              className="clip"
-              src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav">
-              Your browser does not support the
-            <code>audio</code> element.
-            </audio>
-          </Button>
-          {' '}
-          <Button className="drum-pad" value={2} variant="success" id="two">
-            <h2>
-              2
-            </h2>
-            <audio
-              id="2"
-              className="clip"
-              src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav">
-              Your browser does not support the
-            <code>audio</code> element.
-            </audio>
-          </Button>
-          {' '}
-          <Button className="drum-pad" value={3} variant="success" id="three">
-            <h2>
-              3
-            </h2>
-            <audio
-              id="3"
-              className="clip"
-              src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav">
-              Your browser does not support the
-            <code>audio</code> element.
-            </audio>
-          </Button>
-        </Fragment>
-        <br></br>
-        <Fragment>
-          <Button className="drum-pad" value={0} variant="warning" id="multiply">
-            <h2>
-              *
-            </h2>
-            <audio
-              id="0"
-              className="clip"
-              src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav">
-              Your browser does not support the
-            <code>audio</code> element.
-            </audio>
-          </Button>
-          {' '}
-          <Button className="drum-pad" value={4} variant="success" id="four">
-            <h2>
-              4
-            </h2>
-            <audio
-              id="4"
-              className="clip"
-              src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav">
-              Your browser does not support the
-            <code>audio</code> element.
-            </audio>
-          </Button>
-          {' '}
-          <Button className="drum-pad" value={5} variant="success" id="five">
-            <h2>
-              5
-            </h2>
-            <audio
-              id="5"
-              className="clip"
-              src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav">
-              Your browser does not support the
-            <code>audio</code> element.
-            </audio>
-          </Button>
-          {' '}
-          <Button className="drum-pad" value={6} variant="success" id="six">
-            <h2>
-              6
-            </h2>
-            <audio
-              id="6"
-              className="clip"
-              src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav">
-              Your browser does not support the
-            <code>audio</code> element.
-            </audio>
-          </Button>
-        </Fragment>
-        <br></br>
-        <Fragment>
-          {' '}
-          <Button className="drum-pad" value={0} variant="warning" id="divide">
-            <h2>
-              /
-            </h2>
-            <audio
-              id="0"
-              className="clip"
-              src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav">
-              Your browser does not support the
-            <code>audio</code> element.
-            </audio>
-          </Button>
-          {' '}
-          <Button className="drum-pad" value={7} variant="success" id="seven">
+          </Col>
+          <Col as={Button} className="key-pad" xs={2} sm={2} md={1} lg={1} value={7} variant="success" id="seven">
             <h2>
               7
             </h2>
@@ -253,9 +61,8 @@ export class Calculator extends Component {
               Your browser does not support the
             <code>audio</code> element.
             </audio>
-          </Button>
-          {' '}
-          <Button className="drum-pad" value={8} variant="success" id="eight">
+          </Col>
+          <Col as={Button} className="key-pad" xs={2} sm={2} md={1} lg={1} value={8} variant="success" id="eight">
             <h2>
               8
             </h2>
@@ -266,9 +73,8 @@ export class Calculator extends Component {
               Your browser does not support the
             <code>audio</code> element.
             </audio>
-          </Button>
-          {' '}
-          <Button className="drum-pad" value={9} variant="success" id="nine">
+          </Col>
+          <Col as={Button} className="key-pad" xs={2} sm={2} md={1} lg={1} value={9} variant="success" id="nine">
             <h2>
               9
             </h2>
@@ -279,8 +85,180 @@ export class Calculator extends Component {
               Your browser does not support the
             <code>audio</code> element.
             </audio>
-          </Button>
-        </Fragment>
+          </Col>
+        </Row>
+
+        <Row className="justify-content-center">
+          <Col as={Button} className="key-pad" xs={2} sm={2} md={1} lg={1} value={0} variant="warning" id="multiply">
+            <h2>
+              <i class="fas fa-times"></i>
+            </h2>
+            <audio
+              id="0"
+              className="clip"
+              src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav">
+              Your browser does not support the
+            <code>audio</code> element.
+            </audio>
+          </Col>
+          <Col as={Button} className="key-pad" xs={2} sm={2} md={1} lg={1} value={4} variant="success" id="four">
+            <h2>
+              4
+            </h2>
+            <audio
+              id="4"
+              className="clip"
+              src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav">
+              Your browser does not support the
+            <code>audio</code> element.
+            </audio>
+          </Col>
+          <Col as={Button} className="key-pad" xs={2} sm={2} md={1} lg={1} value={5} variant="success" id="five">
+            <h2>
+              5
+            </h2>
+            <audio
+              id="5"
+              className="clip"
+              src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav">
+              Your browser does not support the
+            <code>audio</code> element.
+            </audio>
+          </Col>
+          <Col as={Button} className="key-pad" xs={2} sm={2} md={1} lg={1} value={6} variant="success" id="six">
+            <h2>
+              6
+            </h2>
+            <audio
+              id="6"
+              className="clip"
+              src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav">
+              Your browser does not support the
+            <code>audio</code> element.
+            </audio>
+          </Col>
+        </Row>
+
+        <Row className="justify-content-center">
+          <Col as={Button} className="key-pad" xs={2} sm={2} md={1} lg={1} value={0} variant="warning" id="subtract">
+            <h2>
+              <i class="fas fa-minus"></i>
+            </h2>
+            <audio
+              id="0"
+              className="clip"
+              src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav">
+              Your browser does not support the
+            <code>audio</code> element.
+            </audio>
+          </Col>
+          <Col as={Button} className="key-pad" xs={2} sm={2} md={1} lg={1} value={1} variant="success" id="one">
+            <h2>
+              1
+            </h2>
+            <audio
+              id="1"
+              className="clip"
+              src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav">
+              Your browser does not support the
+            <code>audio</code> element.
+            </audio>
+          </Col>
+          <Col as={Button} className="key-pad" xs={2} sm={2} md={1} lg={1} value={2} variant="success" id="two">
+            <h2>
+              2
+            </h2>
+            <audio
+              id="2"
+              className="clip"
+              src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav">
+              Your browser does not support the
+            <code>audio</code> element.
+            </audio>
+          </Col>
+          <Col as={Button} className="key-pad" xs={2} sm={2} md={1} lg={1} value={3} variant="success" id="three">
+            <h2>
+              3
+            </h2>
+            <audio
+              id="3"
+              className="clip"
+              src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav">
+              Your browser does not support the
+            <code>audio</code> element.
+            </audio>
+          </Col>
+        </Row>
+
+        <Row className="justify-content-center">
+          <Col as={Button} className="key-pad" xs={2} sm={2} md={1} lg={1} value={0} variant="warning" id="add">
+            <h2>
+              <i class="fas fa-plus"></i>
+            </h2>
+            <audio
+              id="0"
+              className="clip"
+              src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav">
+              Your browser does not support the
+            <code>audio</code> element.
+            </audio>
+          </Col>
+          <Col as={Button} className="key-pad" xs={2} sm={2} md={1} lg={1} value={0} variant="dark" id="decimal">
+            <h1 className="decim">
+              .
+            </h1>
+            <audio
+              id="0"
+              className="clip"
+              src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav">
+              Your browser does not support the
+            <code>audio</code> element.
+            </audio>
+          </Col>
+          <Col as={Button} className="key-pad" xs={2} sm={2} md={1} lg={1} value={0} variant="success" id="zero">
+            <h2>
+              0
+            </h2>
+            <audio
+              id="0"
+              className="clip"
+              src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav">
+              Your browser does not support the
+            <code>audio</code> element.
+            </audio>
+          </Col>
+          <Col as={Button} className="key-pad" xs={2} sm={2} md={1} lg={1} value={0} variant="warning" id="equals">
+            <h2>
+              <i class="fas fa-equals"></i>
+            </h2>
+            <audio
+              id="0"
+              className="clip"
+              src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav">
+              Your browser does not support the
+            <code>audio</code> element.
+            </audio>
+          </Col>
+        </Row>
+
+        <Row className="justify-content-center">
+          <Col as={"h3"} className="key-pad" xs={4} sm={2} md={2} lg={2} id="display">
+            0.0000
+          </Col>
+          <Col as={Button} className="key-pad" xs={4} sm={3} md={2} lg={2} value={0} variant="info" id="clear">
+            <h2>
+              clear
+            </h2>
+            <audio
+              id="0"
+              className="clip"
+              src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav">
+              Your browser does not support the
+            <code>audio</code> element.
+            </audio>
+          </Col>
+        </Row>
+        <br></br>
         <h5>
           <a
             className="App-link"
@@ -292,7 +270,7 @@ export class Calculator extends Component {
             <i className="fab fa-twitch"></i> These Episodes on Twitch <i className="fab fa-twitch"></i>
           </a>
         </h5>
-      </div>
+      </Container>
     );
   }
 }
