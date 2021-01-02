@@ -117,3 +117,12 @@ input[type='range']::-ms-fill-upper {
 input[type='range']:focus::-ms-fill-upper {
   background: #367ebd;
 }
+
+.drum-pad {
+  background: rgb(34, 193, 195);
+  background: linear-gradient(
+    0deg,
+    rgba(34, 193, 195, 1) 0%,
+    rgba(40, 167, 69, 1) 100%
+  );
+}

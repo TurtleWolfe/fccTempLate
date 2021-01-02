@@ -9,7 +9,7 @@ export class Pomodoro extends Component {
     // Initial State
     this.state = {
       tglStart: "Start",
-      tglVariant: 'btn-success drum-pad slab',
+      tglVariant: 'btn-success pomodoro-pad slab',
       // timeLft: 1500,
       timeLft: 1500,
       timeWorkSession: 1500,
@@ -72,7 +72,7 @@ export class Pomodoro extends Component {
     // let { timeLft } = this.state;
     this.setState({
       tglStart: "Start",
-      tglVariant: 'btn-success drum-pad slab',
+      tglVariant: 'btn-success pomodoro-pad slab',
       timeLft: 1500,
       timeWorkSession: 1500,
       timeBreak: 300,
@@ -85,12 +85,12 @@ export class Pomodoro extends Component {
       this.interval = setInterval(this.countDown, 1000);
       this.setState({
         tglStart: "Pause",
-        tglVariant: 'btn-warning drum-pad slab',
+        tglVariant: 'btn-warning pomodoro-pad slab',
       });
     } else {
       this.setState({
         tglStart: "Start",
-        tglVariant: 'btn-success drum-pad slab',
+        tglVariant: 'btn-success pomodoro-pad slab',
       });
       // Clearing the interval
       clearInterval(this.interval);
@@ -102,7 +102,7 @@ export class Pomodoro extends Component {
     if (this.state.timeLft === 0) {
       this.setState({
         tglStart: "Start",
-        tglVariant: 'btn-success drum-pad slab',
+        tglVariant: 'btn-success pomodoro-pad slab',
         timeLft: 1500
       });
       clearInterval(this.interval);
@@ -113,7 +113,7 @@ export class Pomodoro extends Component {
       });
     }
   };
-  // <Col as={Button} className="drum-pad slab" xs={5} sm={3} md={3} lg={2} value={11} id="start_stop">
+  // <Col as={Button} className="pomodoro-pad slab" xs={5} sm={3} md={3} lg={2} value={11} id="start_stop">
 
   displayTimer(seconds) {
     // Formatting the time into mm:ss
@@ -163,14 +163,14 @@ export class Pomodoro extends Component {
         </h4>
 
         <Row className="justify-content-center">
-          <Col as={Button} className="drum-pad" xs={2} sm={1} md={1} lg={1} value={9}
+          <Col as={Button} className="pomodoro-pad" xs={2} sm={1} md={1} lg={1} value={9}
             variant="success"
             id="break-increment"
             onClick={this.incrementBreak}>
             <i class="fas fa-plus-circle">
             </i>
           </Col>
-          <Col as={Button} className="drum-pad" xs={2} sm={1} md={1} lg={1} value={10}
+          <Col as={Button} className="pomodoro-pad" xs={2} sm={1} md={1} lg={1} value={10}
             variant="success"
             id="session-increment"
             onClick={this.incrementWorkSession}>
@@ -179,12 +179,12 @@ export class Pomodoro extends Component {
           </Col>
         </Row>
         <Row className="justify-content-center">
-          <Col as={Button} className="drum-pad slab" xs={3} sm={3} md={2} lg={2} value={1} variant="warning" id="break-label">
+          <Col as={Button} className="pomodoro-pad slab" xs={3} sm={3} md={2} lg={2} value={1} variant="warning" id="break-label">
             <h5>
               Break
           </h5>
           </Col>
-          <Col as={Button} className="drum-pad" xs={2} sm={1} md={1} lg={1} value={2} variant="dark" id="break-length">
+          <Col as={Button} className="pomodoro-pad" xs={2} sm={1} md={1} lg={1} value={2} variant="dark" id="break-length">
             <h5>
               {/* {this.displayTimer(timeBreak)} */}
               {/* <br></br> */}
@@ -192,14 +192,14 @@ export class Pomodoro extends Component {
               {/* {timeBreak} */}
             </h5>
           </Col>
-          <Col as={Button} className="drum-pad" xs={2} sm={1} md={1} lg={1} value={4} variant="dark" id="timer-label">
+          <Col as={Button} className="pomodoro-pad" xs={2} sm={1} md={1} lg={1} value={4} variant="dark" id="timer-label">
             <h5>
               {/* {this.displayTimer(timeWorkSession)} */}
               {this.displayMinutes(timeWorkSession)}
               {/* {timeWorkSession} */}
             </h5>
           </Col>
-          <Col as={Button} className="drum-pad slab" xs={3} sm={3} md={2} lg={2} value={3} variant="warning"
+          <Col as={Button} className="pomodoro-pad slab" xs={3} sm={3} md={2} lg={2} value={3} variant="warning"
             id="session-label">
             <h5>
               Work
@@ -207,7 +207,7 @@ export class Pomodoro extends Component {
           </Col>
         </Row>
         <Row className="justify-content-center">
-          <Col as={Button} className="drum-pad" xs={2} sm={1} md={1} lg={1}
+          <Col as={Button} className="pomodoro-pad" xs={2} sm={1} md={1} lg={1}
             value={7}
             variant="info"
             id="break-decrement"
@@ -215,7 +215,7 @@ export class Pomodoro extends Component {
             <i class="fas fa-minus-square">
             </i>
           </Col>
-          <Col as={Button} className="drum-pad" xs={2} sm={1} md={1} lg={1}
+          <Col as={Button} className="pomodoro-pad" xs={2} sm={1} md={1} lg={1}
             value={8}
             variant="info"
             id="session-decrement"
@@ -225,7 +225,7 @@ export class Pomodoro extends Component {
           </Col>
         </Row>
         <Row className="justify-content-center">
-          <Col as={Button} className="drum-pad" xs={5} sm={4} md={3} lg={2} value={5} variant="warning"
+          <Col as={Button} className="pomodoro-pad" xs={5} sm={4} md={3} lg={2} value={5} variant="warning"
             id="time-left">
             <h1 className="slab">
               {/* {timeLft} */}
@@ -233,7 +233,7 @@ export class Pomodoro extends Component {
               {this.displayTimer(timeLft)}
             </h1>
           </Col>
-          <Col as={Button} className="drum-pad" xs={2} sm={1} md={1} lg={1} value={6} variant="dark"
+          <Col as={Button} className="pomodoro-pad" xs={2} sm={1} md={1} lg={1} value={6} variant="dark"
             id="session-length">
             <h5>
               {/* {this.displayTimer(timeLft)} */}
@@ -252,7 +252,7 @@ export class Pomodoro extends Component {
               {/* {tglVariant} */}
             </h5>
           </Col>
-          <Col as={Button} className="drum-pad slab" xs={3} sm={2} md={2} lg={1} value={12}
+          <Col as={Button} className="pomodoro-pad slab" xs={3} sm={2} md={2} lg={1} value={12}
             id="reset"
             onClick={this.setReset}>
             <h5>
