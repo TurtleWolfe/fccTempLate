@@ -225,7 +225,7 @@ export class Pomodoro extends Component {
           </Col>
         </Row>
         <Row className="justify-content-center">
-          <Col as={Button} className="pomodoro-pad" xs={5} sm={4} md={3} lg={2} value={5} variant="warning"
+          <Col as="h1" className="pomodoro-pad pomo-display" xs={5} sm={4} md={3} lg={2} value={5} variant="warning"
             id="time-left">
             <h1 className="slab">
               {/* {timeLft} */}
@@ -233,7 +233,7 @@ export class Pomodoro extends Component {
               {this.displayTimer(timeLft)}
             </h1>
           </Col>
-          <Col as={Button} className="pomodoro-pad" xs={2} sm={1} md={1} lg={1} value={6} variant="dark"
+          <Col as={Button} className="pomodoro-pad" xs={3} sm={2} md={2} lg={1} value={6} variant="dark"
             id="session-length">
             <h5>
               {/* {this.displayTimer(timeLft)} */}
@@ -243,7 +243,7 @@ export class Pomodoro extends Component {
           </Col>
         </Row>
         <Row className="justify-content-center">
-          <Col as={Button} className={tglVariant} xs={5} sm={3} md={3} lg={2} value={11}
+          <Col as={Button} className={tglVariant} xs={5} sm={4} md={3} lg={2} value={11}
             id="start_stop"
             onClick={this.setToggleOnOff}>
             <h5>

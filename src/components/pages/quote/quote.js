@@ -1,6 +1,6 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import axios from 'axios';
-import { Card, Button, ButtonGroup } from 'react-bootstrap';
+import { Card, Container, Button, ButtonGroup } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import './Quote.css';
 
@@ -58,7 +58,7 @@ export class Quote extends Component {
     const { quote, author } = this.state;
 
     return (
-      <Fragment>
+      <Container>
         <Card bg="dark" style={{ width: '90%' }} id="quote-box">
           <Card.Header>
 
@@ -96,7 +96,11 @@ export class Quote extends Component {
               </footer> */}
             </blockquote>
             <ButtonGroup aria-label="Basic example">
-              <Button variant="primary" id="new-quote" onClick={this.setQuote}>new quote</Button>
+              <Button variant="primary" id="new-quote" onClick={this.setQuote}>
+                <h5>
+                  new quote
+              </h5>
+              </Button>
               <Button as="a" variant="warning" id="tweet-quote" href="twitter.com/intent/tweet" ><i className="fab fa-twitter"></i></Button>
             </ButtonGroup>
           </Card.Body>
@@ -113,7 +117,7 @@ export class Quote extends Component {
             <i className="fab fa-twitch"></i> These Episodes on Twitch <i className="fab fa-twitch"></i>
           </a>
         </h5>
-      </Fragment>
+      </Container>
     );
   }
 }

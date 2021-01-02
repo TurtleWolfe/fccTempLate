@@ -15,7 +15,11 @@
   background: var(--primary-color);
   color: #fff;
 } */
-
+body {
+  padding-top: 15px;
+  color: #6197fb;
+  text-shadow: 3px 3px 3px rgba(0, 0, 0, 1);
+}
 .lob {
   font-family: 'Lobster', cursive;
 }

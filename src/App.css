@@ -6,6 +6,18 @@ a {
   font-family: 'Special Elite', cursive;
 }
 
+body {
+  background-color: #282c34;
+}
+
+btn,
+button {
+  -webkit-box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000,
+    5px 5px 15px 5px rgba(0, 0, 0, 0);
+  box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000,
+    5px 5px 15px 5px rgba(0, 0, 0, 0);
+}
+
 .blockquote {
   font-family: 'Lobster', cursive;
 }
@@ -15,7 +27,7 @@ a {
 }
 
 .App-logo {
-  height: 80vmin;
+  height: 50vmin;
   pointer-events: none;
 }
 
@@ -27,7 +39,7 @@ a {
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  /* min-height: 70vh; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -63,7 +75,7 @@ a {
   color: white;
   max-width: 16em;
   margin: auto;
-  margin-top: 3em;
+  /* margin-top: 3em; */
   overflow: hidden;
   background-image: url(./images/script-n-hammer.png);
   /* background-size: 100% auto; */
@@ -80,5 +92,5 @@ a {
 }
 
 .container {
-  margin: 56px;
+  margin: 100px;
 }

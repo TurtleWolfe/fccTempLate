@@ -17,7 +17,16 @@ h5 {
 #session-increment,
 #break-decrement,
 #session-decrement {
-  padding: 5px;
+  padding: 10px;
+}
+
+.pomodoro-pad {
+  margin: 5px;
+}
+
+.pomo-display {
+  padding-top: 15px;
+  color: #ffc107;
 }
 
 .slab {
@@ -74,4 +83,10 @@ h5 {
     rgb(0, 0, 0, 1) 0%,
     rgb(77, 59, 8, 0.5) 100%
   );
+}
+
+.pomo-display h1 {
+  padding-top: 15px;
+  color: #6197fb;
+  text-shadow: 3px 3px 3px rgba(0, 0, 0, 1);
 }

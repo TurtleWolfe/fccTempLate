@@ -8,8 +8,10 @@ import Drum from "./components/pages/drum/Drum";
 import Pomodoro from "./components/pages/pomodoro/Pomodoro";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { Container } from 'react-bootstrap';
+
 import './App.css';
-import { Fragment } from 'react';
+// import { Fragment } from 'react';
 
 function App() {
   return (
@@ -19,7 +21,7 @@ function App() {
         <header className="App-header">
           <Switch>
             <Route exact path='/fccTempLate' render={props => (
-              <Fragment>
+              <Container>
                 <a
                   className="App-link"
                   href="https://github.com/TurtleWolfe/fccTempLate"
@@ -54,7 +56,7 @@ function App() {
                     <i className="fab fa-twitch"></i> These Episodes on Twitch <i className="fab fa-twitch"></i>
                   </a>
                 </h5>
-              </Fragment>
+              </Container>
             )} />
             <Route exact path='/quote' component={Quote} />
             <Route exact path='/markdown' component={MarkDown} />
