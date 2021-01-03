@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 // import PropTypes from 'prop-types';
 import { Button, Container, Row, Col } from 'react-bootstrap';
 import './Calculator.css';
+import { CalcBtn } from "./CalcBtn";
 
 export class Calculator extends Component {
   constructor(props) {
@@ -44,145 +45,108 @@ export class Calculator extends Component {
         </h4>
         {/* <br></br> */}
         <Row className="justify-content-center">
-          <Col as={Button}
-            className="key-pad" xs={2} sm={2} md={1} lg={1} value={"/"}
+          <CalcBtn
+            icon="fas fa-divide"
             variant="warning"
-            id="divide">
-            <h2>
-              <i class="fas fa-divide"></i>
-            </h2>
-          </Col>
-          <Col as={Button}
-            className="key-pad" xs={2} sm={2} md={1} lg={1}
-            id="seven"
+            // value="/"
+            id="divide"
+          >/</CalcBtn>
+          <CalcBtn
+            // icon="fas fa-divide"
+            variant="success"
             value="7"
-            onClick={this.handleClick}
-            // onClick={this.handleClick.bind(this, id)}
-            // onClick={this.handleClick.bind(this, this.props.value)}
+            id="seven"
+          >7</CalcBtn>
+          <CalcBtn
+            // icon="fas fa-divide"
             variant="success"
-          >
-            <h2>
-              7
-            </h2>
-          </Col>
-          <Col as={Button}
-            className="key-pad" xs={2} sm={2} md={1} lg={1} value={8}
+            value="8"
+            id="eight"
+          >8</CalcBtn>
+          <CalcBtn
+            // icon="fas fa-divide"
             variant="success"
-            id="eight">
-            <h2>
-              8
-            </h2>
-          </Col>
-          <Col as={Button}
-            className="key-pad" xs={2} sm={2} md={1} lg={1} value={9}
-            variant="success"
-            id="nine">
-            <h2>
-              9
-            </h2>
-          </Col>
+            value="9"
+            id="nine"
+          >9</CalcBtn>
         </Row>
         <Row className="justify-content-center">
-          <Col as={Button}
-            className="key-pad" xs={2} sm={2} md={1} lg={1} value={"*"}
+          <CalcBtn
+            icon="fas fa-times"
             variant="warning"
-            id="multiply">
-            <h2>
-              <i class="fas fa-times"></i>
-            </h2>
-          </Col>
-          <Col as={Button}
-            className="key-pad" xs={2} sm={2} md={1} lg={1} value={4}
+            // value="*"
+            id="divide"
+          ></CalcBtn>
+          <CalcBtn
+            // icon="fas fa-divide"
             variant="success"
-            id="four">
-            <h2>
-              4
-            </h2>
-          </Col>
-          <Col as={Button}
-            className="key-pad" xs={2} sm={2} md={1} lg={1} value={5}
+            value="4"
+            id="four"
+          >4</CalcBtn>
+          <CalcBtn
+            // icon="fas fa-divide"
             variant="success"
-            id="five">
-            <h2>
-              5
-            </h2>
-          </Col>
-          <Col as={Button}
-            className="key-pad" xs={2} sm={2} md={1} lg={1} value={6}
+            value="5"
+            id="five"
+          >5</CalcBtn>
+          <CalcBtn
+            // icon="fas fa-divide"
             variant="success"
-            id="six">
-            <h2>
-              6
-            </h2>
-          </Col>
+            value="6"
+            id="six"
+          >6</CalcBtn>
         </Row>
         <Row className="justify-content-center">
-          <Col as={Button}
-            className="key-pad" xs={2} sm={2} md={1} lg={1} value={"-"}
+          <CalcBtn
+            icon="fas fa-minus"
             variant="warning"
-            id="subtract">
-            <h2>
-              <i class="fas fa-minus"></i>
-            </h2>
-          </Col>
-          <Col as={Button}
-            className="key-pad" xs={2} sm={2} md={1} lg={1} value={1}
+            // value="-"
+            id="divide"
+          >-</CalcBtn>
+          <CalcBtn
+            // icon="fas fa-divide"
             variant="success"
-            id="one">
-            <h2>
-              1
-            </h2>
-          </Col>
-          <Col as={Button}
-            className="key-pad" xs={2} sm={2} md={1} lg={1} value={2}
+            value="1"
+            id="one"
+          >1</CalcBtn>
+          <CalcBtn
+            // icon="fas fa-divide"
             variant="success"
-            id="two">
-            <h2>
-              2
-            </h2>
-          </Col>
-          <Col as={Button}
-            className="key-pad" xs={2} sm={2} md={1} lg={1} value={3}
+            value="2"
+            id="two"
+          >2</CalcBtn>
+          <CalcBtn
+            // icon="fas fa-divide"
             variant="success"
-            id="three">
-            <h2>
-              3
-            </h2>
-          </Col>
+            value="3"
+            id="three"
+          >3</CalcBtn>
         </Row>
         <Row className="justify-content-center">
-          <Col as={Button}
-            className="key-pad" xs={2} sm={2} md={1} lg={1} value={"+"}
+          <CalcBtn
+            icon="fas fa-plus"
             variant="warning"
-            id="add">
-            <h2>
-              <i class="fas fa-plus"></i>
-            </h2>
-          </Col>
-          <Col as={Button}
-            className="key-pad" xs={2} sm={2} md={1} lg={1} value={"."}
+            // value="+"
+            id="plus"
+          >+</CalcBtn>
+          <CalcBtn
+            // icon="fas fa-divide"
             variant="dark"
-            id="decimal">
-            <h1 className="decim">
-              .
-            </h1>
-          </Col>
-          <Col as={Button}
-            className="key-pad" xs={2} sm={2} md={1} lg={1} value={0}
+            value="."
+            id="decimal"
+          >.</CalcBtn>
+          <CalcBtn
+            // icon="fas fa-divide"
             variant="success"
-            id="zero">
-            <h2>
-              0
-            </h2>
-          </Col>
-          <Col as={Button}
-            className="key-pad" xs={2} sm={2} md={1} lg={1} value={"="}
+            value="0"
+            id="zero"
+          >0</CalcBtn>
+          <CalcBtn
+            icon="fas fa-equals"
             variant="warning"
-            id="equals">
-            <h2>
-              <i class="fas fa-equals"></i>
-            </h2>
-          </Col>
+            // value="="
+            id="equals"
+          >=</CalcBtn>
         </Row>
         <Row className="justify-content-center">
           <Col as={"h3"}
