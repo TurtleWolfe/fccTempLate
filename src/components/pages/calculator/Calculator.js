@@ -30,6 +30,11 @@ export class Calculator extends Component {
   // }
 
   handleClick = (button) => {
+    console.log(this.state.display);
+    if (this.state.disply === "0")
+      this.setState({
+        display: ""
+      });
     if (button === "=") {
       this.calculate();
     }
