@@ -10,8 +10,8 @@ export class Calculator extends Component {
     // Initial State
     this.state = {
       operators: ['+', '-', 'x', '÷'],
+      equation: "equation",
       decimalAdded: false,
-      equation: 0,
       display: 0,
     };
 
@@ -25,26 +25,6 @@ export class Calculator extends Component {
   static propTypes = {
     operators: PropTypes.array.isRequired,
     decimalAdded: PropTypes.bool.isRequired,
-  };
-
-  componentDidUpdate() {
-    let dissPlay = this.state.display;
-    // get the first digit of the current display
-    let firstChar = dissPlay[dissPlay.length - dissPlay.length];
-    console.log(firstChar);
-    // get the scnd digit of the current display
-    let scndChar = dissPlay[dissPlay.length - 2];
-    console.log(scndChar);
-
-    // Final thing left to do is checking the last character of the equation. If it's an operator or a decimal, remove it
-    let { operators } = this.state;
-
-    if (firstChar === "0" && scndChar === "0") {
-      this.setState({
-        display: this.state.display.slice(1)
-      });
-    }
-
   };
 
   // handleClick(id) {
@@ -61,27 +41,15 @@ export class Calculator extends Component {
     //   this.setState({
     //     display: ""
     //   });
-    this.setState({
-      equation: this.state.display
-    });
+
     // get the last digit of the current display
     let dissPlay = this.state.display;
     let lastChar = dissPlay[dissPlay.length - 1];
-    // get the first digit of the current display
-    let firstChar = dissPlay[dissPlay.length - dissPlay.length];
-    console.log(firstChar);
-    console.log(lastChar);
-
     // Final thing left to do is checking the last character of the equation. If it's an operator or a decimal, remove it
     let { operators } = this.state;
-
-    if (button === ".") {
-      if (lastChar === '.') {
-        button = button.replace(/.$/, '');
-      }
+    if (operators.indexOf(lastChar) > -1 || lastChar === '.') {
+      // equation = equation.replace(/.$/, '');
     }
-
-
     if (button === "=") {
       this.calculate();
     }
@@ -113,7 +81,6 @@ export class Calculator extends Component {
 
   reset = () => {
     this.setState({
-      equation: 0,
       display: 0
     });
   };
@@ -282,7 +249,8 @@ export class Calculator extends Component {
           </Col>
         </Row>
         <Row className="justify-content-center">
-          {/* +.0 = */}
+          {/* +.0 */}
+          {/*  */}
           <Col as={Button}
             className="key-pad" xs={2} sm={2} md={1} lg={1}
             variant="warning"
@@ -329,15 +297,12 @@ export class Calculator extends Component {
           </Col>
         </Row>
         <Row className="justify-content-center">
-          {/* equation, display & clear */}
-          <Col as={"h3"}
-            className="key-pad" xs={4} sm={2} md={2} lg={2}
-            id="equation">
-            {this.state.equation}
-          </Col>
+          {/* display & clear */}
+          {/*  */}
           <Col as={"h3"}
             className="key-pad" xs={4} sm={2} md={2} lg={2}
             id="display">
+            {this.state.equation}
             {this.state.display}
           </Col>
           <Col as={Button}
