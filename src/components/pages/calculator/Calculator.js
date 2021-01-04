@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 // import PropTypes from 'prop-types';
 import { Button, Container, Row, Col } from 'react-bootstrap';
 import './Calculator.css';
+import { evaluate } from 'mathjs';
 
 export class Calculator extends Component {
   constructor(props) {
@@ -13,31 +14,64 @@ export class Calculator extends Component {
 
     // This binding is necessary to make `this` work in the callback
     this.handleClick = this.handleClick.bind(this);
-    this.handleClear = this.handleClear.bind(this);
+    // this.handleClear = this.handleClear.bind(this);
   }
 
   // static propTypes = {
   //   quote: PropTypes.string.isRequired,
   // };
 
-  // handleClick(e) { e.preventDefault(); console.log('The link was clicked.'); }
-  // handleClick(id) { this.setState(state => ({ display: {id} })); }
-  handleClick(id) {
-    //   // let id = e.target.value;
-    //   console.log(this.id);
-    console.log(id);
-    //   // console.log(e.target.id);
-    //   // this.setState(state => ({ display: 7 }));
-    this.setState(state => ({ display: id }));
-  }
+  // handleClick(id) {
+  //   // console.log(id);
+  //   // this.setState(state => ({ display: id }));
+  //   this.setState({
+  //     display: id
+  //   });
+  // }
 
-  handleClear() { this.setState(state => ({ display: 0 })); }
+  handleClick = (button) => {
+    if (button === "=") {
+      this.calculate();
+    }
+    else if (button === "c") {
+      this.reset();
+    }
+    else if (button === "CE") {
+      this.backspace();
+    }
+    else {
+      this.setState({
+        display: this.state.display + button
+      });
+    }
+  };
+
+  calculate = () => {
+    try {
+      this.setState({
+        // eslint-disable-next-line
+        display: (evaluate(this.state.display) || "") + ""
+      });
+    } catch (e) {
+      this.setState({
+        display: "error"
+      });
+    }
+  };
+
+  reset = () => {
+    this.setState({
+      display: 0
+    });
+  };
+
+  // backspace = () => {
+  //   this.setState({
+  //     display: this.state.display.slice(0, -1)
+  //   });
+  // };
 
   render() {
-    // const { className, xs, sm, md, lg } = this.state;
-    // const { value, variant, id, icon } = this.props;
-    // const { id } = this.props;
-    // let id = this.props.id;
     return (
       <Container
         id="calculator">
@@ -54,6 +88,7 @@ export class Calculator extends Component {
         </h4>
         {/* <br></br> */}
         <Row className="justify-content-center">
+          {/* 789 */}
           <Col as={Button}
             className="key-pad" xs={2} sm={2} md={1} lg={1}
             variant="warning"
@@ -100,6 +135,7 @@ export class Calculator extends Component {
           </Col>
         </Row>
         <Row className="justify-content-center">
+          {/* 456 */}
           <Col as={Button}
             className="key-pad" xs={2} sm={2} md={1} lg={1}
             variant="warning"
@@ -146,6 +182,7 @@ export class Calculator extends Component {
           </Col>
         </Row>
         <Row className="justify-content-center">
+          {/* 123 */}
           <Col as={Button}
             className="key-pad" xs={2} sm={2} md={1} lg={1}
             variant="warning"
@@ -192,6 +229,8 @@ export class Calculator extends Component {
           </Col>
         </Row>
         <Row className="justify-content-center">
+          {/* +.0 */}
+          {/*  */}
           <Col as={Button}
             className="key-pad" xs={2} sm={2} md={1} lg={1}
             variant="warning"
@@ -233,11 +272,13 @@ export class Calculator extends Component {
             onClick={() => this.handleClick("=")}
           >
             <h2>
-              <i class="fas fa-equals"></i>
+              =<i class="fas fa-equals"></i>
             </h2>
           </Col>
         </Row>
         <Row className="justify-content-center">
+          {/* display & clear */}
+          {/*  */}
           <Col as={"h3"}
             className="key-pad" xs={4} sm={2} md={2} lg={2}
             id="display">
@@ -248,7 +289,7 @@ export class Calculator extends Component {
             variant="info"
             id="clear"
             value="c"
-            onClick={this.handleClear}
+            onClick={this.reset}
           >
             <h2>
               clear
