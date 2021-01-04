@@ -93,4 +93,21 @@ button {
 
 .container {
   margin-top: 5%;
+  padding-top: 56px;
+}
+
+@media screen and (min-width: 600px) {
+  /* Screens above 600px width */
+  .container {
+    margin-top: 12%;
+    padding-top: 0px;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  /* Screens above 960px width */
+  .container {
+    margin-top: 12%;
+    padding-top: 0px;
+  }
 }

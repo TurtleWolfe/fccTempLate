@@ -59,7 +59,7 @@ export class Quote extends Component {
 
     return (
       <Container>
-        <Card bg="dark" style={{ width: '90%' }} id="quote-box">
+        <Card bg="dark" style={{ width: '90%', margin: 'auto' }} id="quote-box">
           <Card.Header>
 
             <h4>

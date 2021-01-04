@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 // import PropTypes from 'prop-types';
 import { Button, Container, Row, Col } from 'react-bootstrap';
 import './Calculator.css';
-import { CalcBtn } from "./CalcBtn";
 
 export class Calculator extends Component {
   constructor(props) {
@@ -21,14 +20,24 @@ export class Calculator extends Component {
   //   quote: PropTypes.string.isRequired,
   // };
 
+  // handleClick(e) { e.preventDefault(); console.log('The link was clicked.'); }
   // handleClick(id) { this.setState(state => ({ display: {id} })); }
-  handleClick() { this.setState(state => ({ display: 7 })); }
+  handleClick(id) {
+    //   // let id = e.target.value;
+    //   console.log(this.id);
+    console.log(id);
+    //   // console.log(e.target.id);
+    //   // this.setState(state => ({ display: 7 }));
+    this.setState(state => ({ display: id }));
+  }
+
   handleClear() { this.setState(state => ({ display: 0 })); }
 
   render() {
-
-    // let seven = 7;
-
+    // const { className, xs, sm, md, lg } = this.state;
+    // const { value, variant, id, icon } = this.props;
+    // const { id } = this.props;
+    // let id = this.props.id;
     return (
       <Container
         id="calculator">
@@ -45,108 +54,188 @@ export class Calculator extends Component {
         </h4>
         {/* <br></br> */}
         <Row className="justify-content-center">
-          <CalcBtn
-            icon="fas fa-divide"
+          <Col as={Button}
+            className="key-pad" xs={2} sm={2} md={1} lg={1}
             variant="warning"
-            // value="/"
             id="divide"
-          >/</CalcBtn>
-          <CalcBtn
-            // icon="fas fa-divide"
+            value="/"
+            onClick={() => this.handleClick("/")}
+          >
+            <h2>
+              <i class="fas fa-divide"></i>
+            </h2>
+          </Col>
+          <Col as={Button}
+            className="key-pad" xs={2} sm={2} md={1} lg={1}
             variant="success"
-            value="7"
             id="seven"
-          >7</CalcBtn>
-          <CalcBtn
-            // icon="fas fa-divide"
+            value="7"
+            onClick={() => this.handleClick("7")}
+          >
+            <h2>
+              7
+            </h2>
+          </Col>
+          <Col as={Button}
+            className="key-pad" xs={2} sm={2} md={1} lg={1}
             variant="success"
-            value="8"
             id="eight"
-          >8</CalcBtn>
-          <CalcBtn
-            // icon="fas fa-divide"
+            value="8"
+            onClick={() => this.handleClick("8")}
+          >
+            <h2>
+              8
+            </h2>
+          </Col>
+          <Col as={Button}
+            className="key-pad" xs={2} sm={2} md={1} lg={1}
             variant="success"
-            value="9"
             id="nine"
-          >9</CalcBtn>
+            value="9"
+            onClick={() => this.handleClick("9")}
+          >
+            <h2>
+              9
+            </h2>
+          </Col>
         </Row>
         <Row className="justify-content-center">
-          <CalcBtn
-            icon="fas fa-times"
+          <Col as={Button}
+            className="key-pad" xs={2} sm={2} md={1} lg={1}
             variant="warning"
-            // value="*"
-            id="divide"
-          ></CalcBtn>
-          <CalcBtn
-            // icon="fas fa-divide"
+            id="multiply"
+            value="*"
+            onClick={() => this.handleClick("*")}
+          >
+            <h2>
+              <i class="fas fa-times"></i>
+            </h2>
+          </Col>
+          <Col as={Button}
+            className="key-pad" xs={2} sm={2} md={1} lg={1}
             variant="success"
-            value="4"
             id="four"
-          >4</CalcBtn>
-          <CalcBtn
-            // icon="fas fa-divide"
+            value="4"
+            onClick={() => this.handleClick("4")}
+          >
+            <h2>
+              4
+            </h2>
+          </Col>
+          <Col as={Button}
+            className="key-pad" xs={2} sm={2} md={1} lg={1}
             variant="success"
-            value="5"
             id="five"
-          >5</CalcBtn>
-          <CalcBtn
-            // icon="fas fa-divide"
+            value="5"
+            onClick={() => this.handleClick("5")}
+          >
+            <h2>
+              5
+            </h2>
+          </Col>
+          <Col as={Button}
+            className="key-pad" xs={2} sm={2} md={1} lg={1}
             variant="success"
-            value="6"
             id="six"
-          >6</CalcBtn>
+            value="6"
+            onClick={() => this.handleClick("6")}
+          >
+            <h2>
+              6
+            </h2>
+          </Col>
         </Row>
         <Row className="justify-content-center">
-          <CalcBtn
-            icon="fas fa-minus"
+          <Col as={Button}
+            className="key-pad" xs={2} sm={2} md={1} lg={1}
             variant="warning"
-            // value="-"
-            id="divide"
-          >-</CalcBtn>
-          <CalcBtn
-            // icon="fas fa-divide"
+            id="subtract"
+            value="-"
+            onClick={() => this.handleClick("-")}
+          >
+            <h2>
+              <i class="fas fa-minus"></i>
+            </h2>
+          </Col>
+          <Col as={Button}
+            className="key-pad" xs={2} sm={2} md={1} lg={1}
             variant="success"
-            value="1"
             id="one"
-          >1</CalcBtn>
-          <CalcBtn
-            // icon="fas fa-divide"
+            value="1"
+            onClick={() => this.handleClick("1")}
+          >
+            <h2>
+              1
+            </h2>
+          </Col>
+          <Col as={Button}
+            className="key-pad" xs={2} sm={2} md={1} lg={1}
             variant="success"
-            value="2"
             id="two"
-          >2</CalcBtn>
-          <CalcBtn
-            // icon="fas fa-divide"
+            value="2"
+            onClick={() => this.handleClick("2")}
+          >
+            <h2>
+              2
+            </h2>
+          </Col>
+          <Col as={Button}
+            className="key-pad" xs={2} sm={2} md={1} lg={1}
             variant="success"
-            value="3"
             id="three"
-          >3</CalcBtn>
+            value="3"
+            onClick={() => this.handleClick("3")}
+          >
+            <h2>
+              3
+            </h2>
+          </Col>
         </Row>
         <Row className="justify-content-center">
-          <CalcBtn
-            icon="fas fa-plus"
+          <Col as={Button}
+            className="key-pad" xs={2} sm={2} md={1} lg={1}
             variant="warning"
-            // value="+"
-            id="plus"
-          >+</CalcBtn>
-          <CalcBtn
-            // icon="fas fa-divide"
+            id="add"
+            value="+"
+            onClick={() => this.handleClick("+")}
+          >
+            <h2>
+              <i class="fas fa-plus"></i>
+            </h2>
+          </Col>
+          <Col as={Button}
+            className="key-pad" xs={2} sm={2} md={1} lg={1}
             variant="dark"
-            value="."
             id="decimal"
-          >.</CalcBtn>
-          <CalcBtn
-            // icon="fas fa-divide"
+            value="."
+            onClick={() => this.handleClick(".")}
+          >
+            <h1 className="decim">
+              .
+            </h1>
+          </Col>
+          <Col as={Button}
+            className="key-pad" xs={2} sm={2} md={1} lg={1}
             variant="success"
-            value="0"
             id="zero"
-          >0</CalcBtn>
-          <CalcBtn
-            icon="fas fa-equals"
+            value="0"
+            onClick={() => this.handleClick("0")}
+          >
+            <h2>
+              0
+            </h2>
+          </Col>
+          <Col as={Button}
+            className="key-pad" xs={2} sm={2} md={1} lg={1}
             variant="warning"
-            // value="="
             id="equals"
-          >=</CalcBtn>
+            value="="
+            onClick={() => this.handleClick("=")}
+          >
+            <h2>
+              <i class="fas fa-equals"></i>
+            </h2>
+          </Col>
         </Row>
         <Row className="justify-content-center">
           <Col as={"h3"}
@@ -155,10 +244,12 @@ export class Calculator extends Component {
             {this.state.display}
           </Col>
           <Col as={Button}
-            className="key-pad" xs={4} sm={3} md={2} lg={2} value={"c"}
-            onClick={this.handleClear}
+            className="key-pad" xs={4} sm={3} md={2} lg={2}
             variant="info"
-            id="clear">
+            id="clear"
+            value="c"
+            onClick={this.handleClear}
+          >
             <h2>
               clear
             </h2>
