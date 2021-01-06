@@ -9,12 +9,12 @@ export class Calculator extends Component {
     super(props);
     // Initial State
     this.state = {
-      operators: ['+', '-', 'x', '÷'],
-      decimalAdded: false,
-      equation: 0,
-      display: 0,
+      // equation: 0,
+      // operators: ['+', '-', 'x', '÷'],
+      operatorFlag: false,
+      decimalFlag: false,
+      displayNumber: 0,
     };
-
 
     // This binding is necessary to make `this` work in the callback
     this.handleClick = this.handleClick.bind(this);
@@ -27,105 +27,67 @@ export class Calculator extends Component {
     decimalAdded: PropTypes.bool.isRequired,
   };
 
-  componentDidUpdate() {
-    // if (this.state.disply === "0")
-    //   this.setState({
-    //     display: ""
-    //   });
-    let dissPlay = this.state.display;
-    // get the first digit of the current display
-    let firstChar = dissPlay[dissPlay.length - dissPlay.length];
-    // console.log(firstChar);
-    // get the second digit of the current display
-    let scndChar = dissPlay[dissPlay.length - 2];
-    // console.log(scndChar);
-    let lastChar = dissPlay[dissPlay.length - 1];
-
-    // console.log(scndChar);
-
-    // Final thing left to do is checking the last character of the equation. If it's an operator or a decimal, remove it
-    if (firstChar === "0" && scndChar === "0") {
-      this.setState({
-        display: this.state.display.slice(1)
-      });
+  handleClick = (buttonName) => {
+    let { displayNumber, operatorFlag, decimalFlag } = this.state;
+    // let lastChar = displayNumber[displayNumber.length - 1];
+    switch (true) {
+      // 24:00
+      case buttonName === "0" ||
+        buttonName === "1" ||
+        buttonName === "2" ||
+        buttonName === "3" ||
+        buttonName === "4" ||
+        buttonName === "5" ||
+        buttonName === "6" ||
+        buttonName === "7" ||
+        buttonName === "8" ||
+        buttonName === "9":
+        if (displayNumber !== "0") {
+          displayNumber += buttonName;
+          operatorFlag = false;
+        } else {
+          displayNumber = buttonName;
+        }
+        break;
+      //25:00
+      case buttonName === "+" ||
+        buttonName === "-" ||
+        buttonName === "*" ||
+        buttonName === "/":
+        if (!operatorFlag) {
+          displayNumber += buttonName;
+          operatorFlag = true;
+          this.setState({ decimalFlag: false });
+        } else {
+          const newNumber = displayNumber.slice(0, displayNumber.length - 1);
+          displayNumber = newNumber;
+          displayNumber += buttonName;
+        }
+        break;
+      //33:00 clear
+      case buttonName === "C":
+        displayNumber = "0";
+        operatorFlag = false;
+        this.setState({ decimalFlag: false });
+        break;
+      //35:00
+      case buttonName === "=":
+        displayNumber = evaluate(displayNumber);
+        operatorFlag = false;
+        this.setState({ decimalFlag: true });
+        break;
+      //38:00
+      case buttonName === ".":
+        if (!decimalFlag) {
+          displayNumber += ".";
+          this.setState({ decimalFlag: true });
+        }
+        break;
+      default:
     }
-
-    // if (button === "+" || button === "/" || button === "*") {
-    if (lastChar === "+" || lastChar === "/" || lastChar === "*") {
-      this.setState({
-        display: "changed"
-      });
-    }
-    // }
+    this.setState({ operatorFlag });
+    this.setState({ displayNumber });
   };
-
-  // handleClick(id) {
-  //   // this.setState(state => ({ display: id }));
-  // }
-  handleClick = (button) => {
-    this.setState({
-      equation: this.state.display
-    });
-    // get the last digit of the current display
-    let dissPlay = this.state.display;
-    let lastChar = dissPlay[dissPlay.length - 1];
-
-    // Final thing left to do is checking the last character of the equation. If it's an operator or a decimal, remove it
-    let { operators } = this.state;
-    let input = Array.from(dissPlay);
-    if (button === ".") {
-      if (lastChar === '.') {
-        button = button.replace(/.$/, '');
-      }
-    }
-    if (button === "+" || button === "/" || button === "*") {
-      if (lastChar === "+" || lastChar === "/" || lastChar === "*") {
-        this.setState({
-          display: "did it"
-        });
-      }
-    }
-    if (button === "=") {
-      this.calculate();
-    }
-    else if (button === "c") {
-      this.reset();
-    }
-    else if (button === "CE") {
-      this.backspace();
-    }
-    else {
-      this.setState({
-        display: this.state.display + button
-      });
-    }
-  };
-
-  calculate = () => {
-    try {
-      this.setState({
-        // eslint-disable-next-line
-        display: (evaluate(this.state.display) || "") + ""
-      });
-    } catch (e) {
-      this.setState({
-        display: "error"
-      });
-    }
-  };
-
-  reset = () => {
-    this.setState({
-      equation: 0,
-      display: 0
-    });
-  };
-
-  // backspace = () => {
-  //   this.setState({
-  //     display: this.state.display.slice(0, -1)
-  //   });
-  // };
 
   render() {
     return (
@@ -344,14 +306,14 @@ export class Calculator extends Component {
           <Col as={"h3"}
             className="key-pad" xs={4} sm={2} md={2} lg={2}
             id="display">
-            {this.state.display}
+            {this.state.displayNumber}
           </Col>
           <Col as={Button}
             className="key-pad" xs={4} sm={3} md={2} lg={2}
             variant="info"
             id="clear"
             value="c"
-            onClick={this.reset}
+            onClick={() => this.handleClick("C")}
           >
             <h2>
               clear
@@ -374,5 +336,4 @@ export class Calculator extends Component {
     );
   }
 }
-
 export default Calculator;
