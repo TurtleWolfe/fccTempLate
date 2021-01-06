@@ -30,6 +30,7 @@ export class Calculator extends Component {
   handleClick = (buttonName) => {
     let { displayNumber, operatorFlag, decimalFlag } = this.state;
     // let lastChar = displayNumber[displayNumber.length - 1];
+    let scndLastChar = displayNumber[displayNumber.length - 2];
     switch (true) {
       // 24:00
       case buttonName === "0" ||
@@ -49,17 +50,35 @@ export class Calculator extends Component {
           displayNumber = buttonName;
         }
         break;
-      //25:00
-      case buttonName === "+" ||
-        buttonName === "-" ||
-        buttonName === "*" ||
-        buttonName === "/":
+      case buttonName === "-":
         if (!operatorFlag) {
           displayNumber += buttonName;
           operatorFlag = true;
           this.setState({ decimalFlag: false });
         } else {
-          const newNumber = displayNumber.slice(0, displayNumber.length - 1);
+          // const newNumber = displayNumber.slice(0, displayNumber.length - 1);
+          // displayNumber = newNumber;
+          displayNumber += buttonName;
+          operatorFlag = true;
+          this.setState({ decimalFlag: false });
+        }
+        break;
+      //25:00
+      case buttonName === "+" ||
+        // buttonName === "-" ||
+        buttonName === "*" ||
+        buttonName === "/":
+        // if (scndLastChar === "*") {
+        //   let newNumber = displayNumber.slice(0, displayNumber.length - 2);
+        //   // console.log(newNumber);
+        //   displayNumber = newNumber;
+        // }
+        if (!operatorFlag) {
+          displayNumber += buttonName;
+          operatorFlag = true;
+          this.setState({ decimalFlag: false });
+        } else {
+          let newNumber = displayNumber.slice(0, displayNumber.length - 1);
           displayNumber = newNumber;
           displayNumber += buttonName;
         }
