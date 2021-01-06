@@ -68,11 +68,11 @@ export class Calculator extends Component {
         // buttonName === "-" ||
         buttonName === "*" ||
         buttonName === "/":
-        // if (scndLastChar === "*") {
-        //   let newNumber = displayNumber.slice(0, displayNumber.length - 2);
-        //   // console.log(newNumber);
-        //   displayNumber = newNumber;
-        // }
+        if (scndLastChar === "*") {
+          let newNumber = displayNumber.slice(0, displayNumber.length - 1);
+          // console.log(newNumber);
+          displayNumber = newNumber;
+        }
         if (!operatorFlag) {
           displayNumber += buttonName;
           operatorFlag = true;
