@@ -28,60 +28,63 @@ export class Calculator extends Component {
   };
 
   componentDidUpdate() {
+    // if (this.state.disply === "0")
+    //   this.setState({
+    //     display: ""
+    //   });
     let dissPlay = this.state.display;
     // get the first digit of the current display
     let firstChar = dissPlay[dissPlay.length - dissPlay.length];
-    console.log(firstChar);
-    // get the scnd digit of the current display
+    // console.log(firstChar);
+    // get the second digit of the current display
     let scndChar = dissPlay[dissPlay.length - 2];
-    console.log(scndChar);
+    // console.log(scndChar);
+    let lastChar = dissPlay[dissPlay.length - 1];
+
+    // console.log(scndChar);
 
     // Final thing left to do is checking the last character of the equation. If it's an operator or a decimal, remove it
-    let { operators } = this.state;
-
     if (firstChar === "0" && scndChar === "0") {
       this.setState({
         display: this.state.display.slice(1)
       });
     }
 
+    // if (button === "+" || button === "/" || button === "*") {
+    if (lastChar === "+" || lastChar === "/" || lastChar === "*") {
+      this.setState({
+        display: "changed"
+      });
+    }
+    // }
   };
 
   // handleClick(id) {
-  //   // console.log(id);
   //   // this.setState(state => ({ display: id }));
-  //   this.setState({
-  //     display: id
-  //   });
   // }
-
   handleClick = (button) => {
-    // console.log(this.state.display);
-    // if (this.state.disply === "0")
-    //   this.setState({
-    //     display: ""
-    //   });
     this.setState({
       equation: this.state.display
     });
     // get the last digit of the current display
     let dissPlay = this.state.display;
     let lastChar = dissPlay[dissPlay.length - 1];
-    // get the first digit of the current display
-    let firstChar = dissPlay[dissPlay.length - dissPlay.length];
-    console.log(firstChar);
-    console.log(lastChar);
 
     // Final thing left to do is checking the last character of the equation. If it's an operator or a decimal, remove it
     let { operators } = this.state;
-
+    let input = Array.from(dissPlay);
     if (button === ".") {
       if (lastChar === '.') {
         button = button.replace(/.$/, '');
       }
     }
-
-
+    if (button === "+" || button === "/" || button === "*") {
+      if (lastChar === "+" || lastChar === "/" || lastChar === "*") {
+        this.setState({
+          display: "did it"
+        });
+      }
+    }
     if (button === "=") {
       this.calculate();
     }
@@ -324,7 +327,10 @@ export class Calculator extends Component {
             onClick={() => this.handleClick("=")}
           >
             <h2>
-              =<i class="fas fa-equals"></i>
+              <strong>
+                =
+              </strong>
+              {/* <i class="fas fa-equals"></i> */}
             </h2>
           </Col>
         </Row>

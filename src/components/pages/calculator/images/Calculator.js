@@ -1,43 +1,133 @@
 import React, { Component } from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import { Button, Container, Row, Col } from 'react-bootstrap';
 import './Calculator.css';
+import { evaluate } from 'mathjs';
 
 export class Calculator extends Component {
   constructor(props) {
     super(props);
     // Initial State
     this.state = {
+      operators: ['+', '-', 'x', '÷'],
+      decimalAdded: false,
+      equation: 0,
       display: 0,
     };
 
+
     // This binding is necessary to make `this` work in the callback
     this.handleClick = this.handleClick.bind(this);
-    this.handleClear = this.handleClear.bind(this);
+    // this.handleClear = this.handleClear.bind(this);
+
   }
 
-  // static propTypes = {
-  //   quote: PropTypes.string.isRequired,
+  static propTypes = {
+    operators: PropTypes.array.isRequired,
+    decimalAdded: PropTypes.bool.isRequired,
+  };
+
+  componentDidUpdate() {
+    // if (this.state.disply === "0")
+    //   this.setState({
+    //     display: ""
+    //   });
+    let dissPlay = this.state.display;
+    // get the first digit of the current display
+    let firstChar = dissPlay[dissPlay.length - dissPlay.length];
+    // console.log(firstChar);
+    // get the second digit of the current display
+    let scndChar = dissPlay[dissPlay.length - 2];
+    // console.log(scndChar);
+    let lastChar = dissPlay[dissPlay.length - 1];
+
+    // console.log(scndChar);
+
+    // Final thing left to do is checking the last character of the equation. If it's an operator or a decimal, remove it
+    if (firstChar === "0" && scndChar === "0") {
+      this.setState({
+        display: this.state.display.slice(1)
+      });
+    }
+
+    // if (button === "+" || button === "/" || button === "*") {
+    if (lastChar === "+" || lastChar === "/" || lastChar === "*") {
+      this.setState({
+        display: "changed"
+      });
+    }
+    // }
+  };
+
+  // handleClick(id) {
+  //   // this.setState(state => ({ display: id }));
+  // }
+  handleClick = (button) => {
+    this.setState({
+      equation: this.state.display
+    });
+    // get the last digit of the current display
+    let dissPlay = this.state.display;
+    let lastChar = dissPlay[dissPlay.length - 1];
+
+    // Final thing left to do is checking the last character of the equation. If it's an operator or a decimal, remove it
+    let { operators } = this.state;
+    let input = Array.from(dissPlay);
+    if (button === ".") {
+      if (lastChar === '.') {
+        button = button.replace(/.$/, '');
+      }
+    }
+    if (button === "+" || button === "/" || button === "*") {
+      if (lastChar === "+" || lastChar === "/" || lastChar === "*") {
+        this.setState({
+          display: "did it"
+        });
+      }
+    }
+    if (button === "=") {
+      this.calculate();
+    }
+    else if (button === "c") {
+      this.reset();
+    }
+    else if (button === "CE") {
+      this.backspace();
+    }
+    else {
+      this.setState({
+        display: this.state.display + button
+      });
+    }
+  };
+
+  calculate = () => {
+    try {
+      this.setState({
+        // eslint-disable-next-line
+        display: (evaluate(this.state.display) || "") + ""
+      });
+    } catch (e) {
+      this.setState({
+        display: "error"
+      });
+    }
+  };
+
+  reset = () => {
+    this.setState({
+      equation: 0,
+      display: 0
+    });
+  };
+
+  // backspace = () => {
+  //   this.setState({
+  //     display: this.state.display.slice(0, -1)
+  //   });
   // };
 
-  // handleClick(e) { e.preventDefault(); console.log('The link was clicked.'); }
-  // handleClick(id) { this.setState(state => ({ display: {id} })); }
-  handleClick(id) {
-    //   // let id = e.target.value;
-    //   console.log(this.id);
-    console.log(id);
-    //   // console.log(e.target.id);
-    //   // this.setState(state => ({ display: 7 }));
-    this.setState(state => ({ display: id }));
-  }
-
-  handleClear() { this.setState(state => ({ display: 0 })); }
-
   render() {
-    // const { className, xs, sm, md, lg } = this.state;
-    // const { value, variant, id, icon } = this.props;
-    // const { id } = this.props;
-    // let id = this.props.id;
     return (
       <Container
         id="calculator">
@@ -54,6 +144,7 @@ export class Calculator extends Component {
         </h4>
         {/* <br></br> */}
         <Row className="justify-content-center">
+          {/* 789 */}
           <Col as={Button}
             className="key-pad" xs={2} sm={2} md={1} lg={1}
             variant="warning"
@@ -100,6 +191,7 @@ export class Calculator extends Component {
           </Col>
         </Row>
         <Row className="justify-content-center">
+          {/* 456 */}
           <Col as={Button}
             className="key-pad" xs={2} sm={2} md={1} lg={1}
             variant="warning"
@@ -146,6 +238,7 @@ export class Calculator extends Component {
           </Col>
         </Row>
         <Row className="justify-content-center">
+          {/* 123 */}
           <Col as={Button}
             className="key-pad" xs={2} sm={2} md={1} lg={1}
             variant="warning"
@@ -192,6 +285,7 @@ export class Calculator extends Component {
           </Col>
         </Row>
         <Row className="justify-content-center">
+          {/* +.0 = */}
           <Col as={Button}
             className="key-pad" xs={2} sm={2} md={1} lg={1}
             variant="warning"
@@ -233,11 +327,20 @@ export class Calculator extends Component {
             onClick={() => this.handleClick("=")}
           >
             <h2>
-              <i class="fas fa-equals"></i>
+              <strong>
+                =
+              </strong>
+              {/* <i class="fas fa-equals"></i> */}
             </h2>
           </Col>
         </Row>
         <Row className="justify-content-center">
+          {/* equation, display & clear */}
+          <Col as={"h3"}
+            className="key-pad" xs={4} sm={2} md={2} lg={2}
+            id="equation">
+            {this.state.equation}
+          </Col>
           <Col as={"h3"}
             className="key-pad" xs={4} sm={2} md={2} lg={2}
             id="display">
@@ -248,7 +351,7 @@ export class Calculator extends Component {
             variant="info"
             id="clear"
             value="c"
-            onClick={this.handleClear}
+            onClick={this.reset}
           >
             <h2>
               clear
