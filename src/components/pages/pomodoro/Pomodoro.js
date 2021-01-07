@@ -13,6 +13,8 @@ export class Pomodoro extends Component {
       timeLft: 1500,
       timeWorkSession: 1500,
       timeBreak: 300,
+      clicks: 0,
+      show: true,
       audio: document.getElementById("beep")
     };
 
@@ -30,7 +32,7 @@ export class Pomodoro extends Component {
   };
 
   incrementBreak = () => {
-    let { tglStart, tglVariant, timeBreak, timeLft, timeWorkSession } = this.state;
+    let { timeBreak } = this.state;
     if (timeBreak < 3600) {
       this.setState({
         timeBreak: timeBreak + 60,
@@ -40,7 +42,7 @@ export class Pomodoro extends Component {
   };
 
   incrementWorkSession = () => {
-    let { tglStart, tglVariant, timeBreak, timeLft, timeWorkSession } = this.state;
+    let { timeWorkSession } = this.state;
     if (timeWorkSession < 3600) {
       this.setState({
         timeWorkSession: timeWorkSession + 60,
@@ -50,7 +52,7 @@ export class Pomodoro extends Component {
   };
 
   decrementBreak = () => {
-    let { tglStart, tglVariant, timeBreak, timeLft, timeWorkSession } = this.state;
+    let { timeBreak } = this.state;
     if (timeBreak > 61) {
       this.setState({
         timeBreak: timeBreak - 60,
@@ -60,7 +62,7 @@ export class Pomodoro extends Component {
   };
 
   decrementWorkSession = () => {
-    let { tglStart, tglVariant, timeBreak, timeLft, timeWorkSession } = this.state;
+    let { timeWorkSession } = this.state;
     if (timeWorkSession > 61) {
       this.setState({
         timeWorkSession: timeWorkSession - 60,
@@ -79,12 +81,15 @@ export class Pomodoro extends Component {
       tglStart: "Start",
       timeBreak: 300,
       timeLft: 1500,
+      clicks: 0,
+      show: true,
     });
+    audio.pause();
     audio.currentTime = 0;
   };
 
   setToggleOnOff = () => {
-    let { tglStart, tglVariant, timeBreak, timeLft, timeWorkSession } = this.state;
+    let { tglStart } = this.state;
     if (tglStart === "Start") {
       this.interval = setInterval(this.countDown, 1000);
       this.setState({
@@ -102,17 +107,29 @@ export class Pomodoro extends Component {
   };
 
   countDown = () => {
-    // let { tglStart, tglVariant, timeBreak, timeLft, timeWorkSession } = this.state;
+    let { show, tglStart, tglVariant, timeBreak, timeLft, timeWorkSession } = this.state;
     // If the time reach 0 then we display Buzzzz! alert.
     let audio = document.getElementById("beep");
-    if (this.state.timeLft === 0) {
+    if (timeLft === 0) {
       this.setState({
         tglVariant: 'btn-success pomodoro-pad slab',
         tglStart: "Start",
-        timeLft: 1500
+        timeLft: timeBreak,
+        // timeLft: ? timeWorkSession : timeBreak ,
+        show: !show
       });
       audio.play();
-      clearInterval(this.interval);
+      // if(show === !show){
+      //   this.setState({
+      //     tglVariant: 'btn-success pomodoro-pad slab',
+      //     tglStart: "Start",
+      //     timeLft: timeBreak,
+      //     // timeLft: ? timeWorkSession : timeBreak ,
+      //     // show: !show
+      //   });
+      // }
+
+      // clearInterval(this.interval);
     } else {
       // We decrease the time second by second
       this.setState({
@@ -146,6 +163,10 @@ export class Pomodoro extends Component {
 
     return `${m}`;
   }
+
+  // ToggleClick = () => {
+  //   this.setState({ show: !this.state.show });
+  // };
 
   render() {
     let { tglStart, tglVariant, timeBreak, timeLft, timeWorkSession } = this.state;
@@ -188,6 +209,7 @@ export class Pomodoro extends Component {
           </Col>
         </Row>
         <Row className="justify-content-center">
+          {/* Break /cnt/cnt /Work */}
           <Col
             as={Button}
             id="break-label"
@@ -270,7 +292,14 @@ export class Pomodoro extends Component {
             className="pomodoro-pad pomo-display"
           >
             <h1 className="slab">
-              {this.displayTimer(timeLft)}
+              {/* {this.displayTimer(timeLft)} */}
+              {/* alternate work break sessions */}
+              {this.state.show ? <h2>{this.displayTimer(timeLft)}</h2> : <h2>{this.displayTimer(timeBreak)}</h2>}
+              <h6>
+                {/* <button onClick={this.ToggleClick}>
+                  {this.state.show ? 'Hide number' : 'Show number'}
+                </button> */}
+              </h6>
             </h1>
           </Col>
           <Col
