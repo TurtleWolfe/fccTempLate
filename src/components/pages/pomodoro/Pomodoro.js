@@ -10,11 +10,12 @@ export class Pomodoro extends Component {
     this.state = {
       tglStart: "Start",
       tglVariant: 'btn-success pomodoro-pad slab',
-      // timeLft: 1500,
       timeLft: 1500,
       timeWorkSession: 1500,
       timeBreak: 300,
+      audio: document.getElementById("beep")
     };
+
     // This binding is necessary to make `this` work in the callback
     // this.setToggleOnOff = this.setToggleOnOff.bind(this);
     // or not necessary if using an arrow function..
@@ -29,58 +30,61 @@ export class Pomodoro extends Component {
   };
 
   incrementBreak = () => {
-    let { timeBreak } = this.state;
+    let { tglStart, tglVariant, timeBreak, timeLft, timeWorkSession } = this.state;
     if (timeBreak < 3600) {
       this.setState({
-        timeBreak: timeBreak + 60
+        timeBreak: timeBreak + 60,
+        timeLft: timeBreak + 60
       });
     }
   };
 
   incrementWorkSession = () => {
-    let { timeWorkSession } = this.state;
+    let { tglStart, tglVariant, timeBreak, timeLft, timeWorkSession } = this.state;
     if (timeWorkSession < 3600) {
       this.setState({
-        timeWorkSession: timeWorkSession + 60
+        timeWorkSession: timeWorkSession + 60,
+        timeLft: timeWorkSession + 60
       });
     }
   };
 
   decrementBreak = () => {
-    let { timeBreak } = this.state;
+    let { tglStart, tglVariant, timeBreak, timeLft, timeWorkSession } = this.state;
     if (timeBreak > 61) {
       this.setState({
-        timeBreak: timeBreak - 60
+        timeBreak: timeBreak - 60,
+        timeLft: timeBreak - 60
       });
     }
   };
 
   decrementWorkSession = () => {
-    let { timeWorkSession } = this.state;
+    let { tglStart, tglVariant, timeBreak, timeLft, timeWorkSession } = this.state;
     if (timeWorkSession > 61) {
       this.setState({
-        timeWorkSession: timeWorkSession - 60
+        timeWorkSession: timeWorkSession - 60,
+        timeLft: timeWorkSession - 60
       });
     }
   };
 
   setReset = () => {
     // Clearing the interval
+    let audio = document.getElementById("beep");
     clearInterval(this.interval);
-    // let { tglStart } = this.state;
-    // let { tglVariant } = this.state;
-    // let { timeLft } = this.state;
     this.setState({
-      tglStart: "Start",
       tglVariant: 'btn-success pomodoro-pad slab',
-      timeLft: 1500,
       timeWorkSession: 1500,
+      tglStart: "Start",
       timeBreak: 300,
+      timeLft: 1500,
     });
+    audio.currentTime = 0;
   };
 
   setToggleOnOff = () => {
-    let { tglStart } = this.state;
+    let { tglStart, tglVariant, timeBreak, timeLft, timeWorkSession } = this.state;
     if (tglStart === "Start") {
       this.interval = setInterval(this.countDown, 1000);
       this.setState({
@@ -98,13 +102,16 @@ export class Pomodoro extends Component {
   };
 
   countDown = () => {
+    // let { tglStart, tglVariant, timeBreak, timeLft, timeWorkSession } = this.state;
     // If the time reach 0 then we display Buzzzz! alert.
+    let audio = document.getElementById("beep");
     if (this.state.timeLft === 0) {
       this.setState({
-        tglStart: "Start",
         tglVariant: 'btn-success pomodoro-pad slab',
+        tglStart: "Start",
         timeLft: 1500
       });
+      audio.play();
       clearInterval(this.interval);
     } else {
       // We decrease the time second by second
@@ -113,7 +120,6 @@ export class Pomodoro extends Component {
       });
     }
   };
-  // <Col as={Button} className="pomodoro-pad slab" xs={5} sm={3} md={3} lg={2} value={11} id="start_stop">
 
   displayTimer(seconds) {
     // Formatting the time into mm:ss
@@ -142,12 +148,7 @@ export class Pomodoro extends Component {
   }
 
   render() {
-    let { tglStart } = this.state;
-    let { tglVariant } = this.state;
-    let { timeLft } = this.state;
-    let { timeWorkSession } = this.state;
-    let { timeBreak } = this.state;
-
+    let { tglStart, tglVariant, timeBreak, timeLft, timeWorkSession } = this.state;
     return (
       <Container>
         <h4>
@@ -161,100 +162,152 @@ export class Pomodoro extends Component {
             <i className="fas  fa-hourglass-start"></i> 25 + 5 Clock <i className="fas  fa-hourglass-half"></i>
           </a>
         </h4>
-
         <Row className="justify-content-center">
-          <Col as={Button} className="pomodoro-pad" xs={2} sm={1} md={1} lg={1} value={9}
+          {/* increments */}
+          <Col
+            as={Button}
             variant="success"
             id="break-increment"
-            onClick={this.incrementBreak}>
+            className="pomodoro-pad"
+            onClick={this.incrementBreak}
+            xs={2} sm={1} md={1} lg={1}
+          >
             <i class="fas fa-plus-circle">
             </i>
           </Col>
-          <Col as={Button} className="pomodoro-pad" xs={2} sm={1} md={1} lg={1} value={10}
+          <Col
+            as={Button}
             variant="success"
             id="session-increment"
-            onClick={this.incrementWorkSession}>
+            className="pomodoro-pad"
+            onClick={this.incrementWorkSession}
+            xs={2} sm={1} md={1} lg={1}
+          >
             <i class="fas fa-plus-circle">
             </i>
           </Col>
         </Row>
         <Row className="justify-content-center">
-          <Col as={Button} className="pomodoro-pad slab" xs={3} sm={3} md={2} lg={2} value={1} variant="warning" id="break-label">
+          <Col
+            as={Button}
+            id="break-label"
+            variant="warning"
+            className="pomodoro-pad slab"
+            xs={3} sm={3} md={2} lg={2}
+          >
             <h5>
               Break
           </h5>
           </Col>
-          <Col as={Button} className="pomodoro-pad" xs={2} sm={1} md={1} lg={1} value={2} variant="dark" id="break-length">
+          <Col
+            as={Button}
+            variant="dark"
+            id="break-length"
+            className="pomodoro-pad"
+            xs={2} sm={1} md={1} lg={1}
+          >
             <h5>
-              {/* {this.displayTimer(timeBreak)} */}
-              {/* <br></br> */}
               {this.displayMinutes(timeBreak)}
-              {/* {timeBreak} */}
             </h5>
           </Col>
-          <Col as={Button} className="pomodoro-pad" xs={2} sm={1} md={1} lg={1} value={4} variant="dark" id="timer-label">
+          <Col
+            as={Button}
+            variant="dark"
+            id="timer-label"
+            className="pomodoro-pad"
+            xs={2} sm={1} md={1} lg={1}
+          >
             <h5>
               {/* {this.displayTimer(timeWorkSession)} */}
               {this.displayMinutes(timeWorkSession)}
               {/* {timeWorkSession} */}
             </h5>
           </Col>
-          <Col as={Button} className="pomodoro-pad slab" xs={3} sm={3} md={2} lg={2} value={3} variant="warning"
-            id="session-label">
+          <Col
+            as={Button}
+            variant="warning"
+            id="session-label"
+            className="pomodoro-pad slab"
+            xs={3} sm={3} md={2} lg={2}
+          >
             <h5>
               Work
           </h5>
           </Col>
         </Row>
         <Row className="justify-content-center">
-          <Col as={Button} className="pomodoro-pad" xs={2} sm={1} md={1} lg={1}
-            value={7}
+          {/* decrements */}
+          <Col
+            as={Button}
             variant="info"
             id="break-decrement"
-            onClick={this.decrementBreak}>
+            className="pomodoro-pad"
+            onClick={this.decrementBreak}
+            xs={2} sm={1} md={1} lg={1}
+          >
             <i class="fas fa-minus-square">
             </i>
           </Col>
-          <Col as={Button} className="pomodoro-pad" xs={2} sm={1} md={1} lg={1}
-            value={8}
+          <Col
+            as={Button}
             variant="info"
             id="session-decrement"
-            onClick={this.decrementWorkSession}>
+            className="pomodoro-pad"
+            onClick={this.decrementWorkSession}
+            xs={2} sm={1} md={1} lg={1}
+          >
             <i class="fas fa-minus-square">
             </i>
           </Col>
         </Row>
         <Row className="justify-content-center">
-          <Col as="h1" className="pomodoro-pad pomo-display" xs={5} sm={4} md={3} lg={2} value={5} variant="warning"
-            id="time-left">
+          {/* display */}
+          <Col
+            as="h1"
+            id="time-left"
+            variant="warning"
+            xs={5} sm={4} md={3} lg={2}
+            className="pomodoro-pad pomo-display"
+          >
             <h1 className="slab">
-              {/* {timeLft} */}
-              {/* <br></br> */}
               {this.displayTimer(timeLft)}
             </h1>
           </Col>
-          <Col as={Button} className="pomodoro-pad" xs={3} sm={2} md={2} lg={1} value={6} variant="dark"
-            id="session-length">
+          <Col
+            as={Button}
+            variant="dark"
+            id="session-length"
+            className="pomodoro-pad"
+            xs={3} sm={2} md={2} lg={1}
+          // value={6}
+          >
             <h5>
-              {/* {this.displayTimer(timeLft)} */}
-              {this.displayHack(timeLft)}
-              {/* {timeLft} */}
+              {this.displayMinutes(timeLft)}
             </h5>
           </Col>
         </Row>
         <Row className="justify-content-center">
-          <Col as={Button} className={tglVariant} xs={5} sm={4} md={3} lg={2} value={11}
+          {/* start, stop & reset */}
+          <Col
+            as={Button}
             id="start_stop"
-            onClick={this.setToggleOnOff}>
+            className={tglVariant}
+            xs={5} sm={4} md={3} lg={2}
+            onClick={this.setToggleOnOff}
+          // value={11}
+          >
             <h5>
               {tglStart}
-              <br></br>
-              {/* {tglVariant} */}
             </h5>
           </Col>
-          <Col as={Button} className="pomodoro-pad slab" xs={3} sm={2} md={2} lg={1} value={12}
+          <Col
             id="reset"
-            onClick={this.setReset}>
+            as={Button}
+            onClick={this.setReset}
+            xs={3} sm={2} md={2} lg={1}
+            // value={12}
+            className="pomodoro-pad slab"
+          >
             <h5>
               Reset
             </h5>
@@ -263,7 +316,7 @@ export class Pomodoro extends Component {
         <audio
           id="beep"
           // controls
-          src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav">
+          src="https://github.com/TurtleWolfe/fccTempLate/blob/master/src/components/pages/pomodoro/440957__l-q__coin-3.wav?raw=true">
           Your browser does not support the
             <code>audio</code> element.
         </audio>

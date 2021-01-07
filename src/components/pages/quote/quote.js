@@ -55,7 +55,7 @@ export class Quote extends Component {
   };
 
   render() {
-    const { quote, author } = this.state;
+    let { quote, author } = this.state;
 
     return (
       <Container>
