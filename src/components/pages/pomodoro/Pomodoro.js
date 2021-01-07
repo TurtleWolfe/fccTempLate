@@ -14,10 +14,10 @@ export class Pomodoro extends Component {
       timeWorkSession: 1500,
       timeBreak: 300,
       clicks: 0,
+      onBreak: false,
       show: true,
       audio: document.getElementById("beep")
     };
-
     // This binding is necessary to make `this` work in the callback
     // this.setToggleOnOff = this.setToggleOnOff.bind(this);
     // or not necessary if using an arrow function..
@@ -81,7 +81,7 @@ export class Pomodoro extends Component {
       tglStart: "Start",
       timeBreak: 300,
       timeLft: 1500,
-      clicks: 0,
+      onBreak: false,
       show: true,
     });
     audio.pause();
@@ -89,12 +89,13 @@ export class Pomodoro extends Component {
   };
 
   setToggleOnOff = () => {
-    let { tglStart } = this.state;
+    let { tglStart, onBreak, timeWorkSession } = this.state;
     if (tglStart === "Start") {
       this.interval = setInterval(this.countDown, 1000);
       this.setState({
         tglStart: "Pause",
         tglVariant: 'btn-warning pomodoro-pad slab',
+        timeLeft: timeWorkSession,
       });
     } else {
       this.setState({
@@ -107,27 +108,23 @@ export class Pomodoro extends Component {
   };
 
   countDown = () => {
-    let { show, tglStart, tglVariant, timeBreak, timeLft, timeWorkSession } = this.state;
+    let { show, onBreak, timeBreak, timeLft, timeWorkSession } = this.state;
     // If the time reach 0 then we display Buzzzz! alert.
     let audio = document.getElementById("beep");
     if (timeLft === 0) {
       this.setState({
-        tglVariant: 'btn-success pomodoro-pad slab',
-        tglStart: "Start",
-        timeLft: timeBreak,
-        // timeLft: ? timeWorkSession : timeBreak ,
-        show: !show
+        onBreak: !onBreak
       });
       audio.play();
-      // if(show === !show){
-      //   this.setState({
-      //     tglVariant: 'btn-success pomodoro-pad slab',
-      //     tglStart: "Start",
-      //     timeLft: timeBreak,
-      //     // timeLft: ? timeWorkSession : timeBreak ,
-      //     // show: !show
-      //   });
-      // }
+      if (!onBreak) {
+        this.setState({
+          timeLft: timeBreak,
+        });
+      } else {
+        this.setState({
+          timeLft: timeWorkSession,
+        });
+      }
 
       // clearInterval(this.interval);
     } else {
@@ -169,7 +166,7 @@ export class Pomodoro extends Component {
   // };
 
   render() {
-    let { tglStart, tglVariant, timeBreak, timeLft, timeWorkSession } = this.state;
+    let { onBreak, tglStart, tglVariant, timeBreak, timeLft, timeWorkSession } = this.state;
     return (
       <Container>
         <h4>
@@ -213,11 +210,13 @@ export class Pomodoro extends Component {
           <Col
             as={Button}
             id="break-label"
-            variant="warning"
+            // variant="warning"
+            variant={onBreak ? "warning" : "dark"}
             className="pomodoro-pad slab"
             xs={3} sm={3} md={2} lg={2}
           >
             <h5>
+
               Break
           </h5>
           </Col>
@@ -229,6 +228,7 @@ export class Pomodoro extends Component {
             xs={2} sm={1} md={1} lg={1}
           >
             <h5>
+              {/* {onBreak ? "on Break" : "at Work"} */}
               {this.displayMinutes(timeBreak)}
             </h5>
           </Col>
@@ -241,13 +241,16 @@ export class Pomodoro extends Component {
           >
             <h5>
               {/* {this.displayTimer(timeWorkSession)} */}
+              {onBreak ? "Break" : "Work"}
+              <br></br>
               {this.displayMinutes(timeWorkSession)}
               {/* {timeWorkSession} */}
             </h5>
           </Col>
           <Col
             as={Button}
-            variant="warning"
+            // variant="dark"
+            variant={onBreak ? "dark" : "warning"}
             id="session-label"
             className="pomodoro-pad slab"
             xs={3} sm={3} md={2} lg={2}
@@ -292,9 +295,9 @@ export class Pomodoro extends Component {
             className="pomodoro-pad pomo-display"
           >
             <h1 className="slab">
-              {/* {this.displayTimer(timeLft)} */}
+              {this.displayTimer(timeLft)}
               {/* alternate work break sessions */}
-              {this.state.show ? <h2>{this.displayTimer(timeLft)}</h2> : <h2>{this.displayTimer(timeBreak)}</h2>}
+              {/* {this.state.show ? <h2>{this.displayTimer(timeLft)}</h2> : <h2>{this.displayTimer(timeBreak)}</h2>} */}
               <h6>
                 {/* <button onClick={this.ToggleClick}>
                   {this.state.show ? 'Hide number' : 'Show number'}
