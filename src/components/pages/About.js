@@ -1,11 +1,12 @@
 import React from 'react';
-import { Container, Row } from 'react-bootstrap';
+import { Container, Row, Image } from 'react-bootstrap';
+import fccCert from '../../images/fccCertificate.png';
 import './About.css';
 
 
 export const About = () => {
   return (
-    <Container>
+    <Container className="About justify-content-center">
       <Row as="a"
         className="ispace App-link justify-content-center"
         href="https://reactjs.org"
@@ -77,6 +78,10 @@ export const About = () => {
         title="The Essential Meta Tags for Social Media"
       >
         <i className="ispace far fa-file-code"></i> Essential Meta Tags<i className="ispace far fa-file-code"></i>
+      </Row>
+      <br></br>
+      <Row className="justify-content-center">
+        <Image src={fccCert} fluid />
       </Row>
     </Container>
   );

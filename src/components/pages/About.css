@@ -3,3 +3,9 @@
   margin-left: 10px;
   margin-right: 10px;
 }
+
+.About img {
+  display: block;
+  margin: 0 auto;
+  width: 60%;
+}
