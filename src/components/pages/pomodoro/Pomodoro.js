@@ -89,7 +89,7 @@ export class Pomodoro extends Component {
   };
 
   setToggleOnOff = () => {
-    let { tglStart, onBreak, timeWorkSession } = this.state;
+    let { tglStart, timeWorkSession } = this.state;
     if (tglStart === "Start") {
       this.interval = setInterval(this.countDown, 1000);
       this.setState({
@@ -108,7 +108,7 @@ export class Pomodoro extends Component {
   };
 
   countDown = () => {
-    let { show, onBreak, timeBreak, timeLft, timeWorkSession } = this.state;
+    let { onBreak, timeBreak, timeLft, timeWorkSession } = this.state;
     // If the time reach 0 then we display Buzzzz! alert.
     let audio = document.getElementById("beep");
     if (timeLft === 0) {
@@ -125,7 +125,6 @@ export class Pomodoro extends Component {
           timeLft: timeWorkSession,
         });
       }
-
       // clearInterval(this.interval);
     } else {
       // We decrease the time second by second
@@ -146,10 +145,10 @@ export class Pomodoro extends Component {
   displayHack(seconds) {
     // Formatting the time into mm:ss
     // const m = Math.floor(seconds % 3600 / 60);
-    const m = Math.floor(seconds % 3600 / 60);
-    // const s = Math.floor(seconds % 3600 % 60);
+    const m = seconds / 60;
+    const s = seconds % 3600 % 60;
 
-    return `${m < 10 ? '0' : ''}${m}`;
+    return `${m}:${s < 10 ? '0' : ''}${s}`;
   }
 
   displayMinutes(seconds) {
@@ -160,10 +159,13 @@ export class Pomodoro extends Component {
 
     return `${m}`;
   }
-
-  // ToggleClick = () => {
-  //   this.setState({ show: !this.state.show });
-  // };
+  clockify = (tme) => {
+    let minutes = Math.floor(tme / 60);
+    let seconds = tme - minutes * 60;
+    seconds = seconds < 10 ? '0' + seconds : seconds;
+    minutes = minutes < 10 ? '0' + minutes : minutes;
+    return minutes + ':' + seconds;
+  };
 
   render() {
     let { onBreak, tglStart, tglVariant, timeBreak, timeLft, timeWorkSession } = this.state;
@@ -206,17 +208,15 @@ export class Pomodoro extends Component {
           </Col>
         </Row>
         <Row className="justify-content-center">
-          {/* Break /cnt/cnt /Work */}
+          {/* Break /counnt/counnt /Work */}
           <Col
             as={Button}
             id="break-label"
-            // variant="warning"
             variant={onBreak ? "warning" : "dark"}
             className="pomodoro-pad slab"
             xs={3} sm={3} md={2} lg={2}
           >
             <h5>
-
               Break
           </h5>
           </Col>
@@ -240,16 +240,13 @@ export class Pomodoro extends Component {
             xs={2} sm={1} md={1} lg={1}
           >
             <h5>
-              {/* {this.displayTimer(timeWorkSession)} */}
               {onBreak ? "Break" : "Work"}
               <br></br>
               {this.displayMinutes(timeWorkSession)}
-              {/* {timeWorkSession} */}
             </h5>
           </Col>
           <Col
             as={Button}
-            // variant="dark"
             variant={onBreak ? "dark" : "warning"}
             id="session-label"
             className="pomodoro-pad slab"
@@ -294,14 +291,20 @@ export class Pomodoro extends Component {
             xs={5} sm={4} md={3} lg={2}
             className="pomodoro-pad pomo-display"
           >
-            <h1 className="slab">
-              {this.displayTimer(timeLft)}
-              {/* alternate work break sessions */}
-              {/* {this.state.show ? <h2>{this.displayTimer(timeLft)}</h2> : <h2>{this.displayTimer(timeBreak)}</h2>} */}
+            <h1 className="slab"
+              id="time-left"
+            >
+              {/* 8. I can see an element with corresponding id="time-left". NOTE: Paused or running, the value in this field should always be displayed in mm:ss format (i.e. 25:00). */}
+              {/* time-left is not formatted correctly: expected '00' to equal '60' */}
+              {this.clockify(timeLft)}
               <h6>
-                {/* <button onClick={this.ToggleClick}>
-                  {this.state.show ? 'Hide number' : 'Show number'}
-                </button> */}
+                {/* {this.displayTimer(timeLft)}
+                <br></br>
+                {this.displayHack(timeLft)}
+                <br></br>
+                {this.displayMinutes(timeLft)}
+                <br></br> */}
+                {/* {this.clockify()} */}
               </h6>
             </h1>
           </Col>
@@ -311,7 +314,6 @@ export class Pomodoro extends Component {
             id="session-length"
             className="pomodoro-pad"
             xs={3} sm={2} md={2} lg={1}
-          // value={6}
           >
             <h5>
               {this.displayMinutes(timeLft)}
@@ -326,7 +328,6 @@ export class Pomodoro extends Component {
             className={tglVariant}
             xs={5} sm={4} md={3} lg={2}
             onClick={this.setToggleOnOff}
-          // value={11}
           >
             <h5>
               {tglStart}
@@ -337,7 +338,6 @@ export class Pomodoro extends Component {
             as={Button}
             onClick={this.setReset}
             xs={3} sm={2} md={2} lg={1}
-            // value={12}
             className="pomodoro-pad slab"
           >
             <h5>
@@ -370,6 +370,4 @@ export class Pomodoro extends Component {
 }
 
 export default Pomodoro;
-//       id="time-left"
-//       id="session-length"
-//       "timer-label"
+
